@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Vim | Bujiang's Blog]]></title>
+  <link href="http://blog.bujiang.info/blog/categories/vim/atom.xml" rel="self"/>
+  <link href="http://blog.bujiang.info/"/>
+  <updated>2014-07-22T01:35:07+08:00</updated>
+  <id>http://blog.bujiang.info/</id>
+  <author>
+    <name><![CDATA[Yan Bujiang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[VIM Tips 2]]></title>
+    <link href="http://blog.bujiang.info/blog/2014/01/09/vim-tips-2/"/>
+    <updated>2014-01-09T21:07:09+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2014/01/09/vim-tips-2</id>
+    <content type="html"><![CDATA[<p>VIM除了可以使用Ctrl和a或者x键来进行数字的加减 在Insert Mode的时候其实还能很方便的进行四则运</p>
+
+<p>例如在Insert Mode下 已经输入了</p>
+
+<p>买了5个苹果 每个苹果是1.34元 总共是：</p>
+
+<p>在一般的文本编辑器中只有两种选择 1.心算 2.计算器</p>
+
+<p>但是在VIM中可以按Ctrl和r 然后按＝ 然后输入5 * 1.34 在按enter(return)键就可以得到结果了</p>
+
+<p><img class="<a" src="href="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Vim/Tips/2/Screen%20Shot%202014-01-09%20at%209.16.51%20PM.jpg">https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Vim/Tips/2/Screen%20Shot%202014-01-09%20at%209.16.51%20PM.jpg</a>"> 6.7</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[VIM Tips 1]]></title>
+    <link href="http://blog.bujiang.info/blog/2014/01/09/vim-tips-1/"/>
+    <updated>2014-01-09T00:50:24+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2014/01/09/vim-tips-1</id>
+    <content type="html"><![CDATA[<p>平时使用VIM都在使用plugin带来的方便 其实VIM在不借助外部plugin也是非常强大的</p>
+
+<p>今天在用录入数据的时候想起来了VIM有个很方便的功能就是能快速的进行数字的加减运算</p>
+
+<p>只需要把光标移动到数字上 按Ctrl和a 就会把数字加一  当然也可以利用到VIM count功能</p>
+
+<p>在按Ctrl键之前 先输入数字</p>
+
+<p>例如 光标现在停在数字1上   按5键然后按Ctrl再按a  数字1就被加一五次变成6了</p>
+
+<p>相对应于加   按Ctrl和x 会进行减一运算</p>
+
+<p>不过有一点需要注意  数字如果是007 这是光标如果停在数字7上 按Ctrl和a  并不会出现008而是010</p>
+
+<p>这是因为VIM识别007为八进制的数字 所以加一就变成010</p>
+
+<p>如果想保持十进制 可以在Normal mode 下 输入 :set nrformats=   即可 当然如果想一劳永逸的话 就添加到vimrc文件里面</p>
+
+<p>更改回007识别成八进制 只要输入 :set nrformats=octal 就行了</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[VIM 插件]]></title>
+    <link href="http://blog.bujiang.info/blog/2013/12/10/vim-cha-jian/"/>
+    <updated>2013-12-10T16:26:00+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2013/12/10/vim-cha-jian</id>
+    <content type="html"><![CDATA[<p>在有了这些插件以后让VIM的使用可以变成一件很快乐而且高效率</p>
+
+<p>VIM插件的“管家”</p>
+
+<p><a href="https://github.com/gmarik/vundle">Vundle</a></p>
+
+<p>Vundle 本身也属于VIM的一个插件 但是使用它可以很方便的管理其它VIM插件 例如在Github上发现好的VIM插件后 在vimrc里面添加一行代码后 Vundle就能帮我们安装需要的这个插件了 对于VIM新手来说实在是方便</p>
+
+<p>安装步骤：</p>
+
+<p>1.在Terminal中使用Git来下载在Github上的Vundle</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone &lt;a href="https://github.com/gmarik/vundle.git">https://github.com/gmarik/vundle.git&lt;/a> ~/.vim/bundle/vundle</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>2.通过编辑器打开vim设置文件</p>
+
+<p>vim ~/.vimrc</p>
+
+<p>在设置文件的最上端添加一下代码
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>set nocompatible
+</span><span class='line'>filetype off
+</span><span class='line'>set rtp+=~/.vim/bundle/vundle/
+</span><span class='line'>call vundle#rc()
+</span><span class='line'>&ldquo; let Vundle manage Vundle
+</span><span class='line'>&rdquo; required!
+</span><span class='line'>Bundle &lsquo;gmarik/vundle&rsquo;
+</span><span class='line'>&ldquo;new plugin add below
+</span><span class='line'>filetype plugin indent on</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>以后安装新的VIM插件就只需要打开VIM设置文件 中添加 Bundle &lsquo;插件在Github上的名字&rsquo;</p>
+
+<p>添加好后 保存退出 再打开VIM 输入 :BundleInstall</p>
+
+<p>Vundle就会下载插件了</p>
+
+<p><img class="<a" src="href="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Vim/Vim%20plugin/Screen%20Shot%202013-12-10%20at%205.09.43%20PM.jpg">https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Vim/Vim%20plugin/Screen%20Shot%202013-12-10%20at%205.09.43%20PM.jpg</a>"></p>
+
+<p>一些我常用的插件都是通过vundle来安装的</p>
+
+<p>EasyMotion 可以很方便的让光标移动到想要去的位置</p>
+
+<p>默认按键有</p>
+
+<p>\j <br/>
+\k <br/>
+\l<br/>
+\h</p>
+
+<p>NERDTree 可以是文件夹和文件呈现成树状图 方便查找打开 默认使用vim的移动按键 和 o来打开文件或文件夹</p>
+]]></content>
+  </entry>
+  
+</feed>

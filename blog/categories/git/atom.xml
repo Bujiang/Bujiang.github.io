@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Git | Bujiang's Blog]]></title>
+  <link href="http://blog.bujiang.info/blog/categories/git/atom.xml" rel="self"/>
+  <link href="http://blog.bujiang.info/"/>
+  <updated>2014-07-22T01:35:07+08:00</updated>
+  <id>http://blog.bujiang.info/</id>
+  <author>
+    <name><![CDATA[Yan Bujiang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Git Day 4]]></title>
+    <link href="http://blog.bujiang.info/blog/2013/12/01/git-day-4/"/>
+    <updated>2013-12-01T23:19:00+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2013/12/01/git-day-4</id>
+    <content type="html"><![CDATA[<p>当有别人分享git链接 或者参与相同的项目可以用git clone来把remote repo保存到本地</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone &lt;a href="https://ddiang@bitbucket.org/ddiang/multi-drop-use-rs232-asm-cg3002-project.git">https://ddiang@bitbucket.org/ddiang/multi-drop-use-rs232-asm-cg3002-project.git&lt;/a> ddiang</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>ddiang 是保存在本地的目录，如果留空 就会使用repo上的目录multi drop……</p>
+
+<p><img class="<a" src="href="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%204/Git-Day-4-1.jpg">https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%204/Git-Day-4-1.jpg</a>"></p>
+
+<p>克隆到本地后可以新建一个自己的分支（branch）</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git branch diang</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><img class="<a" src="href="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%204/Git-Day-4-2.jpg">https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%204/Git-Day-4-2.jpg</a>"></p>
+
+<p>在创建新的分支后可以看到 有diang和master两个分支</p>
+
+<p>要切换到分支diang 需要执行</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git checkout diang</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><img class="<a" src="href="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%204/Git-Day-4-3.jpg">https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%204/Git-Day-4-3.jpg</a>"></p>
+
+<p>由上图可以发现 当我切换到新的分支diang下面</p>
+
+<p>使用touch命令创建了一个空的diang.txt文件  以及commit了</p>
+
+<p>再当我切换回master分支后 是看不到diang.txt文件的  每个分支间不会相互影响</p>
+
+<p>当在新的分支下完成想要做的后可以通过merge命令 把两个分支合在一起</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git merge diang</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><img class="<a" src="href="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%204/Git-Day-4-4.jpg">https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%204/Git-Day-4-4.jpg</a>"></p>
+
+<p>如上图 在合并在一起后 再用branch -d 删除分支</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Git Day 3]]></title>
+    <link href="http://blog.bujiang.info/blog/2013/11/30/git-day-3/"/>
+    <updated>2013-11-30T21:24:00+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2013/11/30/git-day-3</id>
+    <content type="html"><![CDATA[<p>Git是一个分布式版本控制（distributed revision control）系统，除了在本地保留commit和repo</p>
+
+<p>当然也可以储存在不同的地方 例如最常用的GitHub和Bitbucket了</p>
+
+<p>虽然Git是分布式版本控制但是在Git中并没有访问控制（access control)</p>
+
+<p>如果需要访问控制需要借由第三方来实现 如网站（在Github或Bitbucket上可以设置不同帐户的访问权限）或者软件</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git remote add origin &lt;a href="https://ddiang@bitbucket.org/ddiang/multi-drop-use-rs232-asm-cg3002-project.git">https://ddiang@bitbucket.org/ddiang/multi-drop-use-rs232-asm-cg3002-project.git&lt;/a></span></code></pre></td></tr></table></div></figure></notextile></div>
+上面的code 就添加了一个新的remote repo， add是添加新的 origin是remote端的名字 后面的https是地址</p>
+
+<p>想要查询有添加过哪些remote可以通过git remote -v</p>
+
+<p><img class="<a" src="href="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%203/Git-Day-3-1.jpg">https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%203/Git-Day-3-1.jpg</a>"></p>
+
+<p>本地的文件修改好了也commit了</p>
+
+<p>现在需要把本地的push到remote repo上
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git push -u origin master</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>-u 参数是用来记住 remote的origin</p>
+
+<p>下次push的时候就直接push到origin上</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git remote rm origin
+</span><span class='line'>git pull</span></code></pre></td></tr></table></div></figure></notextile></div>
+remote rm 用来移除</p>
+
+<p>pull 把remote repo上做的更改给拿到本地来</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Git Day 2]]></title>
+    <link href="http://blog.bujiang.info/blog/2013/11/29/git-day-2/"/>
+    <updated>2013-11-29T23:44:00+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2013/11/29/git-day-2</id>
+    <content type="html"><![CDATA[<p>在搜索引擎这么发达的情况下有问题Google下，立马就有答案了</p>
+
+<p>但其实Git有提供挺不错的帮助信息可供查询</p>
+
+<p>只要使用git help 和 git help add （在help后面加想要查询的git command)</p>
+
+<p>不记得从上次commit到现在对文件有做过什么改动了，想要查看怎么办呢git log?</p>
+
+<p>git log只能查询添加了哪些文件不能查询改动 这次得用git diff</p>
+
+<p><img class="<a" src="href="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%202/git-day-2-1.jpg">https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%202/git-day-2-1.jpg</a>"></p>
+
+<p>如图 在用diff 可以看到 在License后面添加了copyright info</p>
+
+<p>diff就像Terminal中的diff类似 告诉你有哪些改动</p>
+
+<p>但是当把License文件添加到stage后 再使用git diff将不会显示改动了</p>
+
+<p>如果要显示改动需要添加参数 git diff &mdash;staged</p>
+
+<p>后悔了 不想把License添加到stage</p>
+
+<p>可以用reset来取消stage</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git reset HEAD License</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>其中的HEAD是指最近的commit 可以想像一条从上至下的时间线 最顶上最近的是HEAD</p>
+
+<p>reset可以把staged的给unstage 但是要怎么还原成以前的没有copyright info的那个</p>
+
+<p>License文件呢
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git checkout &mdash; License</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>当修改过不止一个文件时 又要commit 需要一个一个文件commit吗</p>
+
+<p>给commit加上一个小参数就能搞定</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git commit -a -m &ldquo;All files&rdquo;</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>-a 所有staged的文件</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git reset &mdash;soft HEAD^
+</span><span class='line'>git commit &mdash;amend -m &ldquo;Changed&rdquo;
+</span><span class='line'>git reset &mdash;hard HEAD
+</span><span class='line'>git reset &mdash;soft HEAD^^</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>第一条是 撤销最新的HEAD commit 转到第二新的</p>
+
+<p>第二 做了新的改变但是不想要新的commit 而是在HEAD commit中修改</p>
+
+<p>第三 丢掉最新的HEAD commit， soft还保留stage， hard就都丢了</p>
+
+<p>第四 撤销到第三新的  例如 1，2，3 代表时间顺序 1最新是HEAD  2是HEAD^ 3是HEAD^^</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Git Day 1]]></title>
+    <link href="http://blog.bujiang.info/blog/2013/11/28/git-day-1/"/>
+    <updated>2013-11-28T02:14:00+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2013/11/28/git-day-1</id>
+    <content type="html"><![CDATA[<p>一直都没有系统的学习Git，这段时间决心从头来好好的学习下</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mkdir store
+</span><span class='line'>cd store
+</span><span class='line'>git init</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><img class="<a" src="href="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/git_day_1_1.jpg">https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/git_day_1_1.jpg</a>"></p>
+
+<p>git status 如上图所示，用来检查repo的状态</p>
+
+<p><img class="<a" src="href="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/git_day_1_2.jpg">https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/git_day_1_2.jpg</a>"></p>
+
+<p>添加了一个readme 文件后再用 git status 就有提示有添加新的文件</p>
+
+<p>添加文件可以有多种方式</p>
+
+<p>如 git add readme.txt bujiang.txt  一一列举需要添加的文件</p>
+
+<p>git add &mdash;all  添加所有</p>
+
+<p>git add *.txt  添加所有txt文件</p>
+
+<p>git add css/  添加整个css文件夹</p>
+
+<p>想知道添加了什么  可以使用 git log来查询历史记录</p>
+]]></content>
+  </entry>
+  
+</feed>

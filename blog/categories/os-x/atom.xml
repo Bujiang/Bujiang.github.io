@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Os X | Bujiang's Blog]]></title>
+  <link href="http://blog.bujiang.info/blog/categories/os-x/atom.xml" rel="self"/>
+  <link href="http://blog.bujiang.info/"/>
+  <updated>2014-07-22T01:35:07+08:00</updated>
+  <id>http://blog.bujiang.info/</id>
+  <author>
+    <name><![CDATA[Yan Bujiang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[OS X Mavericks小技巧]]></title>
+    <link href="http://blog.bujiang.info/blog/2013/11/04/os-x-mavericksxiao-ji-qiao/"/>
+    <updated>2013-11-04T09:45:00+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2013/11/04/os-x-mavericksxiao-ji-qiao</id>
+    <content type="html"><![CDATA[<p><img class="left <a" src="href="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/2013-11-04-os-x-mavericksxiao-ji-qiao.jpg">https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/2013-11-04-os-x-mavericksxiao-ji-qiao.jpg</a>">
+在OS X Mavericks里，想输入Emoji的时只需要按住Control + Command + Space 热键就能输入Emoji了</p>
+]]></content>
+  </entry>
+  
+</feed>

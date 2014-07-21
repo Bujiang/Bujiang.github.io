@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Quote | Bujiang's Blog]]></title>
+  <link href="http://blog.bujiang.info/blog/categories/quote/atom.xml" rel="self"/>
+  <link href="http://blog.bujiang.info/"/>
+  <updated>2014-07-22T01:35:07+08:00</updated>
+  <id>http://blog.bujiang.info/</id>
+  <author>
+    <name><![CDATA[Yan Bujiang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Quote]]></title>
+    <link href="http://blog.bujiang.info/blog/2013/11/03/quote/"/>
+    <updated>2013-11-03T09:46:00+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2013/11/03/quote</id>
+    <content type="html"><![CDATA[<p><blockquote><p>If you want a happy ending, that depends, of course, on where you stop your story.<br/>如果你想有一个美好的结局，这取决于你在哪里停止这个故事</p><footer><strong>Orson Welles</strong></footer></blockquote></p>
+]]></content>
+  </entry>
+  
+</feed>

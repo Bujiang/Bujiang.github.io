@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Markdown | Bujiang's Blog]]></title>
+  <link href="http://blog.bujiang.info/blog/categories/markdown/atom.xml" rel="self"/>
+  <link href="http://blog.bujiang.info/"/>
+  <updated>2014-07-22T01:35:07+08:00</updated>
+  <id>http://blog.bujiang.info/</id>
+  <author>
+    <name><![CDATA[Yan Bujiang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Markdown]]></title>
+    <link href="http://blog.bujiang.info/blog/2013/11/02/markdown/"/>
+    <updated>2013-11-02T18:46:00+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2013/11/02/markdown</id>
+    <content type="html"><![CDATA[<p><a href="http://wowubuntu.com/markdown/index.html">Markdown：http://wowubuntu.com/markdown/index.html</a></p>
+
+<p>上面的链接是一个挺详细的Markdown语法说明网页</p>
+
+<p>以后博客的编写全得依靠它了</p>
+]]></content>
+  </entry>
+  
+</feed>

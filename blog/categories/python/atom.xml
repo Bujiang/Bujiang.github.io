@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Python | Bujiang's Blog]]></title>
+  <link href="http://blog.bujiang.info/blog/categories/python/atom.xml" rel="self"/>
+  <link href="http://blog.bujiang.info/"/>
+  <updated>2014-07-22T01:35:07+08:00</updated>
+  <id>http://blog.bujiang.info/</id>
+  <author>
+    <name><![CDATA[Yan Bujiang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Python UTF-8]]></title>
+    <link href="http://blog.bujiang.info/blog/2013/11/21/python-utf-8/"/>
+    <updated>2013-11-21T12:09:00+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2013/11/21/python-utf-8</id>
+    <content type="html"><![CDATA[<p>最近因为project的原因很频繁的需要处理本地数据和数据库及网页之间的转换
+就碰到了挺多关于encoding和decoding的问题</p>
+
+<p>涉及的操作系统平台包含Mac，Linux和Windows。软件是Python2.7（Django，pyserial）
+为了保持字符编码的统一性，使用了UTF－8</p>
+
+<p>但在转换成UTF－8的时候经常会有不符合UTF－8定义特殊的字符导致错误出现</p>
+
+<p>其实可以这样方便的解决问题</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">encodeString</span> <span class="o">=</span> <span class="n">originString</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">latin</span><span class="o">-</span><span class="mi">1</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">utf</span><span class="o">-</span><span class="mi">8</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Python的类型判别]]></title>
+    <link href="http://blog.bujiang.info/blog/2013/11/08/pythonde-lei-xing-pan-bie/"/>
+    <updated>2013-11-08T10:42:00+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2013/11/08/pythonde-lei-xing-pan-bie</id>
+    <content type="html"><![CDATA[<p>以前在Python里面判别类型会使用type()
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Check type by using type() </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='pycon'><span class='line'><span class="go">num = 6</span>
+</span><span class='line'><span class="go">type(num)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>其实还有isinstance()
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Check type by using isinstance() </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='pycon'><span class='line'><span class="go">line = u&#39;你好&#39;</span>
+</span><span class='line'><span class="go">isinstance(line, unicode)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>甚至还能这样使用 isinstance(line, (unicode, str))</p>
+
+<p>因为最近在开发网站所以会经常碰到unicode的问题所以还蛮频繁的需要检查类型</p>
+]]></content>
+  </entry>
+  
+</feed>

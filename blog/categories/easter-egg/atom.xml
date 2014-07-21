@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Easter Egg | Bujiang's Blog]]></title>
+  <link href="http://blog.bujiang.info/blog/categories/easter-egg/atom.xml" rel="self"/>
+  <link href="http://blog.bujiang.info/"/>
+  <updated>2014-07-22T01:35:07+08:00</updated>
+  <id>http://blog.bujiang.info/</id>
+  <author>
+    <name><![CDATA[Yan Bujiang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[谷歌彩蛋]]></title>
+    <link href="http://blog.bujiang.info/blog/2014/01/11/gu-ge-cai-dan/"/>
+    <updated>2014-01-11T23:50:20+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2014/01/11/gu-ge-cai-dan</id>
+    <content type="html"><![CDATA[<p>谷歌(Google) 搜索页面上其实有挺多好玩的彩蛋(Easter egg)</p>
+
+<p>(1) do a barrel roll</p>
+
+<p>在谷歌搜索页面输入 do a barrel roll 按enter(return)后 页面就会乖乖的做翻滚（需要在Chrome里面执行）</p>
+
+<p><video width='640' height='320' preload='none' controls poster=''><source src='https://dl.dropboxusercontent.com/u/23849021/Blog/Video/Google%20Easter%20egg/My%20Movie.mp4">https://dl.dropboxusercontent.com/u/23849021/Blog/Video/Google%20Easter%20egg/My%20Movie.mp4</a>' ></video></p>
+
+<p>(2) atari breakout</p>
+
+<p>在谷歌图片搜索页面输入 atari breakout 按enter(return)后 页面就会变成打砖块的小游戏</p>
+
+<p><img class="<a" src="href="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Google%20Easter%20egg/Screen%20Shot%202014-01-11%20at%2010.42.07%20PM.jpg">https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Google%20Easter%20egg/Screen%20Shot%202014-01-11%20at%2010.42.07%20PM.jpg</a>"></p>
+
+<p>(3) google in 1998</p>
+
+<p>输入google in 1998 按enter(return)后 就“穿越”到1998年了 谷歌页面中的图标就回到98年的beta版了</p>
+
+<p><img class="<a" src="href="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Google%20Easter%20egg/Screen%20Shot%202014-01-12%20at%2012.17.50%20AM.jpg">https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Google%20Easter%20egg/Screen%20Shot%202014-01-12%20at%2012.17.50%20AM.jpg</a>"></p>
+
+<p>(4) zerg rush</p>
+
+<p>喜欢星际争霸（星海争霸,StarCraft) 应该会挺熟悉zerg rush 的含义的 我的理解是潮水般压倒性的攻击 :)</p>
+
+<p>在谷歌搜索页面中输入 zerg rush 按enter(return)后  会有一个小游戏出现 需要用鼠标点击那些攻击过来的小圆环 来保护搜索结果 当搜索结果全部被小圆环击碎后游戏就结束了 页面的右侧有APM计</p>
+
+<p><img class="<a" src="href="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Google%20Easter%20egg/Screen%20Shot%202014-01-12%20at%2012.30.07%20AM.jpg">https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Google%20Easter%20egg/Screen%20Shot%202014-01-12%20at%2012.30.07%20AM.jpg</a>"></p>
+
+<p>Happy Googleing</p>
+]]></content>
+  </entry>
+  
+</feed>

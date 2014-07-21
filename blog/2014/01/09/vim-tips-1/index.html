@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>VIM Tips 1 - Bujiang's Blog</title>
+  <meta name="author" content="Yan Bujiang">
+
+  
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.bujiang.info/blog/2014/01/09/vim-tips-1">
+  <link href="/favicon.png" type="image/png" rel="icon">
+  <link href="/atom.xml" rel="alternate" title="Bujiang's Blog" type="application/atom+xml">
+
+  <script src="/javascripts/libs/jquery/jquery-2.0.3.min.js"></script>
+
+<link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="/assets/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+
+
+  
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1331657-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+  <body   >
+    <div id="wrap">
+      <header role="banner">
+        <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Bujiang's Blog</a>
+        </div>
+
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="/">Blog</a>
+                </li>
+                <li >
+                    <a href="/blog/archives">Archives</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="subscribe-rss" href="/atom.xml" title="subscribe via RSS">
+                        <span class="visible-xs">RSS</span>
+                        <img class="hidden-xs" src="/images/rss.png" alt="RSS">
+                    </a>
+                </li>
+                
+            </ul>
+            
+                <form class="search navbar-form navbar-right" action="http://google.com/search" method="GET">
+                    <input type="hidden" name="q" value="site:blog.bujiang.info">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="q" placeholder="Search">
+                    </div>
+                </form>
+            
+        </div>
+    </div>
+</nav>
+
+
+      </header>
+      <div id="main" class="container">
+        <div id="content">
+          <div class="row">
+  <div class="page-content col-md-9">
+    <article class="hentry" role="article" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+      
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-01-09T00:50:24+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Jan 9<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+    
+    <h1 class="entry-title" itemprop="name headline">
+        VIM Tips 1
+        
+    </h1>
+    
+  </header>
+
+
+<div class="entry-content clearfix" itemprop="articleBody"><p>平时使用VIM都在使用plugin带来的方便 其实VIM在不借助外部plugin也是非常强大的</p>
+
+<p>今天在用录入数据的时候想起来了VIM有个很方便的功能就是能快速的进行数字的加减运算</p>
+
+<p>只需要把光标移动到数字上 按Ctrl和a 就会把数字加一  当然也可以利用到VIM count功能</p>
+
+<p>在按Ctrl键之前 先输入数字</p>
+
+<p>例如 光标现在停在数字1上   按5键然后按Ctrl再按a  数字1就被加一五次变成6了</p>
+
+<p>相对应于加   按Ctrl和x 会进行减一运算</p>
+
+<p>不过有一点需要注意  数字如果是007 这是光标如果停在数字7上 按Ctrl和a  并不会出现008而是010</p>
+
+<p>这是因为VIM识别007为八进制的数字 所以加一就变成010</p>
+
+<p>如果想保持十进制 可以在Normal mode 下 输入 :set nrformats=   即可 当然如果想一劳永逸的话 就添加到vimrc文件里面</p>
+
+<p>更改回007识别成八进制 只要输入 :set nrformats=octal 就行了</p>
+</div>
+
+
+      <footer>
+        <p class="meta text-muted">
+          
+  
+
+<span class="glyphicon glyphicon-user"></span> <span class="byline author vcard" itemprop="author" itemscope itemtype="http://schema.org/Person">Posted by <span class="fn" itemprop="name">Yan Bujiang</span></span>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-01-09T00:50:24+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Jan 9<sup>th</sup>, 2014</time>
+          
+
+<span class="glyphicon glyphicon-tags"></span>&nbsp;
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/vim/'>vim</a>
+  
+</span>
+
+
+        </p>
+        
+          <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.bujiang.info/blog/2014/01/09/vim-tips-1/" data-via="DiangDiang" data-counturl="http://blog.bujiang.info/blog/2014/01/09/vim-tips-1/" >Tweet</a>
+  
+  
+  
+</div>
+
+        
+        
+          <ul class="meta text-muted pager">
+            
+            <li class="previous"><a href="/blog/2013/12/17/coder-chu-cuo-liao/" title="Previous Post: Coder 出错了">&laquo; Coder 出错了</a></li>
+            
+            
+            <li class="next"><a href="/blog/2014/01/09/vim-tips-2/" title="Next Post: VIM Tips 2">VIM Tips 2 &raquo;</a></li>
+            
+          </ul>
+        
+      </footer>
+    </article>
+    
+      <section>
+        <h1>Comments</h1>
+        <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+      </section>
+    
+  </div>
+
+  
+  <aside class="sidebar col-md-3">
+    
+      <section class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Recent Posts</h3>
+  </div>
+  
+  <div id="recent_posts" class="list-group">
+    
+    <a class="list-group-item " href="/blog/2014/01/11/gu-ge-cai-dan/">谷歌彩蛋</a>
+    
+    <a class="list-group-item " href="/blog/2014/01/09/vim-tips-2/">VIM Tips 2</a>
+    
+    <a class="list-group-item active" href="/blog/2014/01/09/vim-tips-1/">VIM Tips 1</a>
+    
+    <a class="list-group-item " href="/blog/2013/12/17/coder-chu-cuo-liao/">Coder 出错了</a>
+    
+    <a class="list-group-item " href="/blog/2013/12/15/node-dot-js-shi-wan/">Node.js 试玩</a>
+    
+  </div>
+</section>
+Included file 'custom/asides/category_list.html' not found in _includes directoryIncluded file 'custom/asides/coderbits_portfolio.html' not found in _includes directory
+    
+  </aside>
+  
+</div>
+
+        </div>
+      </div>
+    </div>
+    <footer role="contentinfo"><div class="container">
+    <p class="text-muted credits">
+  Copyright &copy; 2014 - Yan Bujiang<br>
+  <small>
+      <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>,
+      <span class="credit">customized with <a href="https://github.com/kAworu/octostrap3">octostrap3</a></span>.
+  </small>
+</p>
+
+</div>
+</footer>
+    
+
+<script type="text/javascript">
+      var disqus_shortname = 'bujiangsblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.bujiang.info/blog/2014/01/09/vim-tips-1/';
+        var disqus_url = 'http://blog.bujiang.info/blog/2014/01/09/vim-tips-1/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+<script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/javascripts/modernizr-2.0.js"></script>
+
+
+  </body>
+</html>

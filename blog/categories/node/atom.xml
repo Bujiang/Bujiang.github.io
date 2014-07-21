@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Node | Bujiang's Blog]]></title>
+  <link href="http://blog.bujiang.info/blog/categories/node/atom.xml" rel="self"/>
+  <link href="http://blog.bujiang.info/"/>
+  <updated>2014-07-22T01:35:07+08:00</updated>
+  <id>http://blog.bujiang.info/</id>
+  <author>
+    <name><![CDATA[Yan Bujiang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Node.js 试玩]]></title>
+    <link href="http://blog.bujiang.info/blog/2013/12/15/node-dot-js-shi-wan/"/>
+    <updated>2013-12-15T08:47:00+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2013/12/15/node-dot-js-shi-wan</id>
+    <content type="html"><![CDATA[<p>一般提到JavaScript都会想到网页前端， 通常JavaScript都是在浏览器中执行的</p>
+
+<p>而Node.js不同与一般JavaScript它是在服务器端执行（在V8引擎的虚拟机上）</p>
+
+<p><img class="<a" src="href="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Node.js/%E8%AF%95%E7%8E%A9/Screen%20Shot%202013-12-15%20at%208.56.25%20AM.jpg">https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Node.js/%E8%AF%95%E7%8E%A9/Screen%20Shot%202013-12-15%20at%208.56.25%20AM.jpg</a>"></p>
+
+<p>如上图 如果不带任何参数的执行node 就像Python一样会出现一个互动的界面 在这里可以执行JavaScript</p>
+
+<p>介绍完了 开始coding第一个小程序 hello.js</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
+</span><span class='line'>setTimeout(function() {&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>console.log("world");
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>}, 2000)&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>console.log("hello");
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><img class="<a" src="href="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Node.js/%E8%AF%95%E7%8E%A9/Screen%20Shot%202013-12-15%20at%209.11.24%20AM.jpg">https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Node.js/%E8%AF%95%E7%8E%A9/Screen%20Shot%202013-12-15%20at%209.11.24%20AM.jpg</a>"></p>
+
+<p>执行hello.js  会先出现hello 在等待了2秒钟后会出现world</p>
+
+<p>＊： 把上面code中setTimeout 改成 setInterval  再执行hello.js 就会每间隔2秒显示一次world</p>
+
+<p>hello world 完了 现在来个简易的web server</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;br/>
+</span><span class='line'>web-server.js
+</span><span class='line'>var http = require(&lsquo;http&rsquo;);&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>var s = http.createServer(function(req, res) {&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>res.writeHead(200, { 'content-type': 'text/plain' });
+</span><span class='line'>res.end("hello world\n");
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>});
+</span><span class='line'>s.listen(8000);</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>上面的code 先让http载入http模块  然后创建server变量s  让s返回200 ok 以及 hello world给浏览器 在浏览器端输入ip地址加上8000端口就可以看到hello world了</p>
+
+<p><img class="<a" src="href="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Node.js/%E8%AF%95%E7%8E%A9/Screen%20Shot%202013-12-15%20at%209.31.15%20AM.jpg">https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Node.js/%E8%AF%95%E7%8E%A9/Screen%20Shot%202013-12-15%20at%209.31.15%20AM.jpg</a>"></p>
+
+<p>当然也可以通过curl来看header</p>
+
+<p><img class="<a" src="href="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Node.js/%E8%AF%95%E7%8E%A9/Screen%20Shot%202013-12-15%20at%209.36.23%20AM.jpg">https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Node.js/%E8%AF%95%E7%8E%A9/Screen%20Shot%202013-12-15%20at%209.36.23%20AM.jpg</a>"></p>
+]]></content>
+  </entry>
+  
+</feed>

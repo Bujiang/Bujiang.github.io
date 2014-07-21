@@ -4,7 +4,7 @@
   <title><![CDATA[Bujiang's Blog]]></title>
   <link href="http://blog.bujiang.info/atom.xml" rel="self"/>
   <link href="http://blog.bujiang.info/"/>
-  <updated>2014-07-22T01:26:34+08:00</updated>
+  <updated>2014-07-22T01:35:07+08:00</updated>
   <id>http://blog.bujiang.info/</id>
   <author>
     <name><![CDATA[Yan Bujiang]]></name>
@@ -12,5 +12,694 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[谷歌彩蛋]]></title>
+    <link href="http://blog.bujiang.info/blog/2014/01/11/gu-ge-cai-dan/"/>
+    <updated>2014-01-11T23:50:20+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2014/01/11/gu-ge-cai-dan</id>
+    <content type="html"><![CDATA[<p>谷歌(Google) 搜索页面上其实有挺多好玩的彩蛋(Easter egg)</p>
+
+<p>(1) do a barrel roll</p>
+
+<p>在谷歌搜索页面输入 do a barrel roll 按enter(return)后 页面就会乖乖的做翻滚（需要在Chrome里面执行）</p>
+
+<p><video width='640' height='320' preload='none' controls poster='https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Google%20Easter%20egg/Screen%20Shot%202014-01-12%20at%2012.07.01%20AM.png'><source src='https://dl.dropboxusercontent.com/u/23849021/Blog/Video/Google%20Easter%20egg/My%20Movie.mp4' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></video></p>
+
+<p>(2) atari breakout</p>
+
+<p>在谷歌图片搜索页面输入 atari breakout 按enter(return)后 页面就会变成打砖块的小游戏</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Google%20Easter%20egg/Screen%20Shot%202014-01-11%20at%2010.42.07%20PM.jpg"></p>
+
+<p>(3) google in 1998</p>
+
+<p>输入google in 1998 按enter(return)后 就“穿越”到1998年了 谷歌页面中的图标就回到98年的beta版了</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Google%20Easter%20egg/Screen%20Shot%202014-01-12%20at%2012.17.50%20AM.jpg"></p>
+
+<p>(4) zerg rush</p>
+
+<p>喜欢星际争霸（星海争霸,StarCraft) 应该会挺熟悉zerg rush 的含义的 我的理解是潮水般压倒性的攻击 :)</p>
+
+<p>在谷歌搜索页面中输入 zerg rush 按enter(return)后  会有一个小游戏出现 需要用鼠标点击那些攻击过来的小圆环 来保护搜索结果 当搜索结果全部被小圆环击碎后游戏就结束了 页面的右侧有APM计</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Google%20Easter%20egg/Screen%20Shot%202014-01-12%20at%2012.30.07%20AM.jpg"></p>
+
+<p>Happy Googleing</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[VIM Tips 2]]></title>
+    <link href="http://blog.bujiang.info/blog/2014/01/09/vim-tips-2/"/>
+    <updated>2014-01-09T21:07:09+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2014/01/09/vim-tips-2</id>
+    <content type="html"><![CDATA[<p>VIM除了可以使用Ctrl和a或者x键来进行数字的加减 在Insert Mode的时候其实还能很方便的进行四则运</p>
+
+<p>例如在Insert Mode下 已经输入了</p>
+
+<p>买了5个苹果 每个苹果是1.34元 总共是：</p>
+
+<p>在一般的文本编辑器中只有两种选择 1.心算 2.计算器</p>
+
+<p>但是在VIM中可以按Ctrl和r 然后按＝ 然后输入5 * 1.34 在按enter(return)键就可以得到结果了</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Vim/Tips/2/Screen%20Shot%202014-01-09%20at%209.16.51%20PM.jpg"> 6.7</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[VIM Tips 1]]></title>
+    <link href="http://blog.bujiang.info/blog/2014/01/09/vim-tips-1/"/>
+    <updated>2014-01-09T00:50:24+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2014/01/09/vim-tips-1</id>
+    <content type="html"><![CDATA[<p>平时使用VIM都在使用plugin带来的方便 其实VIM在不借助外部plugin也是非常强大的</p>
+
+<p>今天在用录入数据的时候想起来了VIM有个很方便的功能就是能快速的进行数字的加减运算</p>
+
+<p>只需要把光标移动到数字上 按Ctrl和a 就会把数字加一  当然也可以利用到VIM count功能</p>
+
+<p>在按Ctrl键之前 先输入数字</p>
+
+<p>例如 光标现在停在数字1上   按5键然后按Ctrl再按a  数字1就被加一五次变成6了</p>
+
+<p>相对应于加   按Ctrl和x 会进行减一运算</p>
+
+<p>不过有一点需要注意  数字如果是007 这是光标如果停在数字7上 按Ctrl和a  并不会出现008而是010</p>
+
+<p>这是因为VIM识别007为八进制的数字 所以加一就变成010</p>
+
+<p>如果想保持十进制 可以在Normal mode 下 输入 :set nrformats=   即可 当然如果想一劳永逸的话 就添加到vimrc文件里面</p>
+
+<p>更改回007识别成八进制 只要输入 :set nrformats=octal 就行了</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Coder 出错了]]></title>
+    <link href="http://blog.bujiang.info/blog/2013/12/17/coder-chu-cuo-liao/"/>
+    <updated>2013-12-17T00:32:00+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2013/12/17/coder-chu-cuo-liao</id>
+    <content type="html"><![CDATA[<p>一直因为忙于Project 而挺久没有玩Pi了 Pi就一直勤劳的帮我“挖矿”</p>
+
+<p>现在Project结束了 空闲些了 可以玩玩Pi了</p>
+
+<p>前段时间有看Tweet 发现Google有出一个Project叫Coder 用于Pi的</p>
+
+<p>可以把Pi迅速变成Web server</p>
+
+<p>刚想到就立马Google了下 找到了Coder的页面 根据页面提示把安装包给下载了下来</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Raspberry%20Pi/Coder/Screen%20Shot%202013-12-17%20at%2012.44.09%20AM.jpg"></p>
+
+<p>跟Raspbian很类似 把SD卡格式化下 然后插入Pi中就可以工作了</p>
+
+<p>根据步骤一步步来 没一会就出错了</p>
+
+<p>想了想可能是SD卡开了读写保护了， 把SD卡弹了出来， 发现黄色的读写保护按钮“高高”的停在unlock状态</p>
+
+<p>无奈的把它拨动到lock状态又拨回来</p>
+
+<p>再次运行Coder 不一会又出错了</p>
+
+<p>没办法 只好通过Disk Utility重新Format了下SD卡 再试 结果还是出错</p>
+
+<p>也许是Disk Utility的问题吧 然后拿出了“大杀器” SDFormater</p>
+
+<p>本以为没问题了 结果还是报错</p>
+
+<p>在万般无奈的情况下只好在Terminal中运行Coder的安装程序</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Raspberry%20Pi/Coder/Screen%20Shot%202013-12-17%20at%201.02.37%20AM.jpg"></p>
+
+<p>发现原来是因为Coder在执行脚本的时候文件夹名字的空格没有处理好所以一直报错</p>
+
+<p>如上图，  我的路径是/Volumes/Bu/Raspberry Pi/
+而执行脚本的时候指向的却是/Volumes/Bu/Raspberry</p>
+
+<p>想到了以前Gmail也出现过一段时间的crash 最终是因为一个“／” 没想到Coder会因为一个“space”导致报错</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Node.js 试玩]]></title>
+    <link href="http://blog.bujiang.info/blog/2013/12/15/node-dot-js-shi-wan/"/>
+    <updated>2013-12-15T08:47:00+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2013/12/15/node-dot-js-shi-wan</id>
+    <content type="html"><![CDATA[<p>一般提到JavaScript都会想到网页前端， 通常JavaScript都是在浏览器中执行的</p>
+
+<p>而Node.js不同与一般JavaScript它是在服务器端执行（在V8引擎的虚拟机上）</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Node.js/%E8%AF%95%E7%8E%A9/Screen%20Shot%202013-12-15%20at%208.56.25%20AM.jpg"></p>
+
+<p>如上图 如果不带任何参数的执行node 就像Python一样会出现一个互动的界面 在这里可以执行JavaScript</p>
+
+<p>介绍完了 开始coding第一个小程序 hello.js</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>setTimeout(function() {
+</span><span class='line'>    console.log("world");
+</span><span class='line'>}, 2000)
+</span><span class='line'>    console.log("hello");</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Node.js/%E8%AF%95%E7%8E%A9/Screen%20Shot%202013-12-15%20at%209.11.24%20AM.jpg"></p>
+
+<p>执行hello.js  会先出现hello 在等待了2秒钟后会出现world</p>
+
+<p>＊： 把上面code中setTimeout 改成 setInterval  再执行hello.js 就会每间隔2秒显示一次world</p>
+
+<p>hello world 完了 现在来个简易的web server</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>web-server.js
+</span><span class='line'>var http = require('http');
+</span><span class='line'>
+</span><span class='line'>var s = http.createServer(function(req, res) {
+</span><span class='line'>    res.writeHead(200, { 'content-type': 'text/plain' });
+</span><span class='line'>    res.end("hello world\n");
+</span><span class='line'>}); 
+</span><span class='line'>s.listen(8000);</span></code></pre></td></tr></table></div></figure>
+
+
+<p>上面的code 先让http载入http模块  然后创建server变量s  让s返回200 ok 以及 hello world给浏览器 在浏览器端输入ip地址加上8000端口就可以看到hello world了</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Node.js/%E8%AF%95%E7%8E%A9/Screen%20Shot%202013-12-15%20at%209.31.15%20AM.jpg"></p>
+
+<p>当然也可以通过curl来看header</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Node.js/%E8%AF%95%E7%8E%A9/Screen%20Shot%202013-12-15%20at%209.36.23%20AM.jpg"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[VIM 插件]]></title>
+    <link href="http://blog.bujiang.info/blog/2013/12/10/vim-cha-jian/"/>
+    <updated>2013-12-10T16:26:00+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2013/12/10/vim-cha-jian</id>
+    <content type="html"><![CDATA[<p>在有了这些插件以后让VIM的使用可以变成一件很快乐而且高效率</p>
+
+<p>VIM插件的“管家”</p>
+
+<p><a href="https://github.com/gmarik/vundle">Vundle</a></p>
+
+<p>Vundle 本身也属于VIM的一个插件 但是使用它可以很方便的管理其它VIM插件 例如在Github上发现好的VIM插件后 在vimrc里面添加一行代码后 Vundle就能帮我们安装需要的这个插件了 对于VIM新手来说实在是方便</p>
+
+<p>安装步骤：</p>
+
+<p>1.在Terminal中使用Git来下载在Github上的Vundle</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle</span></code></pre></td></tr></table></div></figure>
+
+
+<p>2.通过编辑器打开vim设置文件</p>
+
+<p>vim ~/.vimrc</p>
+
+<p>在设置文件的最上端添加一下代码</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>set nocompatible
+</span><span class='line'>filetype off
+</span><span class='line'>set rtp+=~/.vim/bundle/vundle/
+</span><span class='line'>call vundle#rc()
+</span><span class='line'>" let Vundle manage Vundle
+</span><span class='line'>" required! 
+</span><span class='line'>Bundle 'gmarik/vundle'
+</span><span class='line'>"new plugin add below
+</span><span class='line'>filetype plugin indent on</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>以后安装新的VIM插件就只需要打开VIM设置文件 中添加 Bundle &lsquo;插件在Github上的名字&rsquo;</p>
+
+<p>添加好后 保存退出 再打开VIM 输入 :BundleInstall</p>
+
+<p>Vundle就会下载插件了</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Vim/Vim%20plugin/Screen%20Shot%202013-12-10%20at%205.09.43%20PM.jpg"></p>
+
+<p>一些我常用的插件都是通过vundle来安装的</p>
+
+<p>EasyMotion 可以很方便的让光标移动到想要去的位置</p>
+
+<p>默认按键有</p>
+
+<p>\j <br/>
+\k <br/>
+\l<br/>
+\h</p>
+
+<p>NERDTree 可以是文件夹和文件呈现成树状图 方便查找打开 默认使用vim的移动按键 和 o来打开文件或文件夹</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Git Day 4]]></title>
+    <link href="http://blog.bujiang.info/blog/2013/12/01/git-day-4/"/>
+    <updated>2013-12-01T23:19:00+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2013/12/01/git-day-4</id>
+    <content type="html"><![CDATA[<p>当有别人分享git链接 或者参与相同的项目可以用git clone来把remote repo保存到本地</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://ddiang@bitbucket.org/ddiang/multi-drop-use-rs232-asm-cg3002-project.git ddiang</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>ddiang 是保存在本地的目录，如果留空 就会使用repo上的目录multi drop……</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%204/Git-Day-4-1.jpg"></p>
+
+<p>克隆到本地后可以新建一个自己的分支（branch）</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git branch diang</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%204/Git-Day-4-2.jpg"></p>
+
+<p>在创建新的分支后可以看到 有diang和master两个分支</p>
+
+<p>要切换到分支diang 需要执行</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git checkout diang</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%204/Git-Day-4-3.jpg"></p>
+
+<p>由上图可以发现 当我切换到新的分支diang下面</p>
+
+<p>使用touch命令创建了一个空的diang.txt文件  以及commit了</p>
+
+<p>再当我切换回master分支后 是看不到diang.txt文件的  每个分支间不会相互影响</p>
+
+<p>当在新的分支下完成想要做的后可以通过merge命令 把两个分支合在一起</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git merge diang</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%204/Git-Day-4-4.jpg"></p>
+
+<p>如上图 在合并在一起后 再用branch -d 删除分支</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Git Day 3]]></title>
+    <link href="http://blog.bujiang.info/blog/2013/11/30/git-day-3/"/>
+    <updated>2013-11-30T21:24:00+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2013/11/30/git-day-3</id>
+    <content type="html"><![CDATA[<p>Git是一个分布式版本控制（distributed revision control）系统，除了在本地保留commit和repo</p>
+
+<p>当然也可以储存在不同的地方 例如最常用的GitHub和Bitbucket了</p>
+
+<p>虽然Git是分布式版本控制但是在Git中并没有访问控制（access control)</p>
+
+<p>如果需要访问控制需要借由第三方来实现 如网站（在Github或Bitbucket上可以设置不同帐户的访问权限）或者软件</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git remote add origin https://ddiang@bitbucket.org/ddiang/multi-drop-use-rs232-asm-cg3002-project.git</span></code></pre></td></tr></table></div></figure>
+
+
+<p>上面的code 就添加了一个新的remote repo， add是添加新的 origin是remote端的名字 后面的https是地址</p>
+
+<p>想要查询有添加过哪些remote可以通过git remote -v</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%203/Git-Day-3-1.jpg"></p>
+
+<p>本地的文件修改好了也commit了</p>
+
+<p>现在需要把本地的push到remote repo上</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git push -u origin master</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>-u 参数是用来记住 remote的origin</p>
+
+<p>下次push的时候就直接push到origin上</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git remote rm origin
+</span><span class='line'>git pull</span></code></pre></td></tr></table></div></figure>
+
+
+<p>remote rm 用来移除</p>
+
+<p>pull 把remote repo上做的更改给拿到本地来</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Git Day 2]]></title>
+    <link href="http://blog.bujiang.info/blog/2013/11/29/git-day-2/"/>
+    <updated>2013-11-29T23:44:00+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2013/11/29/git-day-2</id>
+    <content type="html"><![CDATA[<p>在搜索引擎这么发达的情况下有问题Google下，立马就有答案了</p>
+
+<p>但其实Git有提供挺不错的帮助信息可供查询</p>
+
+<p>只要使用git help 和 git help add （在help后面加想要查询的git command)</p>
+
+<p>不记得从上次commit到现在对文件有做过什么改动了，想要查看怎么办呢git log?</p>
+
+<p>git log只能查询添加了哪些文件不能查询改动 这次得用git diff</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%202/git-day-2-1.jpg"></p>
+
+<p>如图 在用diff 可以看到 在License后面添加了copyright info</p>
+
+<p>diff就像Terminal中的diff类似 告诉你有哪些改动</p>
+
+<p>但是当把License文件添加到stage后 再使用git diff将不会显示改动了</p>
+
+<p>如果要显示改动需要添加参数 git diff &mdash;staged</p>
+
+<p>后悔了 不想把License添加到stage</p>
+
+<p>可以用reset来取消stage</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git reset HEAD License</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>其中的HEAD是指最近的commit 可以想像一条从上至下的时间线 最顶上最近的是HEAD</p>
+
+<p>reset可以把staged的给unstage 但是要怎么还原成以前的没有copyright info的那个</p>
+
+<p>License文件呢</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git checkout -- License</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>当修改过不止一个文件时 又要commit 需要一个一个文件commit吗</p>
+
+<p>给commit加上一个小参数就能搞定</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git commit -a -m "All files"</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>-a 所有staged的文件</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git reset --soft HEAD^
+</span><span class='line'>git commit --amend -m "Changed"
+</span><span class='line'>git reset --hard HEAD
+</span><span class='line'>git reset --soft HEAD^^</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>第一条是 撤销最新的HEAD commit 转到第二新的</p>
+
+<p>第二 做了新的改变但是不想要新的commit 而是在HEAD commit中修改</p>
+
+<p>第三 丢掉最新的HEAD commit， soft还保留stage， hard就都丢了</p>
+
+<p>第四 撤销到第三新的  例如 1，2，3 代表时间顺序 1最新是HEAD  2是HEAD^ 3是HEAD^^</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[HTML5]]></title>
+    <link href="http://blog.bujiang.info/blog/2013/11/29/html5/"/>
+    <updated>2013-11-29T07:00:00+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2013/11/29/html5</id>
+    <content type="html"><![CDATA[<p>HTML5相较于HTML 4.01还是挺多相当省事的变化</p>
+
+<p>DOCTYPE在HTML 4.01里</p>
+
+<figure class='code'><figcaption><span>HTML 4.01 Strict </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="cp">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/</span>
+</span><span class='line'><span class="cp">strict.dtd&quot;&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><figcaption><span>HTML 4.01 Transitional </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="cp">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://</span>
+</span><span class='line'><span class="cp">www.w3.org/TR/html4/loose.dtd&quot;&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><figcaption><span>HTML 4.01 Frameset </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="cp">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Frameset//EN&quot; &quot;http://www.w3.org/</span>
+</span><span class='line'><span class="cp">TR/html4/frameset.dtd&quot;&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>在HTML 5中就相当简单了</p>
+
+<figure class='code'><figcaption><span>HTML 5 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>META</p>
+
+<figure class='code'><figcaption><span>HTML 4 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">&quot;Content-Type&quot;</span> <span class="na">content=</span><span class="s">&quot;text/html; charset=UTF-8&quot;</span><span class="nt">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<figure class='code'><figcaption><span>HTML 5 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;UTF-8&quot;</span><span class="nt">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>Script Tag</p>
+
+<figure class='code'><figcaption><span>HTML 4.01 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;file.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+在HTML 5中省去了type 浏览器会推测使用的是javascript</p>
+
+<figure class='code'><figcaption><span>HTML 5 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;file.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>Link Tag</p>
+
+<figure class='code'><figcaption><span>HTML 4.01 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;file.css&quot;</span><span class="nt">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>对于Link Tag同样也可以省去type</p>
+
+<figure class='code'><figcaption><span>HTML 5 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;file.css&quot;</span><span class="nt">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Git Day 1]]></title>
+    <link href="http://blog.bujiang.info/blog/2013/11/28/git-day-1/"/>
+    <updated>2013-11-28T02:14:00+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2013/11/28/git-day-1</id>
+    <content type="html"><![CDATA[<p>一直都没有系统的学习Git，这段时间决心从头来好好的学习下</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mkdir store
+</span><span class='line'>cd store
+</span><span class='line'>git init</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/git_day_1_1.jpg"></p>
+
+<p>git status 如上图所示，用来检查repo的状态</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/git_day_1_2.jpg"></p>
+
+<p>添加了一个readme 文件后再用 git status 就有提示有添加新的文件</p>
+
+<p>添加文件可以有多种方式</p>
+
+<p>如 git add readme.txt bujiang.txt  一一列举需要添加的文件</p>
+
+<p>git add &mdash;all  添加所有</p>
+
+<p>git add *.txt  添加所有txt文件</p>
+
+<p>git add css/  添加整个css文件夹</p>
+
+<p>想知道添加了什么  可以使用 git log来查询历史记录</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Python UTF-8]]></title>
+    <link href="http://blog.bujiang.info/blog/2013/11/21/python-utf-8/"/>
+    <updated>2013-11-21T12:09:00+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2013/11/21/python-utf-8</id>
+    <content type="html"><![CDATA[<p>最近因为project的原因很频繁的需要处理本地数据和数据库及网页之间的转换
+就碰到了挺多关于encoding和decoding的问题</p>
+
+<p>涉及的操作系统平台包含Mac，Linux和Windows。软件是Python2.7（Django，pyserial）
+为了保持字符编码的统一性，使用了UTF－8</p>
+
+<p>但在转换成UTF－8的时候经常会有不符合UTF－8定义特殊的字符导致错误出现</p>
+
+<p>其实可以这样方便的解决问题</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">encodeString</span> <span class="o">=</span> <span class="n">originString</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">&quot;latin-1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&quot;utf-8&quot;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Python的类型判别]]></title>
+    <link href="http://blog.bujiang.info/blog/2013/11/08/pythonde-lei-xing-pan-bie/"/>
+    <updated>2013-11-08T10:42:00+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2013/11/08/pythonde-lei-xing-pan-bie</id>
+    <content type="html"><![CDATA[<p>以前在Python里面判别类型会使用type()</p>
+
+<figure class='code'><figcaption><span>Check type by using type() </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='pycon'><span class='line'><span class="go">num = 6</span>
+</span><span class='line'><span class="go">type(num)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>其实还有isinstance()</p>
+
+<figure class='code'><figcaption><span>Check type by using isinstance() </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='pycon'><span class='line'><span class="go">line = u&#39;你好&#39;</span>
+</span><span class='line'><span class="go">isinstance(line, unicode)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>甚至还能这样使用 isinstance(line, (unicode, str))</p>
+
+<p>因为最近在开发网站所以会经常碰到unicode的问题所以还蛮频繁的需要检查类型</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[OS X Mavericks小技巧]]></title>
+    <link href="http://blog.bujiang.info/blog/2013/11/04/os-x-mavericksxiao-ji-qiao/"/>
+    <updated>2013-11-04T09:45:00+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2013/11/04/os-x-mavericksxiao-ji-qiao</id>
+    <content type="html"><![CDATA[<p><img class="left" src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/2013-11-04-os-x-mavericksxiao-ji-qiao.jpg">
+在OS X Mavericks里，想输入Emoji的时只需要按住Control + Command + Space 热键就能输入Emoji了</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Quote]]></title>
+    <link href="http://blog.bujiang.info/blog/2013/11/03/quote/"/>
+    <updated>2013-11-03T09:46:00+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2013/11/03/quote</id>
+    <content type="html"><![CDATA[<blockquote><p>If you want a happy ending, that depends, of course, on where you stop your story.<br/>如果你想有一个美好的结局，这取决于你在哪里停止这个故事</p><footer><strong>Orson Welles</strong></footer></blockquote>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Markdown]]></title>
+    <link href="http://blog.bujiang.info/blog/2013/11/02/markdown/"/>
+    <updated>2013-11-02T18:46:00+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2013/11/02/markdown</id>
+    <content type="html"><![CDATA[<p><a href="http://wowubuntu.com/markdown/index.html">Markdown：http://wowubuntu.com/markdown/index.html</a></p>
+
+<p>上面的链接是一个挺详细的Markdown语法说明网页</p>
+
+<p>以后博客的编写全得依靠它了</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Hello World]]></title>
+    <link href="http://blog.bujiang.info/blog/2013/11/02/hello-world/"/>
+    <updated>2013-11-02T17:51:00+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2013/11/02/hello-world</id>
+    <content type="html"><![CDATA[<blockquote><p>Hello world</p></blockquote>
+]]></content>
+  </entry>
   
 </feed>
