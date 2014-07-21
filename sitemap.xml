@@ -1,123 +1,83 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  
-  <url>
-    <loc>http://blog.bujiang.info/blog/2014/01/11/gu-ge-cai-dan/</loc>
-    <lastmod>2014-01-11T23:50:20+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.bujiang.info/blog/2014/01/09/vim-tips-2/</loc>
-    <lastmod>2014-01-09T21:07:09+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.bujiang.info/blog/2014/01/09/vim-tips-1/</loc>
-    <lastmod>2014-01-09T00:50:24+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.bujiang.info/blog/2013/12/17/coder-chu-cuo-liao/</loc>
-    <lastmod>2013-12-17T00:32:00+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.bujiang.info/blog/2013/12/15/node-dot-js-shi-wan/</loc>
-    <lastmod>2013-12-15T08:47:00+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.bujiang.info/blog/2013/12/10/vim-cha-jian/</loc>
-    <lastmod>2013-12-10T16:26:00+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.bujiang.info/blog/2013/12/01/git-day-4/</loc>
-    <lastmod>2013-12-01T23:19:00+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.bujiang.info/blog/2013/11/30/git-day-3/</loc>
-    <lastmod>2013-11-30T21:24:00+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.bujiang.info/blog/2013/11/29/git-day-2/</loc>
-    <lastmod>2013-11-29T23:44:00+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.bujiang.info/blog/2013/11/29/html5/</loc>
-    <lastmod>2013-11-29T07:00:00+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.bujiang.info/blog/2013/11/28/git-day-1/</loc>
-    <lastmod>2013-11-28T02:14:00+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.bujiang.info/blog/2013/11/21/python-utf-8/</loc>
-    <lastmod>2013-11-21T12:09:00+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.bujiang.info/blog/2013/11/08/pythonde-lei-xing-pan-bie/</loc>
-    <lastmod>2013-11-08T10:42:00+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.bujiang.info/blog/2013/11/04/os-x-mavericksxiao-ji-qiao/</loc>
-    <lastmod>2013-11-04T09:45:00+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.bujiang.info/blog/2013/11/03/quote/</loc>
-    <lastmod>2013-11-03T09:46:00+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.bujiang.info/blog/2013/11/02/markdown/</loc>
-    <lastmod>2013-11-02T18:46:00+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.bujiang.info/blog/2013/11/02/hello-world/</loc>
-    <lastmod>2013-11-02T17:51:00+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  
-  <url>
-    <loc>http://blog.bujiang.info/blog/archives/</loc>
-    <lastmod>2014-07-22T01:35:07+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.bujiang.info/</loc>
-    <lastmod>2014-07-22T01:35:07+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  
-  
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>http://blog.bujiang.info/blog/2013/11/02/hello-world/</loc>
+        <lastmod>2014-07-22T01:18:04+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.bujiang.info/blog/2013/11/02/markdown/</loc>
+        <lastmod>2014-07-22T01:18:04+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.bujiang.info/blog/2013/11/03/quote/</loc>
+        <lastmod>2014-07-22T01:18:04+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.bujiang.info/blog/2013/11/04/os-x-mavericksxiao-ji-qiao/</loc>
+        <lastmod>2014-07-22T01:18:04+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.bujiang.info/blog/2013/11/08/pythonde-lei-xing-pan-bie/</loc>
+        <lastmod>2014-07-22T01:18:04+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.bujiang.info/blog/2013/11/21/python-utf-8/</loc>
+        <lastmod>2014-07-22T01:18:04+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.bujiang.info/blog/2013/11/28/git-day-1/</loc>
+        <lastmod>2014-07-22T01:18:04+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.bujiang.info/blog/2013/11/29/html5/</loc>
+        <lastmod>2014-07-22T01:18:04+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.bujiang.info/blog/2013/11/29/git-day-2/</loc>
+        <lastmod>2014-07-22T01:18:04+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.bujiang.info/blog/2013/11/30/git-day-3/</loc>
+        <lastmod>2014-07-22T01:18:04+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.bujiang.info/blog/2013/12/01/git-day-4/</loc>
+        <lastmod>2014-07-22T01:18:04+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.bujiang.info/blog/2013/12/10/vim-cha-jian/</loc>
+        <lastmod>2014-07-22T01:18:04+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.bujiang.info/blog/2013/12/15/node-dot-js-shi-wan/</loc>
+        <lastmod>2014-07-22T01:18:04+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.bujiang.info/blog/2013/12/17/coder-chu-cuo-liao/</loc>
+        <lastmod>2014-07-22T01:18:04+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.bujiang.info/blog/2014/01/09/vim-tips-1/</loc>
+        <lastmod>2014-07-22T01:18:04+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.bujiang.info/blog/2014/01/09/vim-tips-2/</loc>
+        <lastmod>2014-07-22T01:18:04+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.bujiang.info/blog/2014/01/11/gu-ge-cai-dan/</loc>
+        <lastmod>2014-07-22T01:18:04+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.bujiang.info/blog/archives/blog/archives/</loc>
+        <lastmod>2014-07-22T01:18:04+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.bujiang.info/</loc>
+        <lastmod>2014-07-22T01:18:04+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.bujiang.info/robots.txt</loc>
+        <lastmod>2014-07-22T01:18:04+08:00</lastmod>
+    </url>
 </urlset>
