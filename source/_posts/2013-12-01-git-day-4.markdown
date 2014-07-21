@@ -1,0 +1,50 @@
+---
+layout: post
+title: "Git Day 4"
+date: 2013-12-01 23:19
+comments: true
+categories: Git
+---
+当有别人分享git链接 或者参与相同的项目可以用git clone来把remote repo保存到本地  
+
+{% codeblock %}
+git clone https://ddiang@bitbucket.org/ddiang/multi-drop-use-rs232-asm-cg3002-project.git ddiang
+{% endcodeblock %}  
+
+ddiang 是保存在本地的目录，如果留空 就会使用repo上的目录multi drop……  
+
+{% img https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%204/Git-Day-4-1.jpg %}  
+
+克隆到本地后可以新建一个自己的分支（branch）  
+
+{% codeblock %}
+git branch diang
+{% endcodeblock %}  
+
+{% img https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%204/Git-Day-4-2.jpg %}  
+
+在创建新的分支后可以看到 有diang和master两个分支  
+
+要切换到分支diang 需要执行  
+
+{% codeblock %}
+git checkout diang
+{% endcodeblock %}  
+
+{% img https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%204/Git-Day-4-3.jpg %}  
+
+由上图可以发现 当我切换到新的分支diang下面  
+
+使用touch命令创建了一个空的diang.txt文件  以及commit了  
+
+再当我切换回master分支后 是看不到diang.txt文件的  每个分支间不会相互影响  
+
+当在新的分支下完成想要做的后可以通过merge命令 把两个分支合在一起  
+
+{% codeblock %}
+git merge diang
+{% endcodeblock %}  
+
+{% img https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%204/Git-Day-4-4.jpg %}  
+
+如上图 在合并在一起后 再用branch -d 删除分支

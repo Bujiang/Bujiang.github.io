@@ -1,0 +1,36 @@
+---
+layout: post
+title: "Git Day 1"
+date: 2013-11-28 02:14
+comments: true
+categories: Git
+---
+一直都没有系统的学习Git，这段时间决心从头来好好的学习下
+
+{% codeblock %}
+mkdir store
+cd store
+git init
+{% endcodeblock %}
+
+{% img https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/git_day_1_1.jpg %}
+
+git status 如上图所示，用来检查repo的状态
+
+{% img https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/git_day_1_2.jpg %}
+
+添加了一个readme 文件后再用 git status 就有提示有添加新的文件
+
+
+添加文件可以有多种方式 
+
+如 git add readme.txt bujiang.txt  一一列举需要添加的文件
+
+git add --all  添加所有
+
+git add *.txt  添加所有txt文件
+
+git add css/  添加整个css文件夹
+                   
+
+想知道添加了什么  可以使用 git log来查询历史记录

@@ -1,0 +1,12 @@
+---
+layout: post
+title: "Markdown"
+date: 2013-11-02 18:46
+comments: true
+categories: Markdown
+---
+[Markdown：http://wowubuntu.com/markdown/index.html](http://wowubuntu.com/markdown/index.html)
+
+上面的链接是一个挺详细的Markdown语法说明网页 
+
+以后博客的编写全得依靠它了

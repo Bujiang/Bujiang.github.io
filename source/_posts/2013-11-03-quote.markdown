@@ -1,0 +1,12 @@
+---
+layout: post
+title: "Quote"
+date: 2013-11-03 09:46
+comments: true
+categories: Quote
+---
+{% blockquote Orson Welles %}
+If you want a happy ending, that depends, of course, on where you stop your story.
+如果你想有一个美好的结局，这取决于你在哪里停止这个故事
+{% endblockquote %}
+

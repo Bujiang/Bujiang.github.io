@@ -1,0 +1,71 @@
+---
+layout: post
+title: "Git Day 2"
+date: 2013-11-29 23:44
+comments: true
+categories: Git
+---
+在搜索引擎这么发达的情况下有问题Google下，立马就有答案了  
+
+但其实Git有提供挺不错的帮助信息可供查询  
+
+只要使用git help 和 git help add （在help后面加想要查询的git command)  
+
+
+不记得从上次commit到现在对文件有做过什么改动了，想要查看怎么办呢git log?  
+
+git log只能查询添加了哪些文件不能查询改动 这次得用git diff  
+
+{% img https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%202/git-day-2-1.jpg %}  
+
+如图 在用diff 可以看到 在License后面添加了copyright info  
+
+diff就像Terminal中的diff类似 告诉你有哪些改动  
+
+但是当把License文件添加到stage后 再使用git diff将不会显示改动了  
+
+如果要显示改动需要添加参数 git diff --staged  
+
+后悔了 不想把License添加到stage  
+
+可以用reset来取消stage  
+
+{% codeblock %}
+git reset HEAD License
+{% endcodeblock %}  
+
+其中的HEAD是指最近的commit 可以想像一条从上至下的时间线 最顶上最近的是HEAD  
+
+reset可以把staged的给unstage 但是要怎么还原成以前的没有copyright info的那个  
+
+License文件呢
+{% codeblock %}
+git checkout -- License
+{% endcodeblock %}  
+
+当修改过不止一个文件时 又要commit 需要一个一个文件commit吗  
+
+给commit加上一个小参数就能搞定  
+
+{% codeblock %}
+git commit -a -m "All files"
+{% endcodeblock %}  
+
+-a 所有staged的文件  
+
+{% codeblock %}
+git reset --soft HEAD^
+git commit --amend -m "Changed"
+git reset --hard HEAD
+git reset --soft HEAD^^
+{% endcodeblock %}  
+
+第一条是 撤销最新的HEAD commit 转到第二新的  
+
+第二 做了新的改变但是不想要新的commit 而是在HEAD commit中修改  
+
+第三 丢掉最新的HEAD commit， soft还保留stage， hard就都丢了
+
+第四 撤销到第三新的  例如 1，2，3 代表时间顺序 1最新是HEAD  2是HEAD^ 3是HEAD^^  
+
+

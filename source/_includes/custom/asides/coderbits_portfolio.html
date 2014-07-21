@@ -1,0 +1,15 @@
+{% if site.coderbits_user %}
+<section>
+  <link href="https://coderbits.com/content/widget/coderbits.css" media="all" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    #coderbits {
+      margin: 10px 0 0 0;
+    }
+  </style>
+  <div class="panel-heading">
+    <h3 class="panel-title">Coderbits Portfolio</h3>
+  </div>
+  <section id="coderbits" data-coderbits-username="{{site.coderbits_user}}"></section>
+  <script src="https://coderbits.com/content/widget/coderbits.js"></script>
+</section>
+{% endif %}

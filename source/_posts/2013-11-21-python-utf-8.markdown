@@ -1,0 +1,20 @@
+---
+layout: post
+title: "Python UTF-8"
+date: 2013-11-21 12:09
+comments: true
+categories: Python 
+---
+最近因为project的原因很频繁的需要处理本地数据和数据库及网页之间的转换
+就碰到了挺多关于encoding和decoding的问题
+
+涉及的操作系统平台包含Mac，Linux和Windows。软件是Python2.7（Django，pyserial）
+为了保持字符编码的统一性，使用了UTF－8
+
+但在转换成UTF－8的时候经常会有不符合UTF－8定义特殊的字符导致错误出现
+
+其实可以这样方便的解决问题
+
+{% codeblock lang:python %}
+encodeString = originString.decode("latin-1").encode("utf-8")
+{% endcodeblock %}

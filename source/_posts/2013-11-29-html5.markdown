@@ -1,0 +1,55 @@
+---
+layout: post
+title: "HTML5"
+date: 2013-11-29 07:00
+comments: true
+categories: HTML 
+---
+HTML5相较于HTML 4.01还是挺多相当省事的变化  
+
+DOCTYPE在HTML 4.01里
+{% codeblock HTML 4.01 Strict lang:html %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/
+strict.dtd">
+{% endcodeblock %}
+{% codeblock HTML 4.01 Transitional lang:html %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://
+www.w3.org/TR/html4/loose.dtd">
+{% endcodeblock %}
+{% codeblock HTML 4.01 Frameset lang:html %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/
+TR/html4/frameset.dtd">
+{% endcodeblock %}  
+
+在HTML 5中就相当简单了
+{% codeblock HTML 5 lang:html %}
+<!DOCTYPE html>
+{% endcodeblock %}  
+
+META 
+{% codeblock HTML 4 lang:html %}
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+{% endcodeblock %}  
+
+{% codeblock HTML 5 lang:html %}
+<meta charset="UTF-8">
+{% endcodeblock %}  
+
+Script Tag
+{% codeblock HTML 4.01 lang:html %}
+<script type="text/javascript" src="file.js"></script>
+{% endcodeblock %}  
+在HTML 5中省去了type 浏览器会推测使用的是javascript
+{% codeblock HTML 5 lang:html %}
+<script src="file.js"></script>
+{% endcodeblock %}  
+
+Link Tag
+{% codeblock HTML 4.01 lang:html %}
+<link rel="stylesheet" type="text/css" href="file.css">
+{% endcodeblock %}  
+
+对于Link Tag同样也可以省去type
+{% codeblock HTML 5 lang:html %}
+<link rel="stylesheet" href="file.css">
+{% endcodeblock %}
