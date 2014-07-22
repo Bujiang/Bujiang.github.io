@@ -3,7 +3,7 @@ layout: post
 title: "Coder 出错了"
 date: 2013-12-17 00:32
 comments: true
-categories: Raspberry Pi 
+categories: [Raspberry Pi,] 
 ---
 一直因为忙于Project 而挺久没有玩Pi了 Pi就一直勤劳的帮我“挖矿”  
 
