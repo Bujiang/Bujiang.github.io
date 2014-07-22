@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://blog.bujiang.info/blog/2014/07/23/ptyhon-printing/</loc>
+    <lastmod>2014-07-23T00:02:09+08:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.bujiang.info/blog/2014/01/11/gu-ge-cai-dan/</loc>
     <lastmod>2014-01-11T23:50:20+08:00</lastmod>
     <priority>0.8</priority>
@@ -107,14 +113,14 @@
   
   <url>
     <loc>http://blog.bujiang.info/blog/archives/</loc>
-    <lastmod>2014-07-22T18:06:04+08:00</lastmod>
+    <lastmod>2014-07-23T02:05:53+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://blog.bujiang.info/</loc>
-    <lastmod>2014-07-22T18:06:04+08:00</lastmod>
+    <lastmod>2014-07-23T02:05:53+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>

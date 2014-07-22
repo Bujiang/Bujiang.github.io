@@ -4,7 +4,7 @@
   <title><![CDATA[Bujiang's Blog]]></title>
   <link href="http://blog.bujiang.info/atom.xml" rel="self"/>
   <link href="http://blog.bujiang.info/"/>
-  <updated>2014-07-22T18:06:04+08:00</updated>
+  <updated>2014-07-23T02:05:53+08:00</updated>
   <id>http://blog.bujiang.info/</id>
   <author>
     <name><![CDATA[Yan Bujiang]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ptyhon Printing]]></title>
+    <link href="http://blog.bujiang.info/blog/2014/07/23/ptyhon-printing/"/>
+    <updated>2014-07-23T00:02:09+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2014/07/23/ptyhon-printing</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>Fun printing</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&quot;/&quot;</span><span class="p">,</span> <span class="s">&quot;-&quot;</span><span class="p">,</span> <span class="s">&quot;|&quot;</span><span class="p">,</span> <span class="s">&quot;</span><span class="se">\\</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;|&quot;</span><span class="p">,</span> <span class="s">&quot;-&quot;</span><span class="p">]:</span>
+</span><span class='line'>        <span class="k">print</span> <span class="s">&quot;Loading [</span><span class="si">%s</span><span class="s">]</span><span class="se">\r\b</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">i</span><span class="p">,</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<iframe width="" height="" src="http://www.youtube.com/embed/q_XmtWG1E7c " frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[谷歌彩蛋]]></title>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Bujiang's Blog]]></title>
   <link href="http://blog.bujiang.info/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://blog.bujiang.info/"/>
-  <updated>2014-07-22T18:06:04+08:00</updated>
+  <updated>2014-07-23T02:05:53+08:00</updated>
   <id>http://blog.bujiang.info/</id>
   <author>
     <name><![CDATA[Yan Bujiang]]></name>
@@ -12,6 +12,24 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ptyhon Printing]]></title>
+    <link href="http://blog.bujiang.info/blog/2014/07/23/ptyhon-printing/"/>
+    <updated>2014-07-23T00:02:09+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2014/07/23/ptyhon-printing</id>
+    <content type="html"><![CDATA[<p>``` python Fun printing</p>
+
+<p>while True:</p>
+
+<pre><code>for i in ["/", "-", "|", "\\", "|", "-"]:
+    print "Loading [%s]\r\b" % i,
+</code></pre>
+
+<p>```
+<iframe width="" height="" src="http://www.youtube.com/embed/q_XmtWG1E7c " frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Python UTF-8]]></title>
