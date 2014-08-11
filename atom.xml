@@ -4,7 +4,7 @@
   <title><![CDATA[Bujiang's Blog]]></title>
   <link href="http://blog.bujiang.info/atom.xml" rel="self"/>
   <link href="http://blog.bujiang.info/"/>
-  <updated>2014-07-23T13:44:55+08:00</updated>
+  <updated>2014-08-11T16:07:27+08:00</updated>
   <id>http://blog.bujiang.info/</id>
   <author>
     <name><![CDATA[Yan Bujiang]]></name>
@@ -12,6 +12,77 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Mount Disk From Shell(Terminal) in Mac]]></title>
+    <link href="http://blog.bujiang.info/blog/2014/08/11/mount-disk-from-shell-terminal-in-mac/"/>
+    <updated>2014-08-11T15:31:00+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2014/08/11/mount-disk-from-shell-terminal-in-mac</id>
+    <content type="html"><![CDATA[<p>Before we mount disk or drive, we need to know all the connected first. There is a program called diskutil that can manipulate the structure of local disks.</p>
+
+<p>Type diskutil list in shell, the program will list all the
+connected disks.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>diskutil list
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The output will look like</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>/dev/disk0
+</span><span class='line'>   <span class="c">#:                       TYPE NAME                    SIZE       IDENTIFIER</span>
+</span><span class='line'>   0:      GUID_partition_scheme                        *250.1 GB   disk0
+</span><span class='line'>   1:                        EFI EFI                     209.7 MB   disk0s1
+</span><span class='line'>   2:                  Apple_HFS Mac OS                  249.2 GB   disk0s2
+</span><span class='line'>   3:                 Apple_Boot Recovery HD             650.0 MB   disk0s3
+</span><span class='line'>/dev/disk2
+</span><span class='line'>   <span class="c">#:                       TYPE NAME                    SIZE       IDENTIFIER</span>
+</span><span class='line'>   0:        CD_partition_scheme                        *124.0 MB   disk2
+</span><span class='line'>   1:       CD_ROM_Mode_2_Form_1 A20110738               108.0 MB   disk2s0
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Suppose will need mount the CD inside optical drive, we can type diskutil mountDisk /dev/disk2</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>diskutil mountDisk /dev/disk2
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After successful mount the disk, the output will look something like</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>Volume<span class="o">(</span>s<span class="o">)</span> mounted successfully
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>For mounting disk the argument use in diskutil is mountDisk but normal extenal hard drive just use mount.</p>
+
+<p>Unmounting disk or drive use unmountDisk or unmount for argument</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>diskutil mount /dev/disk3
+</span><span class='line'>diskutil unmount /dev/disk3
+</span><span class='line'>disktuil mountDisk /dev/disk2
+</span><span class='line'>disktuil unmountDisk /dev/disk2
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ptyhon Printing]]></title>

@@ -115,6 +115,105 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-11T15:31:00+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 11<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+    
+      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2014/08/11/mount-disk-from-shell-terminal-in-mac/" itemprop="url">Mount Disk From Shell(Terminal) in Mac</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>Before we mount disk or drive, we need to know all the connected first. There is a program called diskutil that can manipulate the structure of local disks.</p>
+
+<p>Type diskutil list in shell, the program will list all the
+connected disks.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>diskutil list
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The output will look like</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>/dev/disk0
+</span><span class='line'>   <span class="c">#:                       TYPE NAME                    SIZE       IDENTIFIER</span>
+</span><span class='line'>   0:      GUID_partition_scheme                        *250.1 GB   disk0
+</span><span class='line'>   1:                        EFI EFI                     209.7 MB   disk0s1
+</span><span class='line'>   2:                  Apple_HFS Mac OS                  249.2 GB   disk0s2
+</span><span class='line'>   3:                 Apple_Boot Recovery HD             650.0 MB   disk0s3
+</span><span class='line'>/dev/disk2
+</span><span class='line'>   <span class="c">#:                       TYPE NAME                    SIZE       IDENTIFIER</span>
+</span><span class='line'>   0:        CD_partition_scheme                        *124.0 MB   disk2
+</span><span class='line'>   1:       CD_ROM_Mode_2_Form_1 A20110738               108.0 MB   disk2s0
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Suppose will need mount the CD inside optical drive, we can type diskutil mountDisk /dev/disk2</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>diskutil mountDisk /dev/disk2
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After successful mount the disk, the output will look something like</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>Volume<span class="o">(</span>s<span class="o">)</span> mounted successfully
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>For mounting disk the argument use in diskutil is mountDisk but normal extenal hard drive just use mount.</p>
+
+<p>Unmounting disk or drive use unmountDisk or unmount for argument</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>diskutil mount /dev/disk3
+</span><span class='line'>diskutil unmount /dev/disk3
+</span><span class='line'>disktuil mountDisk /dev/disk2
+</span><span class='line'>disktuil unmountDisk /dev/disk2
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-07-23T00:02:09+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Jul 23<sup>rd</sup>, 2014</time>
         
       </p>
@@ -384,97 +483,6 @@
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-15T08:47:00+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Dec 15<sup>th</sup>, 2013</time>
-        
-      </p>
-    
-    
-      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2013/12/15/node-dot-js-shi-wan/" itemprop="url">Node.js 试玩</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>一般提到JavaScript都会想到网页前端， 通常JavaScript都是在浏览器中执行的</p>
-
-<p>而Node.js不同与一般JavaScript它是在服务器端执行（在V8引擎的虚拟机上）</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Node.js/%E8%AF%95%E7%8E%A9/Screen%20Shot%202013-12-15%20at%208.56.25%20AM.jpg"></p>
-
-<p>如上图 如果不带任何参数的执行node 就像Python一样会出现一个互动的界面 在这里可以执行JavaScript</p>
-
-<p>介绍完了 开始coding第一个小程序 hello.js</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>setTimeout(function() {
-</span><span class='line'>    console.log("world");
-</span><span class='line'>}, 2000)
-</span><span class='line'>    console.log("hello");</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Node.js/%E8%AF%95%E7%8E%A9/Screen%20Shot%202013-12-15%20at%209.11.24%20AM.jpg"></p>
-
-<p>执行hello.js  会先出现hello 在等待了2秒钟后会出现world</p>
-
-<p>＊： 把上面code中setTimeout 改成 setInterval  再执行hello.js 就会每间隔2秒显示一次world</p>
-
-<p>hello world 完了 现在来个简易的web server</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>web-server.js
-</span><span class='line'>var http = require('http');
-</span><span class='line'>
-</span><span class='line'>var s = http.createServer(function(req, res) {
-</span><span class='line'>    res.writeHead(200, { 'content-type': 'text/plain' });
-</span><span class='line'>    res.end("hello world\n");
-</span><span class='line'>}); 
-</span><span class='line'>s.listen(8000);</span></code></pre></td></tr></table></div></figure>
-
-
-<p>上面的code 先让http载入http模块  然后创建server变量s  让s返回200 ok 以及 hello world给浏览器 在浏览器端输入ip地址加上8000端口就可以看到hello world了</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Node.js/%E8%AF%95%E7%8E%A9/Screen%20Shot%202013-12-15%20at%209.31.15%20AM.jpg"></p>
-
-<p>当然也可以通过curl来看header</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Node.js/%E8%AF%95%E7%8E%A9/Screen%20Shot%202013-12-15%20at%209.36.23%20AM.jpg"></p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -498,6 +506,8 @@
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/2014/08/11/mount-disk-from-shell-terminal-in-mac/">Mount Disk From Shell(Terminal) in Mac</a>
+    
     <a class="list-group-item " href="/blog/2014/07/23/ptyhon-printing/">Ptyhon Printing</a>
     
     <a class="list-group-item " href="/blog/2014/01/11/gu-ge-cai-dan/">谷歌彩蛋</a>
@@ -505,8 +515,6 @@
     <a class="list-group-item " href="/blog/2014/01/09/vim-tips-2/">VIM Tips 2</a>
     
     <a class="list-group-item " href="/blog/2014/01/09/vim-tips-1/">VIM Tips 1</a>
-    
-    <a class="list-group-item " href="/blog/2013/12/17/coder-chu-cuo-liao/">Coder 出错了</a>
     
   </div>
 </section>
@@ -530,7 +538,7 @@
     
     
     <a class="list-group-item " href="/blog/categories/os-x/index.html">
-        <span class="badge">1</span>
+        <span class="badge">2</span>
         os x
       </a>
     
