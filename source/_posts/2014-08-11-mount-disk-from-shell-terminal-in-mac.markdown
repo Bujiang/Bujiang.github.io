@@ -3,7 +3,7 @@ layout: post
 title: "Mount disk from Shell(Terminal) in Mac"
 date: 2014-08-11 15:31:00 +0800
 comments: true
-categories: [OS X,]
+categories: [OS X,BASH]
 ---
 
 Before we mount disk or drive, we need to know all the connected first. There is a program called diskutil that can manipulate the structure of local disks.
