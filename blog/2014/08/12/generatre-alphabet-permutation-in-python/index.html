@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>VIM Tips 1 - Bujiang's Blog</title>
+  <title>Generate Alphabet Permutation in Python - Bujiang's Blog</title>
   <meta name="author" content="Yan Bujiang">
 
   
@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.bujiang.info/blog/2014/01/09/vim-tips-1">
+  <link rel="canonical" href="http://blog.bujiang.info/blog/2014/08/12/generatre-alphabet-permutation-in-python">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="Bujiang's Blog" type="application/atom+xml">
 
@@ -111,38 +111,83 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-01-09T00:50:24+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Jan 9<sup>th</sup>, 2014</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-12T22:38:04+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 12<sup>th</sup>, 2014</time>
         
       </p>
     
     
     <h1 class="entry-title" itemprop="name headline">
-        VIM Tips 1
+        Generate Alphabet Permutation in Python
         
     </h1>
     
   </header>
 
 
-<div class="entry-content clearfix" itemprop="articleBody"><p>平时使用VIM都在使用plugin带来的方便 其实VIM在不借助外部plugin也是非常强大的</p>
+<div class="entry-content clearfix" itemprop="articleBody"><p>Yesterday I&rsquo;ve find a loophole in my friends website, the API for mobile side registration does not have any human verification functions.
+I decide to generate alphabet permutation list for user name and register fake users.</p>
 
-<p>今天在用录入数据的时候想起来了VIM有个很方便的功能就是能快速的进行数字的加减运算</p>
+<p>In python standard library have functions for iterators for efficient looping which name is itertools. The itertools have permutation generators.</p>
 
-<p>只需要把光标移动到数字上 按Ctrl和a 就会把数字加一  当然也可以利用到VIM count功能</p>
+<p>The permutation function needs two arguments, one is iterable, another one is length like if the iterable is &ldquo;ABC&rdquo; and length is 2 then (A,B) (A,C) (B,A) (B,C) (C,A) (C,B) are results for this functions.</p>
 
-<p>在按Ctrl键之前 先输入数字</p>
+<figure class='code'><figcaption><span>Generate permutation</span><a href='https://docs.python.org/2/library/itertools.html#itertools.permutations'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">itertools</span>
+</span><span class='line'><span class="n">iterable</span> <span class="o">=</span> <span class="s">&#39;ABC&#39;</span>
+</span><span class='line'><span class="n">length</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span class='line'><span class="n">permutation</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">permutations</span><span class="p">(</span><span class="n">iterable</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
+</span><span class='line'><span class="n">permutation</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">permuation</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p>例如 光标现在停在数字1上   按5键然后按Ctrl再按a  数字1就被加一五次变成6了</p>
 
-<p>相对应于加   按Ctrl和x 会进行减一运算</p>
+<p>After generate, inside the python list are tuples not string for user name. We need join alphabet within tuple together. Like (A,B) become &lsquo;AB&rsquo;</p>
 
-<p>不过有一点需要注意  数字如果是007 这是光标如果停在数字7上 按Ctrl和a  并不会出现008而是010</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">nameList</span> <span class="o">=</span> <span class="p">[]</span>                        <span class="c">#Create a empty list</span>
+</span><span class='line'><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">permutation</span><span class="p">:</span>
+</span><span class='line'>    <span class="n">nameList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>      <span class="c">#Join alphabet together and append in namList</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p>这是因为VIM识别007为八进制的数字 所以加一就变成010</p>
 
-<p>如果想保持十进制 可以在Normal mode 下 输入 :set nrformats=   即可 当然如果想一劳永逸的话 就添加到vimrc文件里面</p>
+<p>The user name list are done, next is register user by use API. That API for registration use form-urlencoded. For simplicity, I decide just use curl construct special POST request.</p>
 
-<p>更改回007识别成八进制 只要输入 :set nrformats=octal 就行了</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">TYPE</span> <span class="o">=</span> <span class="s">&quot;&#39;Content-Type:application/x-www-form-urlencoded&#39;&quot;</span>
+</span><span class='line'><span class="n">DEVICE</span> <span class="o">=</span> <span class="s">&quot; -d &#39;device_type=2&amp;user_name=&quot;</span>
+</span><span class='line'><span class="n">EMAIL</span> <span class="o">=</span> <span class="s">&quot;&amp;email=&quot;</span>
+</span><span class='line'><span class="n">EMAILTAIL</span> <span class="o">=</span> <span class="s">&quot;%40bujiang.info&amp;password=12345&amp;device_token=&#39;&quot;</span>
+</span><span class='line'><span class="n">URL</span> <span class="o">=</span> <span class="s">&quot; http://***********.com/*******api/index.php/v1/dp_auth/signup&quot;</span>
+</span><span class='line'><span class="n">COMMAND</span> <span class="o">=</span> <span class="s">&quot;curl -s -X POST -H &quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">execmd</span><span class="p">():</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">nameList</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">name</span> <span class="o">=</span> <span class="n">nameList</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>    <span class="c">#Poped name use for username</span>
+</span><span class='line'>        <span class="n">cmd</span> <span class="o">=</span> <span class="n">COMMAND</span> <span class="o">+</span> <span class="n">TYPE</span> <span class="o">+</span> <span class="n">DEVICE</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="n">EMAIL</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="n">EMAILTAIL</span> <span class="o">+</span> <span class="n">URL</span>    <span class="c">#Construct command for different username registration</span>
+</span><span class='line'>        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>    <span class="c">#Execute command in shell </span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The code is modified from original code, original code use multithread for concurrent post request. Those asterisk in code URL for privacy reason.
+Another loophole for this registration API is password in plaintext.</p>
+
+<p>*: All test actions are under my friend authorization</p>
 </div>
 
 
@@ -166,13 +211,13 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-01-09T00:50:24+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Jan 9<sup>th</sup>, 2014</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-12T22:38:04+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 12<sup>th</sup>, 2014</time>
           
 
 <span class="glyphicon glyphicon-tags"></span>&nbsp;
 <span class="categories">
   
-    <a class='category' href='/blog/categories/vim/'>vim</a>
+    <a class='category' href='/blog/categories/bash/'>bash</a>, <a class='category' href='/blog/categories/python/'>python</a>
   
 </span>
 
@@ -181,7 +226,7 @@
         
           <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.bujiang.info/blog/2014/01/09/vim-tips-1/" data-via="DiangDiang" data-counturl="http://blog.bujiang.info/blog/2014/01/09/vim-tips-1/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.bujiang.info/blog/2014/08/12/generatre-alphabet-permutation-in-python/" data-via="DiangDiang" data-counturl="http://blog.bujiang.info/blog/2014/08/12/generatre-alphabet-permutation-in-python/" >Tweet</a>
   
   
   
@@ -193,10 +238,8 @@
         
           <ul class="meta text-muted pager">
             
-            <li class="previous"><a href="/blog/2013/12/17/coder-chu-cuo-liao/" title="Previous Post: Coder 出错了">&laquo; Coder 出错了</a></li>
+            <li class="previous"><a href="/blog/2014/08/11/mount-disk-from-shell-terminal-in-mac/" title="Previous Post: Mount disk from Shell(Terminal) in Mac">&laquo; Mount disk from Shell(Terminal) in Mac</a></li>
             
-            
-            <li class="next"><a href="/blog/2014/01/09/vim-tips-2/" title="Next Post: VIM Tips 2">VIM Tips 2 &raquo;</a></li>
             
           </ul>
         
@@ -221,7 +264,7 @@
   
   <div id="recent_posts" class="list-group">
     
-    <a class="list-group-item " href="/blog/2014/08/12/generatre-alphabet-permutation-in-python/">Generate Alphabet Permutation in Python</a>
+    <a class="list-group-item active" href="/blog/2014/08/12/generatre-alphabet-permutation-in-python/">Generate Alphabet Permutation in Python</a>
     
     <a class="list-group-item " href="/blog/2014/08/11/mount-disk-from-shell-terminal-in-mac/">Mount Disk From Shell(Terminal) in Mac</a>
     
@@ -351,8 +394,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://blog.bujiang.info/blog/2014/01/09/vim-tips-1/';
-        var disqus_url = 'http://blog.bujiang.info/blog/2014/01/09/vim-tips-1/';
+        var disqus_identifier = 'http://blog.bujiang.info/blog/2014/08/12/generatre-alphabet-permutation-in-python/';
+        var disqus_url = 'http://blog.bujiang.info/blog/2014/08/12/generatre-alphabet-permutation-in-python/';
         var disqus_script = 'embed.js';
       
     (function () {

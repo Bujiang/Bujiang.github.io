@@ -115,6 +115,106 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-12T22:38:04+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 12<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+    
+      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2014/08/12/generatre-alphabet-permutation-in-python/" itemprop="url">Generate Alphabet Permutation in Python</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>Yesterday I&rsquo;ve find a loophole in my friends website, the API for mobile side registration does not have any human verification functions.
+I decide to generate alphabet permutation list for user name and register fake users.</p>
+
+<p>In python standard library have functions for iterators for efficient looping which name is itertools. The itertools have permutation generators.</p>
+
+<p>The permutation function needs two arguments, one is iterable, another one is length like if the iterable is &ldquo;ABC&rdquo; and length is 2 then (A,B) (A,C) (B,A) (B,C) (C,A) (C,B) are results for this functions.</p>
+
+<figure class='code'><figcaption><span>Generate permutation</span><a href='https://docs.python.org/2/library/itertools.html#itertools.permutations'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">itertools</span>
+</span><span class='line'><span class="n">iterable</span> <span class="o">=</span> <span class="s">&#39;ABC&#39;</span>
+</span><span class='line'><span class="n">length</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span class='line'><span class="n">permutation</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">permutations</span><span class="p">(</span><span class="n">iterable</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
+</span><span class='line'><span class="n">permutation</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">permuation</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After generate, inside the python list are tuples not string for user name. We need join alphabet within tuple together. Like (A,B) become &lsquo;AB&rsquo;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">nameList</span> <span class="o">=</span> <span class="p">[]</span>                        <span class="c">#Create a empty list</span>
+</span><span class='line'><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">permutation</span><span class="p">:</span>
+</span><span class='line'>    <span class="n">nameList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>      <span class="c">#Join alphabet together and append in namList</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The user name list are done, next is register user by use API. That API for registration use form-urlencoded. For simplicity, I decide just use curl construct special POST request.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">TYPE</span> <span class="o">=</span> <span class="s">&quot;&#39;Content-Type:application/x-www-form-urlencoded&#39;&quot;</span>
+</span><span class='line'><span class="n">DEVICE</span> <span class="o">=</span> <span class="s">&quot; -d &#39;device_type=2&amp;user_name=&quot;</span>
+</span><span class='line'><span class="n">EMAIL</span> <span class="o">=</span> <span class="s">&quot;&amp;email=&quot;</span>
+</span><span class='line'><span class="n">EMAILTAIL</span> <span class="o">=</span> <span class="s">&quot;%40bujiang.info&amp;password=12345&amp;device_token=&#39;&quot;</span>
+</span><span class='line'><span class="n">URL</span> <span class="o">=</span> <span class="s">&quot; http://***********.com/*******api/index.php/v1/dp_auth/signup&quot;</span>
+</span><span class='line'><span class="n">COMMAND</span> <span class="o">=</span> <span class="s">&quot;curl -s -X POST -H &quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">execmd</span><span class="p">():</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">nameList</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">name</span> <span class="o">=</span> <span class="n">nameList</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>    <span class="c">#Poped name use for username</span>
+</span><span class='line'>        <span class="n">cmd</span> <span class="o">=</span> <span class="n">COMMAND</span> <span class="o">+</span> <span class="n">TYPE</span> <span class="o">+</span> <span class="n">DEVICE</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="n">EMAIL</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="n">EMAILTAIL</span> <span class="o">+</span> <span class="n">URL</span>    <span class="c">#Construct command for different username registration</span>
+</span><span class='line'>        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>    <span class="c">#Execute command in shell </span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The code is modified from original code, original code use multithread for concurrent post request. Those asterisk in code URL for privacy reason.
+Another loophole for this registration API is password in plaintext.</p>
+
+<p>*: All test actions are under my friend authorization</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-11T15:31:00+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 11<sup>th</sup>, 2014</time>
         
       </p>
@@ -409,80 +509,6 @@ connected disks.</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-17T00:32:00+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Dec 17<sup>th</sup>, 2013</time>
-        
-      </p>
-    
-    
-      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2013/12/17/coder-chu-cuo-liao/" itemprop="url">Coder 出错了</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>一直因为忙于Project 而挺久没有玩Pi了 Pi就一直勤劳的帮我“挖矿”</p>
-
-<p>现在Project结束了 空闲些了 可以玩玩Pi了</p>
-
-<p>前段时间有看Tweet 发现Google有出一个Project叫Coder 用于Pi的</p>
-
-<p>可以把Pi迅速变成Web server</p>
-
-<p>刚想到就立马Google了下 找到了Coder的页面 根据页面提示把安装包给下载了下来</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Raspberry%20Pi/Coder/Screen%20Shot%202013-12-17%20at%2012.44.09%20AM.jpg"></p>
-
-<p>跟Raspbian很类似 把SD卡格式化下 然后插入Pi中就可以工作了</p>
-
-<p>根据步骤一步步来 没一会就出错了</p>
-
-<p>想了想可能是SD卡开了读写保护了， 把SD卡弹了出来， 发现黄色的读写保护按钮“高高”的停在unlock状态</p>
-
-<p>无奈的把它拨动到lock状态又拨回来</p>
-
-<p>再次运行Coder 不一会又出错了</p>
-
-<p>没办法 只好通过Disk Utility重新Format了下SD卡 再试 结果还是出错</p>
-
-<p>也许是Disk Utility的问题吧 然后拿出了“大杀器” SDFormater</p>
-
-<p>本以为没问题了 结果还是报错</p>
-
-<p>在万般无奈的情况下只好在Terminal中运行Coder的安装程序</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Raspberry%20Pi/Coder/Screen%20Shot%202013-12-17%20at%201.02.37%20AM.jpg"></p>
-
-<p>发现原来是因为Coder在执行脚本的时候文件夹名字的空格没有处理好所以一直报错</p>
-
-<p>如上图，  我的路径是/Volumes/Bu/Raspberry Pi/
-而执行脚本的时候指向的却是/Volumes/Bu/Raspberry</p>
-
-<p>想到了以前Gmail也出现过一段时间的crash 最终是因为一个“／” 没想到Coder会因为一个“space”导致报错</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -506,6 +532,8 @@ connected disks.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/2014/08/12/generatre-alphabet-permutation-in-python/">Generate Alphabet Permutation in Python</a>
+    
     <a class="list-group-item " href="/blog/2014/08/11/mount-disk-from-shell-terminal-in-mac/">Mount Disk From Shell(Terminal) in Mac</a>
     
     <a class="list-group-item " href="/blog/2014/07/23/ptyhon-printing/">Ptyhon Printing</a>
@@ -513,8 +541,6 @@ connected disks.</p>
     <a class="list-group-item " href="/blog/2014/01/11/gu-ge-cai-dan/">谷歌彩蛋</a>
     
     <a class="list-group-item " href="/blog/2014/01/09/vim-tips-2/">VIM Tips 2</a>
-    
-    <a class="list-group-item " href="/blog/2014/01/09/vim-tips-1/">VIM Tips 1</a>
     
   </div>
 </section>
@@ -544,7 +570,7 @@ connected disks.</p>
     
     
     <a class="list-group-item " href="/blog/categories/python/index.html">
-        <span class="badge">3</span>
+        <span class="badge">4</span>
         python
       </a>
     
@@ -586,7 +612,7 @@ connected disks.</p>
     
     
     <a class="list-group-item " href="/blog/categories/bash/index.html">
-        <span class="badge">1</span>
+        <span class="badge">2</span>
         bash
       </a>
     
