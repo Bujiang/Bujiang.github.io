@@ -115,6 +115,61 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-01-09T00:50:24+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Jan 9<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+    
+      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2014/01/09/vim-tips-1/" itemprop="url">VIM Tips 1</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>平时使用VIM都在使用plugin带来的方便 其实VIM在不借助外部plugin也是非常强大的</p>
+
+<p>今天在用录入数据的时候想起来了VIM有个很方便的功能就是能快速的进行数字的加减运算</p>
+
+<p>只需要把光标移动到数字上 按Ctrl和a 就会把数字加一  当然也可以利用到VIM count功能</p>
+
+<p>在按Ctrl键之前 先输入数字</p>
+
+<p>例如 光标现在停在数字1上   按5键然后按Ctrl再按a  数字1就被加一五次变成6了</p>
+
+<p>相对应于加   按Ctrl和x 会进行减一运算</p>
+
+<p>不过有一点需要注意  数字如果是007 这是光标如果停在数字7上 按Ctrl和a  并不会出现008而是010</p>
+
+<p>这是因为VIM识别007为八进制的数字 所以加一就变成010</p>
+
+<p>如果想保持十进制 可以在Normal mode 下 输入 :set nrformats=   即可 当然如果想一劳永逸的话 就添加到vimrc文件里面</p>
+
+<p>更改回007识别成八进制 只要输入 :set nrformats=octal 就行了</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-17T00:32:00+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Dec 17<sup>th</sup>, 2013</time>
         
       </p>
@@ -525,115 +580,6 @@
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-11-29T23:44:00+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Nov 29<sup>th</sup>, 2013</time>
-        
-      </p>
-    
-    
-      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2013/11/29/git-day-2/" itemprop="url">Git Day 2</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>在搜索引擎这么发达的情况下有问题Google下，立马就有答案了</p>
-
-<p>但其实Git有提供挺不错的帮助信息可供查询</p>
-
-<p>只要使用git help 和 git help add （在help后面加想要查询的git command)</p>
-
-<p>不记得从上次commit到现在对文件有做过什么改动了，想要查看怎么办呢git log?</p>
-
-<p>git log只能查询添加了哪些文件不能查询改动 这次得用git diff</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%202/git-day-2-1.jpg"></p>
-
-<p>如图 在用diff 可以看到 在License后面添加了copyright info</p>
-
-<p>diff就像Terminal中的diff类似 告诉你有哪些改动</p>
-
-<p>但是当把License文件添加到stage后 再使用git diff将不会显示改动了</p>
-
-<p>如果要显示改动需要添加参数 git diff &mdash;staged</p>
-
-<p>后悔了 不想把License添加到stage</p>
-
-<p>可以用reset来取消stage</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git reset HEAD License</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>其中的HEAD是指最近的commit 可以想像一条从上至下的时间线 最顶上最近的是HEAD</p>
-
-<p>reset可以把staged的给unstage 但是要怎么还原成以前的没有copyright info的那个</p>
-
-<p>License文件呢</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git checkout -- License</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>当修改过不止一个文件时 又要commit 需要一个一个文件commit吗</p>
-
-<p>给commit加上一个小参数就能搞定</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git commit -a -m "All files"</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>-a 所有staged的文件</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git reset --soft HEAD^
-</span><span class='line'>git commit --amend -m "Changed"
-</span><span class='line'>git reset --hard HEAD
-</span><span class='line'>git reset --soft HEAD^^</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>第一条是 撤销最新的HEAD commit 转到第二新的</p>
-
-<p>第二 做了新的改变但是不想要新的commit 而是在HEAD commit中修改</p>
-
-<p>第三 丢掉最新的HEAD commit， soft还保留stage， hard就都丢了</p>
-
-<p>第四 撤销到第三新的  例如 1，2，3 代表时间顺序 1最新是HEAD  2是HEAD^ 3是HEAD^^</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -657,6 +603,8 @@
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/2014/08/15/python-challlenge-0-1/">Python Challlenge 0 - 1</a>
+    
     <a class="list-group-item " href="/blog/2014/08/12/generatre-alphabet-permutation-in-python/">Generate Alphabet Permutation in Python</a>
     
     <a class="list-group-item " href="/blog/2014/08/11/mount-disk-from-shell-terminal-in-mac/">Mount Disk From Shell(Terminal) in Mac</a>
@@ -664,8 +612,6 @@
     <a class="list-group-item " href="/blog/2014/07/23/ptyhon-printing/">Ptyhon Printing</a>
     
     <a class="list-group-item " href="/blog/2014/01/11/gu-ge-cai-dan/">谷歌彩蛋</a>
-    
-    <a class="list-group-item " href="/blog/2014/01/09/vim-tips-2/">VIM Tips 2</a>
     
   </div>
 </section>
@@ -695,7 +641,7 @@
     
     
     <a class="list-group-item " href="/blog/categories/python/index.html">
-        <span class="badge">4</span>
+        <span class="badge">5</span>
         python
       </a>
     
@@ -737,7 +683,7 @@
     
     
     <a class="list-group-item " href="/blog/categories/bash/index.html">
-        <span class="badge">2</span>
+        <span class="badge">3</span>
         bash
       </a>
     

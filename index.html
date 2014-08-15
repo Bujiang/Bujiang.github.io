@@ -115,6 +115,165 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-15T18:40:45+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 15<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+    
+      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2014/08/15/python-challlenge-0-1/" itemprop="url">Python Challlenge 0 - 1</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>Stage 0. Warming up</p>
+
+<p><a href="http://www.pythonchallenge.com/pc/def/0.html">http://www.pythonchallenge.com/pc/def/0.html</a></p>
+
+<p>The webpage contain a picture and show 2 to the power of 38, beneath the picture has a
+hint &ldquo;try to change the URL address.&rdquo;
+This is a python challenge, so I open python in interactive mode, then calculate
+the answer.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>&gt;&gt;&gt; 2**38
+</span><span class='line'>274877906944
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>replace the 0 to result then get the next stage URL is <a href="http://www.pythonchallenge.com/pc/def/274877906944.html">http://www.pythonchallenge.com/pc/def/274877906944.html</a></p>
+
+<p>Stage 1. What about making trans?</p>
+
+<p>In webpage there have one picture and one paragraph. The picture show K->M O->Q E->G, and
+the paragraph looks like have some meaning but for now I do not know it.
+I guess it probably is a caesar cipher. So in terminal(shell) I type man ascii to do
+a quick check to confirm my guess. &lsquo;K&rsquo;, &lsquo;O&rsquo;, &lsquo;E&rsquo; are all shift by two positions.
+Then I write a shift function to decrypt it.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c">#!/usr/bin/env python</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">change</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">):</span>
+</span><span class='line'>    <span class="n">plaintext</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class='line'>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ciphertext</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s">&#39; &#39;</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">plaintext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="s">&#39;.&#39;</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">plaintext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="s">&#39;(&#39;</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">plaintext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;(&#39;</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="s">&#39;)&#39;</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">plaintext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;)&#39;</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="s">&#39;</span><span class="se">\&#39;</span><span class="s">&#39;</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">plaintext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\&#39;</span><span class="s">&#39;</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>            <span class="c"># ASCII lower letter decimal value for a to z is 97 to 122</span>
+</span><span class='line'>            <span class="n">value</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span>
+</span><span class='line'>
+</span><span class='line'>            <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="mi">122</span><span class="p">:</span>
+</span><span class='line'>                <span class="n">value</span> <span class="o">=</span> <span class="n">value</span> <span class="o">-</span> <span class="mi">122</span> <span class="o">+</span> <span class="mi">96</span>
+</span><span class='line'>                <span class="n">plaintext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+</span><span class='line'>            <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>                <span class="n">plaintext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span><span class="p">))</span>
+</span><span class='line'>    <span class="k">return</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">plaintext</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">paragraph</span> <span class="o">=</span> <span class="s">&quot;g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcpq ypc dmp. bmgle gr gl zw fylb gq glcddgagclr ylb rfyr&#39;q ufw rfgq rcvr gq qm jmle. sqgle qrpgle.kyicrpylq() gq pcamkkclbcb. lmu ynnjw ml rfc spj.&quot;</span>
+</span><span class='line'><span class="n">decodedParagraph</span> <span class="o">=</span> <span class="n">change</span><span class="p">(</span><span class="n">paragraph</span><span class="p">)</span>
+</span><span class='line'><span class="k">print</span> <span class="n">decodedParagraph</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The result is below</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>i hope you didnt translate it by hand.
+</span><span class='line'>thats what computers are <span class="k">for</span>.
+</span><span class='line'>doing it in by hand is inefficient and that<span class="err">&#39;</span>s why this text is so long.
+</span><span class='line'>using string.maketrans<span class="o">()</span> is recommended.
+</span><span class='line'>now apply on the url.
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>oops, it seems instead of doing lines of coding, it just need a string function.
+This stage URL is <a href="http://www.pythonchallenge.com/pc/def/map.html">http://www.pythonchallenge.com/pc/def/map.html</a>
+map need to change to ocr, so get next stage URL
+<a href="http://www.pythonchallenge.com/pc/def/ocr.html">http://www.pythonchallenge.com/pc/def/ocr.html</a></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">ciphertext</span> <span class="o">=</span> <span class="s">&quot;map&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">plaintext</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span>
+</span><span class='line'>    <span class="s">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span><span class="p">,</span> <span class="s">&quot;cdefghijklmnopqrstuvwxyzab&quot;</span>
+</span><span class='line'><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">print</span> <span class="n">ciphertext</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">plaintext</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-12T22:38:04+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 12<sup>th</sup>, 2014</time>
         
       </p>
@@ -454,61 +613,6 @@ connected disks.</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-01-09T00:50:24+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Jan 9<sup>th</sup>, 2014</time>
-        
-      </p>
-    
-    
-      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2014/01/09/vim-tips-1/" itemprop="url">VIM Tips 1</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>平时使用VIM都在使用plugin带来的方便 其实VIM在不借助外部plugin也是非常强大的</p>
-
-<p>今天在用录入数据的时候想起来了VIM有个很方便的功能就是能快速的进行数字的加减运算</p>
-
-<p>只需要把光标移动到数字上 按Ctrl和a 就会把数字加一  当然也可以利用到VIM count功能</p>
-
-<p>在按Ctrl键之前 先输入数字</p>
-
-<p>例如 光标现在停在数字1上   按5键然后按Ctrl再按a  数字1就被加一五次变成6了</p>
-
-<p>相对应于加   按Ctrl和x 会进行减一运算</p>
-
-<p>不过有一点需要注意  数字如果是007 这是光标如果停在数字7上 按Ctrl和a  并不会出现008而是010</p>
-
-<p>这是因为VIM识别007为八进制的数字 所以加一就变成010</p>
-
-<p>如果想保持十进制 可以在Normal mode 下 输入 :set nrformats=   即可 当然如果想一劳永逸的话 就添加到vimrc文件里面</p>
-
-<p>更改回007识别成八进制 只要输入 :set nrformats=octal 就行了</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -532,6 +636,8 @@ connected disks.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/2014/08/15/python-challlenge-0-1/">Python Challlenge 0 - 1</a>
+    
     <a class="list-group-item " href="/blog/2014/08/12/generatre-alphabet-permutation-in-python/">Generate Alphabet Permutation in Python</a>
     
     <a class="list-group-item " href="/blog/2014/08/11/mount-disk-from-shell-terminal-in-mac/">Mount Disk From Shell(Terminal) in Mac</a>
@@ -539,8 +645,6 @@ connected disks.</p>
     <a class="list-group-item " href="/blog/2014/07/23/ptyhon-printing/">Ptyhon Printing</a>
     
     <a class="list-group-item " href="/blog/2014/01/11/gu-ge-cai-dan/">谷歌彩蛋</a>
-    
-    <a class="list-group-item " href="/blog/2014/01/09/vim-tips-2/">VIM Tips 2</a>
     
   </div>
 </section>
@@ -570,7 +674,7 @@ connected disks.</p>
     
     
     <a class="list-group-item " href="/blog/categories/python/index.html">
-        <span class="badge">4</span>
+        <span class="badge">5</span>
         python
       </a>
     
@@ -612,7 +716,7 @@ connected disks.</p>
     
     
     <a class="list-group-item " href="/blog/categories/bash/index.html">
-        <span class="badge">2</span>
+        <span class="badge">3</span>
         bash
       </a>
     

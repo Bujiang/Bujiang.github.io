@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Mount Disk From Shell(Terminal) in Mac - Bujiang's Blog</title>
+  <title>Python Challlenge 0 - 1 - Bujiang's Blog</title>
   <meta name="author" content="Yan Bujiang">
 
   
@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.bujiang.info/blog/2014/08/11/mount-disk-from-shell-terminal-in-mac">
+  <link rel="canonical" href="http://blog.bujiang.info/blog/2014/08/15/python-challlenge-0-1">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="Bujiang's Blog" type="application/atom+xml">
 
@@ -111,30 +111,44 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-11T15:31:00+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 11<sup>th</sup>, 2014</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-15T18:40:45+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 15<sup>th</sup>, 2014</time>
         
       </p>
     
     
     <h1 class="entry-title" itemprop="name headline">
-        Mount Disk From Shell(Terminal) in Mac
+        Python Challlenge 0 - 1
         
     </h1>
     
   </header>
 
 
-<div class="entry-content clearfix" itemprop="articleBody"><p>Before we mount disk or drive, we need to know all the connected first. There is a program called diskutil that can manipulate the structure of local disks.</p>
+<div class="entry-content clearfix" itemprop="articleBody"><p>Stage 0. Warming up</p>
 
-<p>Type diskutil list in shell, the program will list all the
-connected disks.</p>
+<p><a href="http://www.pythonchallenge.com/pc/def/0.html">http://www.pythonchallenge.com/pc/def/0.html</a></p>
+
+<p>The webpage contain a picture and show 2 to the power of 38, beneath the picture has a
+hint &ldquo;try to change the URL address.&rdquo;
+This is a python challenge, so I open python in interactive mode, then calculate
+the answer.</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>diskutil list
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>&gt;&gt;&gt; 2**38
+</span><span class='line'>274877906944
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>The output will look like</p>
+<p>replace the 0 to result then get the next stage URL is <a href="http://www.pythonchallenge.com/pc/def/274877906944.html">http://www.pythonchallenge.com/pc/def/274877906944.html</a></p>
+
+<p>Stage 1. What about making trans?</p>
+
+<p>In webpage there have one picture and one paragraph. The picture show K->M O->Q E->G, and
+the paragraph looks like have some meaning but for now I do not know it.
+I guess it probably is a caesar cipher. So in terminal(shell) I type man ascii to do
+a quick check to confirm my guess. &lsquo;K&rsquo;, &lsquo;O&rsquo;, &lsquo;E&rsquo; are all shift by two positions.
+Then I write a shift function to decrypt it.</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -146,45 +160,91 @@ connected disks.</p>
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>/dev/disk0
-</span><span class='line'>   <span class="c">#:                       TYPE NAME                    SIZE       IDENTIFIER</span>
-</span><span class='line'>   0:      GUID_partition_scheme                        *250.1 GB   disk0
-</span><span class='line'>   1:                        EFI EFI                     209.7 MB   disk0s1
-</span><span class='line'>   2:                  Apple_HFS Mac OS                  249.2 GB   disk0s2
-</span><span class='line'>   3:                 Apple_Boot Recovery HD             650.0 MB   disk0s3
-</span><span class='line'>/dev/disk2
-</span><span class='line'>   <span class="c">#:                       TYPE NAME                    SIZE       IDENTIFIER</span>
-</span><span class='line'>   0:        CD_partition_scheme                        *124.0 MB   disk2
-</span><span class='line'>   1:       CD_ROM_Mode_2_Form_1 A20110738               108.0 MB   disk2s0
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c">#!/usr/bin/env python</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">change</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">):</span>
+</span><span class='line'>    <span class="n">plaintext</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class='line'>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ciphertext</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s">&#39; &#39;</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">plaintext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="s">&#39;.&#39;</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">plaintext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="s">&#39;(&#39;</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">plaintext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;(&#39;</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="s">&#39;)&#39;</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">plaintext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;)&#39;</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="s">&#39;</span><span class="se">\&#39;</span><span class="s">&#39;</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">plaintext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\&#39;</span><span class="s">&#39;</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>            <span class="c"># ASCII lower letter decimal value for a to z is 97 to 122</span>
+</span><span class='line'>            <span class="n">value</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span>
+</span><span class='line'>
+</span><span class='line'>            <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="mi">122</span><span class="p">:</span>
+</span><span class='line'>                <span class="n">value</span> <span class="o">=</span> <span class="n">value</span> <span class="o">-</span> <span class="mi">122</span> <span class="o">+</span> <span class="mi">96</span>
+</span><span class='line'>                <span class="n">plaintext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+</span><span class='line'>            <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>                <span class="n">plaintext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span><span class="p">))</span>
+</span><span class='line'>    <span class="k">return</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">plaintext</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">paragraph</span> <span class="o">=</span> <span class="s">&quot;g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcpq ypc dmp. bmgle gr gl zw fylb gq glcddgagclr ylb rfyr&#39;q ufw rfgq rcvr gq qm jmle. sqgle qrpgle.kyicrpylq() gq pcamkkclbcb. lmu ynnjw ml rfc spj.&quot;</span>
+</span><span class='line'><span class="n">decodedParagraph</span> <span class="o">=</span> <span class="n">change</span><span class="p">(</span><span class="n">paragraph</span><span class="p">)</span>
+</span><span class='line'><span class="k">print</span> <span class="n">decodedParagraph</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Suppose will need mount the CD inside optical drive, we can type diskutil mountDisk /dev/disk2</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>diskutil mountDisk /dev/disk2
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>After successful mount the disk, the output will look something like</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>Volume<span class="o">(</span>s<span class="o">)</span> mounted successfully
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>For mounting disk the argument use in diskutil is mountDisk but normal extenal hard drive just use mount.</p>
-
-<p>Unmounting disk or drive use unmountDisk or unmount for argument</p>
+<p>The result is below</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>diskutil mount /dev/disk3
-</span><span class='line'>diskutil unmount /dev/disk3
-</span><span class='line'>disktuil mountDisk /dev/disk2
-</span><span class='line'>disktuil unmountDisk /dev/disk2
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>i hope you didnt translate it by hand.
+</span><span class='line'>thats what computers are <span class="k">for</span>.
+</span><span class='line'>doing it in by hand is inefficient and that<span class="err">&#39;</span>s why this text is so long.
+</span><span class='line'>using string.maketrans<span class="o">()</span> is recommended.
+</span><span class='line'>now apply on the url.
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>oops, it seems instead of doing lines of coding, it just need a string function.
+This stage URL is <a href="http://www.pythonchallenge.com/pc/def/map.html">http://www.pythonchallenge.com/pc/def/map.html</a>
+map need to change to ocr, so get next stage URL
+<a href="http://www.pythonchallenge.com/pc/def/ocr.html">http://www.pythonchallenge.com/pc/def/ocr.html</a></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">ciphertext</span> <span class="o">=</span> <span class="s">&quot;map&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">plaintext</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span>
+</span><span class='line'>    <span class="s">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span><span class="p">,</span> <span class="s">&quot;cdefghijklmnopqrstuvwxyzab&quot;</span>
+</span><span class='line'><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">print</span> <span class="n">ciphertext</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">plaintext</span><span class="p">)</span>
 </span></code></pre></td></tr></table></div></figure>
 
 </div>
@@ -210,13 +270,13 @@ connected disks.</p>
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-11T15:31:00+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 11<sup>th</sup>, 2014</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-15T18:40:45+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 15<sup>th</sup>, 2014</time>
           
 
 <span class="glyphicon glyphicon-tags"></span>&nbsp;
 <span class="categories">
   
-    <a class='category' href='/blog/categories/bash/'>bash</a>, <a class='category' href='/blog/categories/os-x/'>os x</a>
+    <a class='category' href='/blog/categories/bash/'>bash</a>, <a class='category' href='/blog/categories/python/'>python</a>
   
 </span>
 
@@ -225,7 +285,7 @@ connected disks.</p>
         
           <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.bujiang.info/blog/2014/08/11/mount-disk-from-shell-terminal-in-mac/" data-via="DiangDiang" data-counturl="http://blog.bujiang.info/blog/2014/08/11/mount-disk-from-shell-terminal-in-mac/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.bujiang.info/blog/2014/08/15/python-challlenge-0-1/" data-via="DiangDiang" data-counturl="http://blog.bujiang.info/blog/2014/08/15/python-challlenge-0-1/" >Tweet</a>
   
   
   
@@ -237,10 +297,8 @@ connected disks.</p>
         
           <ul class="meta text-muted pager">
             
-            <li class="previous"><a href="/blog/2014/07/23/ptyhon-printing/" title="Previous Post: Ptyhon printing">&laquo; Ptyhon printing</a></li>
+            <li class="previous"><a href="/blog/2014/08/12/generatre-alphabet-permutation-in-python/" title="Previous Post: Generate alphabet permutation in python">&laquo; Generate alphabet permutation in python</a></li>
             
-            
-            <li class="next"><a href="/blog/2014/08/12/generatre-alphabet-permutation-in-python/" title="Next Post: Generate alphabet permutation in python">Generate alphabet permutation in python &raquo;</a></li>
             
           </ul>
         
@@ -265,11 +323,11 @@ connected disks.</p>
   
   <div id="recent_posts" class="list-group">
     
-    <a class="list-group-item " href="/blog/2014/08/15/python-challlenge-0-1/">Python Challlenge 0 - 1</a>
+    <a class="list-group-item active" href="/blog/2014/08/15/python-challlenge-0-1/">Python Challlenge 0 - 1</a>
     
     <a class="list-group-item " href="/blog/2014/08/12/generatre-alphabet-permutation-in-python/">Generate Alphabet Permutation in Python</a>
     
-    <a class="list-group-item active" href="/blog/2014/08/11/mount-disk-from-shell-terminal-in-mac/">Mount Disk From Shell(Terminal) in Mac</a>
+    <a class="list-group-item " href="/blog/2014/08/11/mount-disk-from-shell-terminal-in-mac/">Mount Disk From Shell(Terminal) in Mac</a>
     
     <a class="list-group-item " href="/blog/2014/07/23/ptyhon-printing/">Ptyhon Printing</a>
     
@@ -395,8 +453,8 @@ connected disks.</p>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://blog.bujiang.info/blog/2014/08/11/mount-disk-from-shell-terminal-in-mac/';
-        var disqus_url = 'http://blog.bujiang.info/blog/2014/08/11/mount-disk-from-shell-terminal-in-mac/';
+        var disqus_identifier = 'http://blog.bujiang.info/blog/2014/08/15/python-challlenge-0-1/';
+        var disqus_url = 'http://blog.bujiang.info/blog/2014/08/15/python-challlenge-0-1/';
         var disqus_script = 'embed.js';
       
     (function () {
