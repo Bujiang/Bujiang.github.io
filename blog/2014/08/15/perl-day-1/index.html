@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Markdown - Bujiang's Blog</title>
+  <title>Perl Day 1 - Bujiang's Blog</title>
   <meta name="author" content="Yan Bujiang">
 
   
@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.bujiang.info/blog/2013/11/02/markdown">
+  <link rel="canonical" href="http://blog.bujiang.info/blog/2014/08/15/perl-day-1">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="Bujiang's Blog" type="application/atom+xml">
 
@@ -111,24 +111,74 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-11-02T18:46:00+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Nov 2<sup>nd</sup>, 2013</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-15T23:42:23+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 15<sup>th</sup>, 2014</time>
         
       </p>
     
     
     <h1 class="entry-title" itemprop="name headline">
-        Markdown
+        Perl Day 1
         
     </h1>
     
   </header>
 
 
-<div class="entry-content clearfix" itemprop="articleBody"><p><a href="http://wowubuntu.com/markdown/index.html">Markdown：http://wowubuntu.com/markdown/index.html</a></p>
+<div class="entry-content clearfix" itemprop="articleBody"><p>I really like to use ack(pure Perl implemented)  which is a tool like grep but it optimized for search source code and filter by easy filter by file type, it cause me became interested in Perl.</p>
 
-<p>上面的链接是一个挺详细的Markdown语法说明网页</p>
+<p>For blog about Perl, I just want to record fragments of my learning process, it may not be suitable for others to read. Sorry for that :)</p>
 
-<p>以后博客的编写全得依靠它了</p>
+<p>Perl, Practical Extraction and Report Language or Pathologically Eclectic Rubbish Lister.</p>
+
+<p>For the tradition, first is &ldquo;Hello World!&rdquo;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="c1">#!/usr/bin/env perl</span>
+</span><span class='line'><span class="k">print</span> <span class="s">&quot;Hello Worlds!&quot;</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Perl need &ldquo;;&rdquo;.</p>
+
+<p>61298040 and 61_298_040 are same</p>
+
+<p>Octal: 0377</p>
+
+<p>Hexadecimal: 0xff</p>
+
+<p>Binary: 0b11111111</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="k">print</span> <span class="s">&quot;\lL&quot;</span> <span class="c1">#outputs small l</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">print</span> <span class="s">&quot;\LAPPLE&quot;</span> <span class="c1">#outputs apple    *: For capital use \u or \U</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Use . to connotate two strings like &ldquo;Hello&rdquo;.&ldquo; World!&rdquo;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="s">&quot;fred&quot;</span> <span class="n">x</span> <span class="mi">3</span> <span class="c1"># will outputs &quot;fredfredfred&quot;; </span>
+</span><span class='line'><span class="s">&quot;fred&quot;</span> <span class="n">x</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># outputs same</span>
+</span><span class='line'><span class="mi">5</span> <span class="n">x</span> <span class="mi">4</span> <span class="c1"># outputs &quot;5555&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>scalar variable begin with $ sign</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="nv">$Bujiang</span> <span class="o">=</span> <span class="s">&quot;Bujiang&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="nv">$Bujiang</span> <span class="o">.=</span> <span class="nv">$Bujiang</span><span class="p">;</span>  <span class="c1"># &quot;BujiangBujiang&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>&lt;= is less or equal; >= is grater or equal</p>
 </div>
 
 
@@ -152,13 +202,13 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-11-02T18:46:00+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Nov 2<sup>nd</sup>, 2013</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-15T23:42:23+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 15<sup>th</sup>, 2014</time>
           
 
 <span class="glyphicon glyphicon-tags"></span>&nbsp;
 <span class="categories">
   
-    <a class='category' href='/blog/categories/markdown/'>markdown</a>
+    <a class='category' href='/blog/categories/perl/'>perl</a>
   
 </span>
 
@@ -167,7 +217,7 @@
         
           <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.bujiang.info/blog/2013/11/02/markdown/" data-via="DiangDiang" data-counturl="http://blog.bujiang.info/blog/2013/11/02/markdown/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.bujiang.info/blog/2014/08/15/perl-day-1/" data-via="DiangDiang" data-counturl="http://blog.bujiang.info/blog/2014/08/15/perl-day-1/" >Tweet</a>
   
   
   
@@ -179,10 +229,8 @@
         
           <ul class="meta text-muted pager">
             
-            <li class="previous"><a href="/blog/2013/11/02/hello-world/" title="Previous Post: Hello world">&laquo; Hello world</a></li>
+            <li class="previous"><a href="/blog/2014/08/15/python-challlenge-0-1/" title="Previous Post: Python challlenge 0 - 1">&laquo; Python challlenge 0 - 1</a></li>
             
-            
-            <li class="next"><a href="/blog/2013/11/03/quote/" title="Next Post: Quote">Quote &raquo;</a></li>
             
           </ul>
         
@@ -207,7 +255,7 @@
   
   <div id="recent_posts" class="list-group">
     
-    <a class="list-group-item " href="/blog/2014/08/15/perl-day-1/">Perl Day 1</a>
+    <a class="list-group-item active" href="/blog/2014/08/15/perl-day-1/">Perl Day 1</a>
     
     <a class="list-group-item " href="/blog/2014/08/15/python-challlenge-0-1/">Python Challlenge 0 - 1</a>
     
@@ -343,8 +391,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://blog.bujiang.info/blog/2013/11/02/markdown/';
-        var disqus_url = 'http://blog.bujiang.info/blog/2013/11/02/markdown/';
+        var disqus_identifier = 'http://blog.bujiang.info/blog/2014/08/15/perl-day-1/';
+        var disqus_url = 'http://blog.bujiang.info/blog/2014/08/15/perl-day-1/';
         var disqus_script = 'embed.js';
       
     (function () {

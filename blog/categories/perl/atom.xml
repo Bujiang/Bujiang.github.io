@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Perl | Bujiang's Blog]]></title>
+  <link href="http://blog.bujiang.info/blog/categories/perl/atom.xml" rel="self"/>
+  <link href="http://blog.bujiang.info/"/>
+  <updated>2014-08-16T01:09:06+08:00</updated>
+  <id>http://blog.bujiang.info/</id>
+  <author>
+    <name><![CDATA[Yan Bujiang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Perl Day 1]]></title>
+    <link href="http://blog.bujiang.info/blog/2014/08/15/perl-day-1/"/>
+    <updated>2014-08-15T23:42:23+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2014/08/15/perl-day-1</id>
+    <content type="html"><![CDATA[<p>I really like to use ack(pure Perl implemented)  which is a tool like grep but it optimized for search source code and filter by easy filter by file type, it cause me became interested in Perl.</p>
+
+<p>For blog about Perl, I just want to record fragments of my learning process, it may not be suitable for others to read. Sorry for that :)</p>
+
+<p>Perl, Practical Extraction and Report Language or Pathologically Eclectic Rubbish Lister.</p>
+
+<p>For the tradition, first is &ldquo;Hello World!&rdquo;
+``` perl</p>
+
+<h1>!/usr/bin/env perl</h1>
+
+<p>print &ldquo;Hello Worlds!&rdquo;;
+```
+Perl need &ldquo;;&rdquo;.</p>
+
+<p>61298040 and 61_298_040 are same</p>
+
+<p>Octal: 0377</p>
+
+<p>Hexadecimal: 0xff</p>
+
+<p>Binary: 0b11111111  <br/>
+``` perl
+print &ldquo;\lL&rdquo; #outputs small l</p>
+
+<p>print &ldquo;\LAPPLE&rdquo; #outputs apple    *: For capital use \u or \U
+<code>
+Use . to connotate two strings like "Hello"." World!"
+</code> perl
+&ldquo;fred&rdquo; x 3 # will outputs &ldquo;fredfredfred&rdquo;;
+&ldquo;fred&rdquo; x (1+2) # outputs same
+5 x 4 # outputs &ldquo;5555&rdquo;
+<code>
+scalar variable begin with $ sign
+</code> perl
+$Bujiang = &ldquo;Bujiang&rdquo;;
+$Bujiang .= $Bujiang;  # &ldquo;BujiangBujiang&rdquo;
+```
+&lt;= is less or equal; >= is grater or equal</p>
+]]></content>
+  </entry>
+  
+</feed>
