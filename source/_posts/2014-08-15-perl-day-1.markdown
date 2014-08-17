@@ -1,0 +1,44 @@
+---
+layout: post
+title: "Perl Day 1"
+date: 2014-08-15 23:42:23 +0800
+comments: true
+categories: [Perl,]
+---
+I really like to use ack(pure Perl implemented)  which is a tool like grep but it optimized for search source code and filter by easy filter by file type, it cause me became interested in Perl. 
+
+For blog about Perl, I just want to record fragments of my learning process, it may not be suitable for others to read. Sorry for that :)
+
+Perl, Practical Extraction and Report Language or Pathologically Eclectic Rubbish Lister.
+
+For the tradition, first is "Hello World!"
+``` perl
+#!/usr/bin/env perl
+print "Hello Worlds!";
+```
+Perl need ";". 
+
+61298040 and 61_298_040 are same
+
+Octal: 0377
+
+Hexadecimal: 0xff
+
+Binary: 0b11111111    
+``` perl
+print "\lL" #outputs small l
+
+print "\LAPPLE" #outputs apple    *: For capital use \u or \U
+```
+Use . to connotate two strings like "Hello"." World!"
+``` perl
+"fred" x 3 # will outputs "fredfredfred"; 
+"fred" x (1+2) # outputs same
+5 x 4 # outputs "5555"
+```
+scalar variable begin with $ sign
+``` perl
+$Bujiang = "Bujiang";
+$Bujiang .= $Bujiang;  # "BujiangBujiang"
+```
+<= is less or equal; >= is grater or equal
