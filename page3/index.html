@@ -115,6 +115,93 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-01T23:19:00+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Dec 1<sup>st</sup>, 2013</time>
+        
+      </p>
+    
+    
+      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2013/12/01/git-day-4/" itemprop="url">Git Day 4</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>当有别人分享git链接 或者参与相同的项目可以用git clone来把remote repo保存到本地</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://ddiang@bitbucket.org/ddiang/multi-drop-use-rs232-asm-cg3002-project.git ddiang</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>ddiang 是保存在本地的目录，如果留空 就会使用repo上的目录multi drop……</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%204/Git-Day-4-1.jpg"></p>
+
+<p>克隆到本地后可以新建一个自己的分支（branch）</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git branch diang</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%204/Git-Day-4-2.jpg"></p>
+
+<p>在创建新的分支后可以看到 有diang和master两个分支</p>
+
+<p>要切换到分支diang 需要执行</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git checkout diang</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%204/Git-Day-4-3.jpg"></p>
+
+<p>由上图可以发现 当我切换到新的分支diang下面</p>
+
+<p>使用touch命令创建了一个空的diang.txt文件  以及commit了</p>
+
+<p>再当我切换回master分支后 是看不到diang.txt文件的  每个分支间不会相互影响</p>
+
+<p>当在新的分支下完成想要做的后可以通过merge命令 把两个分支合在一起</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git merge diang</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%204/Git-Day-4-4.jpg"></p>
+
+<p>如上图 在合并在一起后 再用branch -d 删除分支</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-11-30T21:24:00+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Nov 30<sup>th</sup>, 2013</time>
         
       </p>
@@ -527,65 +614,6 @@
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-11-08T10:42:00+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Nov 8<sup>th</sup>, 2013</time>
-        
-      </p>
-    
-    
-      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2013/11/08/pythonde-lei-xing-pan-bie/" itemprop="url">Python的类型判别</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>以前在Python里面判别类型会使用type()</p>
-
-<figure class='code'><figcaption><span>Check type by using type() </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='pycon'><span class='line'><span class="go">num = 6</span>
-</span><span class='line'><span class="go">type(num)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>其实还有isinstance()</p>
-
-<figure class='code'><figcaption><span>Check type by using isinstance() </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='pycon'><span class='line'><span class="go">line = u&#39;你好&#39;</span>
-</span><span class='line'><span class="go">isinstance(line, unicode)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>甚至还能这样使用 isinstance(line, (unicode, str))</p>
-
-<p>因为最近在开发网站所以会经常碰到unicode的问题所以还蛮频繁的需要检查类型</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -609,15 +637,15 @@
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/2014/08/17/python-challenge-2/">Python Challenge 2</a>
+    
     <a class="list-group-item " href="/blog/2014/08/15/perl-day-1/">Perl Day 1</a>
     
-    <a class="list-group-item " href="/blog/2014/08/15/python-challlenge-0-1/">Python Challlenge 0 - 1</a>
+    <a class="list-group-item " href="/blog/2014/08/15/python-challenge-0-1/">Python Challenge 0 - 1</a>
     
     <a class="list-group-item " href="/blog/2014/08/12/generatre-alphabet-permutation-in-python/">Generate Alphabet Permutation in Python</a>
     
     <a class="list-group-item " href="/blog/2014/08/11/mount-disk-from-shell-terminal-in-mac/">Mount Disk From Shell(Terminal) in Mac</a>
-    
-    <a class="list-group-item " href="/blog/2014/07/23/ptyhon-printing/">Ptyhon Printing</a>
     
   </div>
 </section>
@@ -647,7 +675,7 @@
     
     
     <a class="list-group-item " href="/blog/categories/python/index.html">
-        <span class="badge">5</span>
+        <span class="badge">6</span>
         python
       </a>
     

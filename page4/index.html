@@ -115,6 +115,65 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-11-08T10:42:00+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Nov 8<sup>th</sup>, 2013</time>
+        
+      </p>
+    
+    
+      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2013/11/08/pythonde-lei-xing-pan-bie/" itemprop="url">Python的类型判别</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>以前在Python里面判别类型会使用type()</p>
+
+<figure class='code'><figcaption><span>Check type by using type() </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='pycon'><span class='line'><span class="go">num = 6</span>
+</span><span class='line'><span class="go">type(num)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>其实还有isinstance()</p>
+
+<figure class='code'><figcaption><span>Check type by using isinstance() </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='pycon'><span class='line'><span class="go">line = u&#39;你好&#39;</span>
+</span><span class='line'><span class="go">isinstance(line, unicode)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>甚至还能这样使用 isinstance(line, (unicode, str))</p>
+
+<p>因为最近在开发网站所以会经常碰到unicode的问题所以还蛮频繁的需要检查类型</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-11-04T09:45:00+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Nov 4<sup>th</sup>, 2013</time>
         
       </p>
@@ -275,15 +334,15 @@
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/2014/08/17/python-challenge-2/">Python Challenge 2</a>
+    
     <a class="list-group-item " href="/blog/2014/08/15/perl-day-1/">Perl Day 1</a>
     
-    <a class="list-group-item " href="/blog/2014/08/15/python-challlenge-0-1/">Python Challlenge 0 - 1</a>
+    <a class="list-group-item " href="/blog/2014/08/15/python-challenge-0-1/">Python Challenge 0 - 1</a>
     
     <a class="list-group-item " href="/blog/2014/08/12/generatre-alphabet-permutation-in-python/">Generate Alphabet Permutation in Python</a>
     
     <a class="list-group-item " href="/blog/2014/08/11/mount-disk-from-shell-terminal-in-mac/">Mount Disk From Shell(Terminal) in Mac</a>
-    
-    <a class="list-group-item " href="/blog/2014/07/23/ptyhon-printing/">Ptyhon Printing</a>
     
   </div>
 </section>
@@ -313,7 +372,7 @@
     
     
     <a class="list-group-item " href="/blog/categories/python/index.html">
-        <span class="badge">5</span>
+        <span class="badge">6</span>
         python
       </a>
     

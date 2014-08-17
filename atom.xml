@@ -4,7 +4,7 @@
   <title><![CDATA[Bujiang's Blog]]></title>
   <link href="http://blog.bujiang.info/atom.xml" rel="self"/>
   <link href="http://blog.bujiang.info/"/>
-  <updated>2014-08-16T01:09:06+08:00</updated>
+  <updated>2014-08-17T15:48:03+08:00</updated>
   <id>http://blog.bujiang.info/</id>
   <author>
     <name><![CDATA[Yan Bujiang]]></name>
@@ -12,6 +12,93 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Python Challenge 2]]></title>
+    <link href="http://blog.bujiang.info/blog/2014/08/17/python-challenge-2/"/>
+    <updated>2014-08-17T14:47:57+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2014/08/17/python-challenge-2</id>
+    <content type="html"><![CDATA[<p>Stage 2</p>
+
+<p>After finish load the <a href="http://www.pythonchallenge.com/pc/def/ocr.html">webpage</a>, there are a blurry picture and a paragraph</p>
+
+<blockquote><p>recognize the characters. maybe they are in the book, <br/>but MAYBE they are in the page source.</p></blockquote>
+
+
+<p>Perhaps the answer contain in the page source code, so I open terminal and in python interactive mode.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">urllib2</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="nb">dir</span><span class="p">(</span><span class="n">urllib2</span><span class="p">)</span>
+</span><span class='line'><span class="p">[</span><span class="s">&#39;AbstractBasicAuthHandler&#39;</span><span class="p">,</span> <span class="s">&#39;AbstractDigestAuthHandler&#39;</span><span class="p">,</span> <span class="s">&#39;AbstractHTTPHandler&#39;</span><span class="p">,</span> <span class="s">&#39;BaseHandler&#39;</span><span class="p">,</span> <span class="s">&#39;CacheFTPHandler&#39;</span><span class="p">,</span> <span class="s">&#39;FTPHandler&#39;</span><span class="p">,</span> <span class="s">&#39;FileHandler&#39;</span><span class="p">,</span> <span class="s">&#39;HTTPBasicAuthHandler&#39;</span><span class="p">,</span> <span class="s">&#39;HTTPCookieProcessor&#39;</span><span class="p">,</span> <span class="s">&#39;HTTPDefaultErrorHandler&#39;</span><span class="p">,</span> <span class="s">&#39;HTTPDigestAuthHandler&#39;</span><span class="p">,</span> <span class="s">&#39;HTTPError&#39;</span><span class="p">,</span> <span class="s">&#39;HTTPErrorProcessor&#39;</span><span class="p">,</span> <span class="s">&#39;HTTPHandler&#39;</span><span class="p">,</span> <span class="s">&#39;HTTPPasswordMgr&#39;</span><span class="p">,</span> <span class="s">&#39;HTTPPasswordMgrWithDefaultRealm&#39;</span><span class="p">,</span> <span class="s">&#39;HTTPRedirectHandler&#39;</span><span class="p">,</span> <span class="s">&#39;HTTPSHandler&#39;</span><span class="p">,</span> <span class="s">&#39;OpenerDirector&#39;</span><span class="p">,</span> <span class="s">&#39;ProxyBasicAuthHandler&#39;</span><span class="p">,</span> <span class="s">&#39;ProxyDigestAuthHandler&#39;</span><span class="p">,</span> <span class="s">&#39;ProxyHandler&#39;</span><span class="p">,</span> <span class="s">&#39;Request&#39;</span><span class="p">,</span> <span class="s">&#39;StringIO&#39;</span><span class="p">,</span> <span class="s">&#39;URLError&#39;</span><span class="p">,</span> <span class="s">&#39;UnknownHandler&#39;</span><span class="p">,</span> <span class="s">&#39;__builtins__&#39;</span><span class="p">,</span> <span class="s">&#39;__doc__&#39;</span><span class="p">,</span> <span class="s">&#39;__file__&#39;</span><span class="p">,</span> <span class="s">&#39;__name__&#39;</span><span class="p">,</span> <span class="s">&#39;__package__&#39;</span><span class="p">,</span> <span class="s">&#39;__version__&#39;</span><span class="p">,</span> <span class="s">&#39;_cut_port_re&#39;</span><span class="p">,</span> <span class="s">&#39;_opener&#39;</span><span class="p">,</span> <span class="s">&#39;_parse_proxy&#39;</span><span class="p">,</span> <span class="s">&#39;_safe_gethostbyname&#39;</span><span class="p">,</span> <span class="s">&#39;addinfourl&#39;</span><span class="p">,</span> <span class="s">&#39;base64&#39;</span><span class="p">,</span> <span class="s">&#39;bisect&#39;</span><span class="p">,</span> <span class="s">&#39;build_opener&#39;</span><span class="p">,</span> <span class="s">&#39;ftpwrapper&#39;</span><span class="p">,</span> <span class="s">&#39;getproxies&#39;</span><span class="p">,</span> <span class="s">&#39;hashlib&#39;</span><span class="p">,</span> <span class="s">&#39;httplib&#39;</span><span class="p">,</span> <span class="s">&#39;install_opener&#39;</span><span class="p">,</span> <span class="s">&#39;localhost&#39;</span><span class="p">,</span> <span class="s">&#39;mimetools&#39;</span><span class="p">,</span> <span class="s">&#39;os&#39;</span><span class="p">,</span> <span class="s">&#39;parse_http_list&#39;</span><span class="p">,</span> <span class="s">&#39;parse_keqv_list&#39;</span><span class="p">,</span> <span class="s">&#39;posixpath&#39;</span><span class="p">,</span> <span class="s">&#39;proxy_bypass&#39;</span><span class="p">,</span> <span class="s">&#39;quote&#39;</span><span class="p">,</span> <span class="s">&#39;random&#39;</span><span class="p">,</span> <span class="s">&#39;randombytes&#39;</span><span class="p">,</span> <span class="s">&#39;re&#39;</span><span class="p">,</span> <span class="s">&#39;request_host&#39;</span><span class="p">,</span> <span class="s">&#39;socket&#39;</span><span class="p">,</span> <span class="s">&#39;splitattr&#39;</span><span class="p">,</span> <span class="s">&#39;splithost&#39;</span><span class="p">,</span> <span class="s">&#39;splitpasswd&#39;</span><span class="p">,</span> <span class="s">&#39;splitport&#39;</span><span class="p">,</span> <span class="s">&#39;splittag&#39;</span><span class="p">,</span> <span class="s">&#39;splittype&#39;</span><span class="p">,</span> <span class="s">&#39;splituser&#39;</span><span class="p">,</span> <span class="s">&#39;splitvalue&#39;</span><span class="p">,</span> <span class="s">&#39;sys&#39;</span><span class="p">,</span> <span class="s">&#39;time&#39;</span><span class="p">,</span> <span class="s">&#39;toBytes&#39;</span><span class="p">,</span> <span class="s">&#39;unquote&#39;</span><span class="p">,</span> <span class="s">&#39;unwrap&#39;</span><span class="p">,</span> <span class="s">&#39;url2pathname&#39;</span><span class="p">,</span> <span class="s">&#39;urlopen&#39;</span><span class="p">,</span> <span class="s">&#39;urlparse&#39;</span><span class="p">,</span> <span class="s">&#39;warnings&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">page</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&quot;http://www.pythonchallenge.com/pc/def/ocr.html&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="nb">dir</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
+</span><span class='line'><span class="p">[</span><span class="s">&#39;__doc__&#39;</span><span class="p">,</span> <span class="s">&#39;__init__&#39;</span><span class="p">,</span> <span class="s">&#39;__iter__&#39;</span><span class="p">,</span> <span class="s">&#39;__module__&#39;</span><span class="p">,</span> <span class="s">&#39;__repr__&#39;</span><span class="p">,</span> <span class="s">&#39;close&#39;</span><span class="p">,</span> <span class="s">&#39;code&#39;</span><span class="p">,</span> <span class="s">&#39;fileno&#39;</span><span class="p">,</span> <span class="s">&#39;fp&#39;</span><span class="p">,</span> <span class="s">&#39;getcode&#39;</span><span class="p">,</span> <span class="s">&#39;geturl&#39;</span><span class="p">,</span> <span class="s">&#39;headers&#39;</span><span class="p">,</span> <span class="s">&#39;info&#39;</span><span class="p">,</span> <span class="s">&#39;msg&#39;</span><span class="p">,</span> <span class="s">&#39;next&#39;</span><span class="p">,</span> <span class="s">&#39;read&#39;</span><span class="p">,</span> <span class="s">&#39;readline&#39;</span><span class="p">,</span> <span class="s">&#39;readlines&#39;</span><span class="p">,</span> <span class="s">&#39;url&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">page</span> <span class="o">=</span> <span class="n">page</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>urllib2 is python package that can open url (make request), but I can not remember exactly the function to access.</p>
+
+<p>By use dir(urllib2) it shows has urlopen which is
+needed one.</p>
+
+<p>Ater I printed out the source code of the webpage, it mess up with a bunch of puctuation. It seems I am on the wrong track or this puctuations are some ciphertext? After a while, I recheck that paragraph it ask me to recognize the characters, so maybe it need the alphabets.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">charList</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">page</span><span class="p">:</span>
+</span><span class='line'><span class="o">...</span>     <span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
+</span><span class='line'><span class="o">...</span>             <span class="n">charList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span><span class='line'><span class="o">...</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">charList</span> <span class="o">=</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">charList</span><span class="p">)</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">charList</span>
+</span><span class='line'><span class="s">&#39;htmlheadtitleocrtitlelinkrelstylesheettypetextcsshrefstylecssheadbodycenterimgsrcocrjpgbrfontcolorcrecognizethecharactersmaybetheyareinthebookbrbutMAYBEtheyareinthepagesourcecenterbrbrbrfontsizecolorgoldGeneraltipsliUsethehintsTheyarehelpfulmostofthetimesliliInvestigatethedatagiventoyouliliAvoidlookingforspoilerslibrForumsahrefhttpwwwpythonchallengecomforumsPythonChallengeForumsareadbeforeyoupostbrIRCircfreenodenetpythonchallengebrbrToseethesolutionstothepreviouslevelreplacepcwithpcciegotohttp</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">wwwpythonchallengecompccdefocrhtmlbodyhtmlfindrarecharactersinthemessbelowequality</span><span class="s">&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I find the tail of the whole string, it got &ldquo;python challenge&rdquo;, &ldquo;body html&rdquo;, &ldquo;find&rdquo;, it seems interesting.
+I open the source code of webpage in browser</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="c">&lt;!--</span>
+</span><span class='line'><span class="c">find rare characters in the mess below:</span>
+</span><span class='line'><span class="c">--&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">&lt;!--</span>
+</span><span class='line'><span class="c">Inside this comment mess up with a bunch of puctuation</span>
+</span><span class='line'><span class="c">--&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Combine with &ldquo;findrarecharactersinthemessbelowequality&rdquo;, I got the answer &ldquo;equality&rdquo;</p>
+
+<p>So next state is <a href="http://www.pythonchallenge.com/pc/def/equality.html">equality.html</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Perl Day 1]]></title>
@@ -77,10 +164,10 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Python Challlenge 0 - 1]]></title>
-    <link href="http://blog.bujiang.info/blog/2014/08/15/python-challlenge-0-1/"/>
+    <title type="html"><![CDATA[Python Challenge 0 - 1]]></title>
+    <link href="http://blog.bujiang.info/blog/2014/08/15/python-challenge-0-1/"/>
     <updated>2014-08-15T18:40:45+08:00</updated>
-    <id>http://blog.bujiang.info/blog/2014/08/15/python-challlenge-0-1</id>
+    <id>http://blog.bujiang.info/blog/2014/08/15/python-challenge-0-1</id>
     <content type="html"><![CDATA[<p>Stage 0. Warming up</p>
 
 <p><a href="http://www.pythonchallenge.com/pc/def/0.html">http://www.pythonchallenge.com/pc/def/0.html</a></p>
@@ -1021,18 +1108,6 @@ connected disks.</p>
     <id>http://blog.bujiang.info/blog/2013/11/04/os-x-mavericksxiao-ji-qiao</id>
     <content type="html"><![CDATA[<p><img class="left" src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/2013-11-04-os-x-mavericksxiao-ji-qiao.jpg">
 在OS X Mavericks里，想输入Emoji的时只需要按住Control + Command + Space 热键就能输入Emoji了</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Quote]]></title>
-    <link href="http://blog.bujiang.info/blog/2013/11/03/quote/"/>
-    <updated>2013-11-03T09:46:00+08:00</updated>
-    <id>http://blog.bujiang.info/blog/2013/11/03/quote</id>
-    <content type="html"><![CDATA[<blockquote><p>If you want a happy ending, that depends, of course, on where you stop your story.<br/>如果你想有一个美好的结局，这取决于你在哪里停止这个故事</p><footer><strong>Orson Welles</strong></footer></blockquote>
-
-
-
 ]]></content>
   </entry>
   

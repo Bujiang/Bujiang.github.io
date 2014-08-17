@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Bujiang's Blog]]></title>
   <link href="http://blog.bujiang.info/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://blog.bujiang.info/"/>
-  <updated>2014-08-16T01:09:06+08:00</updated>
+  <updated>2014-08-17T15:48:03+08:00</updated>
   <id>http://blog.bujiang.info/</id>
   <author>
     <name><![CDATA[Yan Bujiang]]></name>
@@ -14,10 +14,75 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Python Challlenge 0 - 1]]></title>
-    <link href="http://blog.bujiang.info/blog/2014/08/15/python-challlenge-0-1/"/>
+    <title type="html"><![CDATA[Python Challenge 2]]></title>
+    <link href="http://blog.bujiang.info/blog/2014/08/17/python-challenge-2/"/>
+    <updated>2014-08-17T14:47:57+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2014/08/17/python-challenge-2</id>
+    <content type="html"><![CDATA[<p>Stage 2</p>
+
+<p>After finish load the <a href="http://www.pythonchallenge.com/pc/def/ocr.html">webpage</a>, there are a blurry picture and a paragraph
+<blockquote><p>recognize the characters. maybe they are in the book,<br/>but MAYBE they are in the page source.</p></blockquote></p>
+
+<p>Perhaps the answer contain in the page source code, so I open terminal and in python interactive mode.
+``` python</p>
+
+<blockquote><blockquote><blockquote><p>import urllib2
+dir(urllib2)
+[&lsquo;AbstractBasicAuthHandler&rsquo;, &lsquo;AbstractDigestAuthHandler&rsquo;, &lsquo;AbstractHTTPHandler&rsquo;, &lsquo;BaseHandler&rsquo;, &lsquo;CacheFTPHandler&rsquo;, &lsquo;FTPHandler&rsquo;, &lsquo;FileHandler&rsquo;, &lsquo;HTTPBasicAuthHandler&rsquo;, &lsquo;HTTPCookieProcessor&rsquo;, &lsquo;HTTPDefaultErrorHandler&rsquo;, &lsquo;HTTPDigestAuthHandler&rsquo;, &lsquo;HTTPError&rsquo;, &lsquo;HTTPErrorProcessor&rsquo;, &lsquo;HTTPHandler&rsquo;, &lsquo;HTTPPasswordMgr&rsquo;, &lsquo;HTTPPasswordMgrWithDefaultRealm&rsquo;, &lsquo;HTTPRedirectHandler&rsquo;, &lsquo;HTTPSHandler&rsquo;, &lsquo;OpenerDirector&rsquo;, &lsquo;ProxyBasicAuthHandler&rsquo;, &lsquo;ProxyDigestAuthHandler&rsquo;, &lsquo;ProxyHandler&rsquo;, &lsquo;Request&rsquo;, &lsquo;StringIO&rsquo;, &lsquo;URLError&rsquo;, &lsquo;UnknownHandler&rsquo;, &lsquo;<strong>builtins</strong>&rsquo;, &lsquo;<strong>doc</strong>&rsquo;, &lsquo;<strong>file</strong>&rsquo;, &lsquo;<strong>name</strong>&rsquo;, &lsquo;<strong>package</strong>&rsquo;, &lsquo;<strong>version</strong>&rsquo;, &lsquo;<em>cut_port_re&rsquo;, &lsquo;</em>opener&rsquo;, &lsquo;<em>parse_proxy&rsquo;, &lsquo;</em>safe_gethostbyname&rsquo;, &lsquo;addinfourl&rsquo;, &lsquo;base64&rsquo;, &lsquo;bisect&rsquo;, &lsquo;build_opener&rsquo;, &lsquo;ftpwrapper&rsquo;, &lsquo;getproxies&rsquo;, &lsquo;hashlib&rsquo;, &lsquo;httplib&rsquo;, &lsquo;install_opener&rsquo;, &lsquo;localhost&rsquo;, &lsquo;mimetools&rsquo;, &lsquo;os&rsquo;, &lsquo;parse_http_list&rsquo;, &lsquo;parse_keqv_list&rsquo;, &lsquo;posixpath&rsquo;, &lsquo;proxy_bypass&rsquo;, &lsquo;quote&rsquo;, &lsquo;random&rsquo;, &lsquo;randombytes&rsquo;, &rsquo;re', &lsquo;request_host&rsquo;, &lsquo;socket&rsquo;, &lsquo;splitattr&rsquo;, &lsquo;splithost&rsquo;, &lsquo;splitpasswd&rsquo;, &lsquo;splitport&rsquo;, &lsquo;splittag&rsquo;, &lsquo;splittype&rsquo;, &lsquo;splituser&rsquo;, &lsquo;splitvalue&rsquo;, &lsquo;sys&rsquo;, &lsquo;time&rsquo;, &lsquo;toBytes&rsquo;, &lsquo;unquote&rsquo;, &lsquo;unwrap&rsquo;, &lsquo;url2pathname&rsquo;, &lsquo;urlopen&rsquo;, &lsquo;urlparse&rsquo;, &lsquo;warnings&rsquo;]
+page = urllib2.urlopen(&ldquo;<a href="http://www.pythonchallenge.com/pc/def/ocr.html">http://www.pythonchallenge.com/pc/def/ocr.html</a>&rdquo;)
+dir(page)
+[&lsquo;<strong>doc</strong>&rsquo;, &lsquo;<strong>init</strong>&rsquo;, &lsquo;<strong>iter</strong>&rsquo;, &lsquo;<strong>module</strong>&rsquo;, &lsquo;<strong>repr</strong>&rsquo;, &lsquo;close&rsquo;, &lsquo;code&rsquo;, &lsquo;fileno&rsquo;, &lsquo;fp&rsquo;, &lsquo;getcode&rsquo;, &lsquo;geturl&rsquo;, &lsquo;headers&rsquo;, &lsquo;info&rsquo;, &lsquo;msg&rsquo;, &lsquo;next&rsquo;, &lsquo;read&rsquo;, &lsquo;readline&rsquo;, &lsquo;readlines&rsquo;, &lsquo;url&rsquo;]
+page = page.read()
+```
+urllib2 is python package that can open url (make request), but I can not remember exactly the function to access.</p></blockquote></blockquote></blockquote>
+
+<p>By use dir(urllib2) it shows has urlopen which is
+needed one.</p>
+
+<p>Ater I printed out the source code of the webpage, it mess up with a bunch of puctuation. It seems I am on the wrong track or this puctuations are some ciphertext? After a while, I recheck that paragraph it ask me to recognize the characters, so maybe it need the alphabets.
+``` python</p>
+
+<blockquote><blockquote><blockquote><p>charList = []
+for i in page:
+&hellip;     if i.isalpha():
+&hellip;             charList.append(i)
+&hellip;
+charList = &lsquo;&rsquo;.join(charList)
+charList
+&lsquo;htmlheadtitleocrtitlelinkrelstylesheettypetextcsshrefstylecssheadbodycenterimgsrcocrjpgbrfontcolorcrecognizethecharactersmaybetheyareinthebookbrbutMAYBEtheyareinthepagesourcecenterbrbrbrfontsizecolorgoldGeneraltipsliUsethehintsTheyarehelpfulmostofthetimesliliInvestigatethedatagiventoyouliliAvoidlookingforspoilerslibrForumsahrefhttpwwwpythonchallengecomforumsPythonChallengeForumsareadbeforeyoupostbrIRCircfreenodenetpythonchallengebrbrToseethesolutionstothepreviouslevelreplacepcwithpcciegotohttp</p></blockquote></blockquote></blockquote>
+
+<p>wwwpythonchallengecompccdefocrhtmlbodyhtmlfindrarecharactersinthemessbelowequality'
+```</p>
+
+<p>I find the tail of the whole string, it got &ldquo;python challenge&rdquo;, &ldquo;body html&rdquo;, &ldquo;find&rdquo;, it seems interesting.
+I open the source code of webpage in browser
+``` html</p>
+
+<!--
+find rare characters in the mess below:
+-->
+
+
+
+
+<!--
+Inside this comment mess up with a bunch of puctuation
+-->
+
+
+<p>```</p>
+
+<p>Combine with &ldquo;findrarecharactersinthemessbelowequality&rdquo;, I got the answer &ldquo;equality&rdquo;</p>
+
+<p>So next state is <a href="http://www.pythonchallenge.com/pc/def/equality.html">equality.html</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Python Challenge 0 - 1]]></title>
+    <link href="http://blog.bujiang.info/blog/2014/08/15/python-challenge-0-1/"/>
     <updated>2014-08-15T18:40:45+08:00</updated>
-    <id>http://blog.bujiang.info/blog/2014/08/15/python-challlenge-0-1</id>
+    <id>http://blog.bujiang.info/blog/2014/08/15/python-challenge-0-1</id>
     <content type="html"><![CDATA[<p>Stage 0. Warming up</p>
 
 <p><a href="http://www.pythonchallenge.com/pc/def/0.html">http://www.pythonchallenge.com/pc/def/0.html</a></p>
@@ -197,33 +262,6 @@ Another loophole for this registration API is password in plaintext.</p>
 <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">encodeString</span> <span class="o">=</span> <span class="n">originString</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">latin</span><span class="o">-</span><span class="mi">1</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">utf</span><span class="o">-</span><span class="mi">8</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;)</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Python的类型判别]]></title>
-    <link href="http://blog.bujiang.info/blog/2013/11/08/pythonde-lei-xing-pan-bie/"/>
-    <updated>2013-11-08T10:42:00+08:00</updated>
-    <id>http://blog.bujiang.info/blog/2013/11/08/pythonde-lei-xing-pan-bie</id>
-    <content type="html"><![CDATA[<p>以前在Python里面判别类型会使用type()
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Check type by using type() </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='pycon'><span class='line'><span class="go">num = 6</span>
-</span><span class='line'><span class="go">type(num)</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>其实还有isinstance()
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Check type by using isinstance() </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='pycon'><span class='line'><span class="go">line = u&#39;你好&#39;</span>
-</span><span class='line'><span class="go">isinstance(line, unicode)</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>甚至还能这样使用 isinstance(line, (unicode, str))</p>
-
-<p>因为最近在开发网站所以会经常碰到unicode的问题所以还蛮频繁的需要检查类型</p>
 ]]></content>
   </entry>
   

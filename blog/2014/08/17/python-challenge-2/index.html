@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Python Challenge 2 - Bujiang's Blog</title>
+  <meta name="author" content="Yan Bujiang">
+
+  
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.bujiang.info/blog/2014/08/17/python-challenge-2">
+  <link href="/favicon.png" type="image/png" rel="icon">
+  <link href="/atom.xml" rel="alternate" title="Bujiang's Blog" type="application/atom+xml">
+
+  <script src="/javascripts/libs/jquery/jquery-2.0.3.min.js"></script>
+
+<link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="/assets/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+
+
+  
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1331657-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+  <body   >
+    <div id="wrap">
+      <header role="banner">
+        <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Bujiang's Blog</a>
+        </div>
+
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="/">Blog</a>
+                </li>
+                <li >
+                    <a href="/blog/archives">Archives</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="subscribe-rss" href="/atom.xml" title="subscribe via RSS">
+                        <span class="visible-xs">RSS</span>
+                        <img class="hidden-xs" src="/images/rss.png" alt="RSS">
+                    </a>
+                </li>
+                
+            </ul>
+            
+                <form class="search navbar-form navbar-right" action="http://google.com/search" method="GET">
+                    <input type="hidden" name="q" value="site:blog.bujiang.info">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="q" placeholder="Search">
+                    </div>
+                </form>
+            
+        </div>
+    </div>
+</nav>
+
+
+      </header>
+      <div id="main" class="container">
+        <div id="content">
+          <div class="row">
+  <div class="page-content col-md-9">
+    <article class="hentry" role="article" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+      
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-17T14:47:57+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 17<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+    
+    <h1 class="entry-title" itemprop="name headline">
+        Python Challenge 2
+        
+    </h1>
+    
+  </header>
+
+
+<div class="entry-content clearfix" itemprop="articleBody"><p>Stage 2</p>
+
+<p>After finish load the <a href="http://www.pythonchallenge.com/pc/def/ocr.html">webpage</a>, there are a blurry picture and a paragraph</p>
+
+<blockquote><p>recognize the characters. maybe they are in the book, <br/>but MAYBE they are in the page source.</p></blockquote>
+
+
+<p>Perhaps the answer contain in the page source code, so I open terminal and in python interactive mode.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">urllib2</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="nb">dir</span><span class="p">(</span><span class="n">urllib2</span><span class="p">)</span>
+</span><span class='line'><span class="p">[</span><span class="s">&#39;AbstractBasicAuthHandler&#39;</span><span class="p">,</span> <span class="s">&#39;AbstractDigestAuthHandler&#39;</span><span class="p">,</span> <span class="s">&#39;AbstractHTTPHandler&#39;</span><span class="p">,</span> <span class="s">&#39;BaseHandler&#39;</span><span class="p">,</span> <span class="s">&#39;CacheFTPHandler&#39;</span><span class="p">,</span> <span class="s">&#39;FTPHandler&#39;</span><span class="p">,</span> <span class="s">&#39;FileHandler&#39;</span><span class="p">,</span> <span class="s">&#39;HTTPBasicAuthHandler&#39;</span><span class="p">,</span> <span class="s">&#39;HTTPCookieProcessor&#39;</span><span class="p">,</span> <span class="s">&#39;HTTPDefaultErrorHandler&#39;</span><span class="p">,</span> <span class="s">&#39;HTTPDigestAuthHandler&#39;</span><span class="p">,</span> <span class="s">&#39;HTTPError&#39;</span><span class="p">,</span> <span class="s">&#39;HTTPErrorProcessor&#39;</span><span class="p">,</span> <span class="s">&#39;HTTPHandler&#39;</span><span class="p">,</span> <span class="s">&#39;HTTPPasswordMgr&#39;</span><span class="p">,</span> <span class="s">&#39;HTTPPasswordMgrWithDefaultRealm&#39;</span><span class="p">,</span> <span class="s">&#39;HTTPRedirectHandler&#39;</span><span class="p">,</span> <span class="s">&#39;HTTPSHandler&#39;</span><span class="p">,</span> <span class="s">&#39;OpenerDirector&#39;</span><span class="p">,</span> <span class="s">&#39;ProxyBasicAuthHandler&#39;</span><span class="p">,</span> <span class="s">&#39;ProxyDigestAuthHandler&#39;</span><span class="p">,</span> <span class="s">&#39;ProxyHandler&#39;</span><span class="p">,</span> <span class="s">&#39;Request&#39;</span><span class="p">,</span> <span class="s">&#39;StringIO&#39;</span><span class="p">,</span> <span class="s">&#39;URLError&#39;</span><span class="p">,</span> <span class="s">&#39;UnknownHandler&#39;</span><span class="p">,</span> <span class="s">&#39;__builtins__&#39;</span><span class="p">,</span> <span class="s">&#39;__doc__&#39;</span><span class="p">,</span> <span class="s">&#39;__file__&#39;</span><span class="p">,</span> <span class="s">&#39;__name__&#39;</span><span class="p">,</span> <span class="s">&#39;__package__&#39;</span><span class="p">,</span> <span class="s">&#39;__version__&#39;</span><span class="p">,</span> <span class="s">&#39;_cut_port_re&#39;</span><span class="p">,</span> <span class="s">&#39;_opener&#39;</span><span class="p">,</span> <span class="s">&#39;_parse_proxy&#39;</span><span class="p">,</span> <span class="s">&#39;_safe_gethostbyname&#39;</span><span class="p">,</span> <span class="s">&#39;addinfourl&#39;</span><span class="p">,</span> <span class="s">&#39;base64&#39;</span><span class="p">,</span> <span class="s">&#39;bisect&#39;</span><span class="p">,</span> <span class="s">&#39;build_opener&#39;</span><span class="p">,</span> <span class="s">&#39;ftpwrapper&#39;</span><span class="p">,</span> <span class="s">&#39;getproxies&#39;</span><span class="p">,</span> <span class="s">&#39;hashlib&#39;</span><span class="p">,</span> <span class="s">&#39;httplib&#39;</span><span class="p">,</span> <span class="s">&#39;install_opener&#39;</span><span class="p">,</span> <span class="s">&#39;localhost&#39;</span><span class="p">,</span> <span class="s">&#39;mimetools&#39;</span><span class="p">,</span> <span class="s">&#39;os&#39;</span><span class="p">,</span> <span class="s">&#39;parse_http_list&#39;</span><span class="p">,</span> <span class="s">&#39;parse_keqv_list&#39;</span><span class="p">,</span> <span class="s">&#39;posixpath&#39;</span><span class="p">,</span> <span class="s">&#39;proxy_bypass&#39;</span><span class="p">,</span> <span class="s">&#39;quote&#39;</span><span class="p">,</span> <span class="s">&#39;random&#39;</span><span class="p">,</span> <span class="s">&#39;randombytes&#39;</span><span class="p">,</span> <span class="s">&#39;re&#39;</span><span class="p">,</span> <span class="s">&#39;request_host&#39;</span><span class="p">,</span> <span class="s">&#39;socket&#39;</span><span class="p">,</span> <span class="s">&#39;splitattr&#39;</span><span class="p">,</span> <span class="s">&#39;splithost&#39;</span><span class="p">,</span> <span class="s">&#39;splitpasswd&#39;</span><span class="p">,</span> <span class="s">&#39;splitport&#39;</span><span class="p">,</span> <span class="s">&#39;splittag&#39;</span><span class="p">,</span> <span class="s">&#39;splittype&#39;</span><span class="p">,</span> <span class="s">&#39;splituser&#39;</span><span class="p">,</span> <span class="s">&#39;splitvalue&#39;</span><span class="p">,</span> <span class="s">&#39;sys&#39;</span><span class="p">,</span> <span class="s">&#39;time&#39;</span><span class="p">,</span> <span class="s">&#39;toBytes&#39;</span><span class="p">,</span> <span class="s">&#39;unquote&#39;</span><span class="p">,</span> <span class="s">&#39;unwrap&#39;</span><span class="p">,</span> <span class="s">&#39;url2pathname&#39;</span><span class="p">,</span> <span class="s">&#39;urlopen&#39;</span><span class="p">,</span> <span class="s">&#39;urlparse&#39;</span><span class="p">,</span> <span class="s">&#39;warnings&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">page</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&quot;http://www.pythonchallenge.com/pc/def/ocr.html&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="nb">dir</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
+</span><span class='line'><span class="p">[</span><span class="s">&#39;__doc__&#39;</span><span class="p">,</span> <span class="s">&#39;__init__&#39;</span><span class="p">,</span> <span class="s">&#39;__iter__&#39;</span><span class="p">,</span> <span class="s">&#39;__module__&#39;</span><span class="p">,</span> <span class="s">&#39;__repr__&#39;</span><span class="p">,</span> <span class="s">&#39;close&#39;</span><span class="p">,</span> <span class="s">&#39;code&#39;</span><span class="p">,</span> <span class="s">&#39;fileno&#39;</span><span class="p">,</span> <span class="s">&#39;fp&#39;</span><span class="p">,</span> <span class="s">&#39;getcode&#39;</span><span class="p">,</span> <span class="s">&#39;geturl&#39;</span><span class="p">,</span> <span class="s">&#39;headers&#39;</span><span class="p">,</span> <span class="s">&#39;info&#39;</span><span class="p">,</span> <span class="s">&#39;msg&#39;</span><span class="p">,</span> <span class="s">&#39;next&#39;</span><span class="p">,</span> <span class="s">&#39;read&#39;</span><span class="p">,</span> <span class="s">&#39;readline&#39;</span><span class="p">,</span> <span class="s">&#39;readlines&#39;</span><span class="p">,</span> <span class="s">&#39;url&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">page</span> <span class="o">=</span> <span class="n">page</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>urllib2 is python package that can open url (make request), but I can not remember exactly the function to access.</p>
+
+<p>By use dir(urllib2) it shows has urlopen which is
+needed one.</p>
+
+<p>Ater I printed out the source code of the webpage, it mess up with a bunch of puctuation. It seems I am on the wrong track or this puctuations are some ciphertext? After a while, I recheck that paragraph it ask me to recognize the characters, so maybe it need the alphabets.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">charList</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">page</span><span class="p">:</span>
+</span><span class='line'><span class="o">...</span>     <span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
+</span><span class='line'><span class="o">...</span>             <span class="n">charList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span><span class='line'><span class="o">...</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">charList</span> <span class="o">=</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">charList</span><span class="p">)</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">charList</span>
+</span><span class='line'><span class="s">&#39;htmlheadtitleocrtitlelinkrelstylesheettypetextcsshrefstylecssheadbodycenterimgsrcocrjpgbrfontcolorcrecognizethecharactersmaybetheyareinthebookbrbutMAYBEtheyareinthepagesourcecenterbrbrbrfontsizecolorgoldGeneraltipsliUsethehintsTheyarehelpfulmostofthetimesliliInvestigatethedatagiventoyouliliAvoidlookingforspoilerslibrForumsahrefhttpwwwpythonchallengecomforumsPythonChallengeForumsareadbeforeyoupostbrIRCircfreenodenetpythonchallengebrbrToseethesolutionstothepreviouslevelreplacepcwithpcciegotohttp</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">wwwpythonchallengecompccdefocrhtmlbodyhtmlfindrarecharactersinthemessbelowequality</span><span class="s">&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I find the tail of the whole string, it got &ldquo;python challenge&rdquo;, &ldquo;body html&rdquo;, &ldquo;find&rdquo;, it seems interesting.
+I open the source code of webpage in browser</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="c">&lt;!--</span>
+</span><span class='line'><span class="c">find rare characters in the mess below:</span>
+</span><span class='line'><span class="c">--&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">&lt;!--</span>
+</span><span class='line'><span class="c">Inside this comment mess up with a bunch of puctuation</span>
+</span><span class='line'><span class="c">--&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Combine with &ldquo;findrarecharactersinthemessbelowequality&rdquo;, I got the answer &ldquo;equality&rdquo;</p>
+
+<p>So next state is <a href="http://www.pythonchallenge.com/pc/def/equality.html">equality.html</a></p>
+</div>
+
+
+      <footer>
+        <p class="meta text-muted">
+          
+  
+
+<span class="glyphicon glyphicon-user"></span> <span class="byline author vcard" itemprop="author" itemscope itemtype="http://schema.org/Person">Posted by <span class="fn" itemprop="name">Yan Bujiang</span></span>
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-17T14:47:57+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 17<sup>th</sup>, 2014</time>
+          
+
+<span class="glyphicon glyphicon-tags"></span>&nbsp;
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/python/'>python</a>
+  
+</span>
+
+
+        </p>
+        
+          <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.bujiang.info/blog/2014/08/17/python-challenge-2/" data-via="DiangDiang" data-counturl="http://blog.bujiang.info/blog/2014/08/17/python-challenge-2/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+        
+        
+          <ul class="meta text-muted pager">
+            
+            <li class="previous"><a href="/blog/2014/08/15/perl-day-1/" title="Previous Post: Perl Day 1">&laquo; Perl Day 1</a></li>
+            
+            
+          </ul>
+        
+      </footer>
+    </article>
+    
+      <section>
+        <h1>Comments</h1>
+        <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+      </section>
+    
+  </div>
+
+  
+  <aside class="sidebar col-md-3">
+    
+      <section class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Recent Posts</h3>
+  </div>
+  
+  <div id="recent_posts" class="list-group">
+    
+    <a class="list-group-item active" href="/blog/2014/08/17/python-challenge-2/">Python Challenge 2</a>
+    
+    <a class="list-group-item " href="/blog/2014/08/15/perl-day-1/">Perl Day 1</a>
+    
+    <a class="list-group-item " href="/blog/2014/08/15/python-challenge-0-1/">Python Challenge 0 - 1</a>
+    
+    <a class="list-group-item " href="/blog/2014/08/12/generatre-alphabet-permutation-in-python/">Generate Alphabet Permutation in Python</a>
+    
+    <a class="list-group-item " href="/blog/2014/08/11/mount-disk-from-shell-terminal-in-mac/">Mount Disk From Shell(Terminal) in Mac</a>
+    
+  </div>
+</section>
+<section class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Categories</h3>
+  </div>
+  <div class="list-group">
+    
+    
+    <a class="list-group-item " href="/blog/categories/markdown/index.html">
+        <span class="badge">1</span>
+        markdown
+      </a>
+    
+    
+    <a class="list-group-item " href="/blog/categories/quote/index.html">
+        <span class="badge">1</span>
+        quote
+      </a>
+    
+    
+    <a class="list-group-item " href="/blog/categories/os-x/index.html">
+        <span class="badge">2</span>
+        os x
+      </a>
+    
+    
+    <a class="list-group-item " href="/blog/categories/python/index.html">
+        <span class="badge">6</span>
+        python
+      </a>
+    
+    
+    <a class="list-group-item " href="/blog/categories/git/index.html">
+        <span class="badge">4</span>
+        git
+      </a>
+    
+    
+    <a class="list-group-item " href="/blog/categories/html/index.html">
+        <span class="badge">1</span>
+        html
+      </a>
+    
+    
+    <a class="list-group-item " href="/blog/categories/vim/index.html">
+        <span class="badge">3</span>
+        vim
+      </a>
+    
+    
+    <a class="list-group-item " href="/blog/categories/node/index.html">
+        <span class="badge">1</span>
+        node
+      </a>
+    
+    
+    <a class="list-group-item " href="/blog/categories/raspberry-pi/index.html">
+        <span class="badge">1</span>
+        raspberry pi
+      </a>
+    
+    
+    <a class="list-group-item " href="/blog/categories/easter-egg/index.html">
+        <span class="badge">1</span>
+        easter egg
+      </a>
+    
+    
+    <a class="list-group-item " href="/blog/categories/bash/index.html">
+        <span class="badge">3</span>
+        bash
+      </a>
+    
+    
+    <a class="list-group-item " href="/blog/categories/perl/index.html">
+        <span class="badge">1</span>
+        perl
+      </a>
+    
+  </div>
+</section>
+
+<section class="panel panel-default">
+  <link href="https://dl.dropboxusercontent.com/u/23849021/Blog/coderbits.css" media="all" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    #coderbits {
+      margin: 10px 0 0 0;
+    }
+  </style>
+  <div class="panel-heading">
+    <h3 class="panel-title">Coderbits Portfolio</h3>
+  </div>
+  <section id="coderbits" data-coderbits-username="DiangDiang"></section>
+  <script src="https://coderbits.com/content/widget/coderbits.js"></script>
+</section>
+
+
+
+
+    
+  </aside>
+  
+</div>
+
+        </div>
+      </div>
+    </div>
+    <footer role="contentinfo"><div class="container">
+    <p class="text-muted credits">
+  Copyright &copy; 2014 - Yan Bujiang<br>
+  <small>
+      <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>,
+      <span class="credit">customized with <a href="https://github.com/kAworu/octostrap3">octostrap3</a></span>.
+  </small>
+</p>
+
+</div>
+</footer>
+    
+
+<script type="text/javascript">
+      var disqus_shortname = 'bujiangsblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.bujiang.info/blog/2014/08/17/python-challenge-2/';
+        var disqus_url = 'http://blog.bujiang.info/blog/2014/08/17/python-challenge-2/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+<script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/javascripts/modernizr-2.0.js"></script>
+
+
+  </body>
+</html>
