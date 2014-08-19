@@ -5,7 +5,7 @@ date: 2014-08-15 18:40:45 +0800
 comments: true
 categories: [Python, Bash]
 ---
-Stage 0. Warming up
+Challenge 0. Warming up
 
 http://www.pythonchallenge.com/pc/def/0.html
 
@@ -20,7 +20,7 @@ the answer.
 
 replace the 0 to result then get the next stage URL is http://www.pythonchallenge.com/pc/def/274877906944.html
 
-Stage 1. What about making trans?
+Challenge 1. What about making trans?
 
 In webpage there have one picture and one paragraph. The picture show K->M O->Q E->G, and 
 the paragraph looks like have some meaning but for now I do not know it.

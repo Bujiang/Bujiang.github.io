@@ -6,7 +6,7 @@ comments: true
 categories: [Python,]
 ---
 
-Stage 2
+Challenge 2. ocr
 
 After finish load the [webpage](http://www.pythonchallenge.com/pc/def/ocr.html), there are a blurry picture and a paragraph 
 {% blockquote %}
