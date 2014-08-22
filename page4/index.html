@@ -115,6 +115,56 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-11-21T12:09:00+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Nov 21<sup>st</sup>, 2013</time>
+        
+      </p>
+    
+    
+      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2013/11/21/python-utf-8/" itemprop="url">Python UTF-8</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>最近因为project的原因很频繁的需要处理本地数据和数据库及网页之间的转换
+就碰到了挺多关于encoding和decoding的问题</p>
+
+<p>涉及的操作系统平台包含Mac，Linux和Windows。软件是Python2.7（Django，pyserial）
+为了保持字符编码的统一性，使用了UTF－8</p>
+
+<p>但在转换成UTF－8的时候经常会有不符合UTF－8定义特殊的字符导致错误出现</p>
+
+<p>其实可以这样方便的解决问题</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">encodeString</span> <span class="o">=</span> <span class="n">originString</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">&quot;latin-1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&quot;utf-8&quot;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-11-08T10:42:00+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Nov 8<sup>th</sup>, 2013</time>
         
       </p>
@@ -334,6 +384,8 @@
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/2014/08/20/python-challenge-3/">Python Challenge 3</a>
+    
     <a class="list-group-item " href="/blog/2014/08/17/python-challenge-2/">Python Challenge 2</a>
     
     <a class="list-group-item " href="/blog/2014/08/15/perl-day-1/">Perl Day 1</a>
@@ -341,8 +393,6 @@
     <a class="list-group-item " href="/blog/2014/08/15/python-challenge-0-1/">Python Challenge 0 - 1</a>
     
     <a class="list-group-item " href="/blog/2014/08/12/generatre-alphabet-permutation-in-python/">Generate Alphabet Permutation in Python</a>
-    
-    <a class="list-group-item " href="/blog/2014/08/11/mount-disk-from-shell-terminal-in-mac/">Mount Disk From Shell(Terminal) in Mac</a>
     
   </div>
 </section>
@@ -372,7 +422,7 @@
     
     
     <a class="list-group-item " href="/blog/categories/python/index.html">
-        <span class="badge">6</span>
+        <span class="badge">7</span>
         python
       </a>
     

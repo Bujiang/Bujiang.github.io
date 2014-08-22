@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Bujiang's Blog]]></title>
   <link href="http://blog.bujiang.info/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://blog.bujiang.info/"/>
-  <updated>2014-08-17T15:48:03+08:00</updated>
+  <updated>2014-08-22T12:59:13+08:00</updated>
   <id>http://blog.bujiang.info/</id>
   <author>
     <name><![CDATA[Yan Bujiang]]></name>
@@ -14,11 +14,39 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Python Challenge 3]]></title>
+    <link href="http://blog.bujiang.info/blog/2014/08/20/python-challenge-3/"/>
+    <updated>2014-08-20T00:10:44+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2014/08/20/python-challenge-3</id>
+    <content type="html"><![CDATA[<p>Challenge 3. <a href="http://www.pythonchallenge.com/pc/def/equality.html">re</a></p>
+
+<p>Like previous challenge, this challenge contains one picture and one pargraph.
+<blockquote><p>One small letter, surrounded by EXACTLY three big bodyguards on each of its sides.</p></blockquote></p>
+
+<p>The title of challenge 3 page is re, maybe this is another hint telling me to use re package?
+``` python</p>
+
+<blockquote><blockquote><blockquote><p>import urllib2
+data = urllib2.urlopen(&ldquo;<a href="http://www.pythonchallenge.com/pc/def/equality.html">http://www.pythonchallenge.com/pc/def/equality.html</a>&rdquo;)
+data = data.read()
+print &ldquo;&rdquo;.join(re.findall(&ldquo;[^A-Z][A-Z]{3}([a-z])[A-Z]{3}[^A-Z]&rdquo;, data))
+linkedlist
+```</p></blockquote></blockquote></blockquote>
+
+<p>[^A-Z] matches any single character not in it</p>
+
+<p>[A-Z]{3} matches three UPPERCASE characters</p>
+
+<p>Next challenge is <a href="http://www.pythonchallenge.com/pc/def/equality.html">linkedlist</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Python Challenge 2]]></title>
     <link href="http://blog.bujiang.info/blog/2014/08/17/python-challenge-2/"/>
     <updated>2014-08-17T14:47:57+08:00</updated>
     <id>http://blog.bujiang.info/blog/2014/08/17/python-challenge-2</id>
-    <content type="html"><![CDATA[<p>Stage 2</p>
+    <content type="html"><![CDATA[<p>Challenge 2. ocr</p>
 
 <p>After finish load the <a href="http://www.pythonchallenge.com/pc/def/ocr.html">webpage</a>, there are a blurry picture and a paragraph
 <blockquote><p>recognize the characters. maybe they are in the book,<br/>but MAYBE they are in the page source.</p></blockquote></p>
@@ -74,7 +102,7 @@ Inside this comment mess up with a bunch of puctuation
 
 <p>Combine with &ldquo;findrarecharactersinthemessbelowequality&rdquo;, I got the answer &ldquo;equality&rdquo;</p>
 
-<p>So next state is <a href="http://www.pythonchallenge.com/pc/def/equality.html">equality.html</a></p>
+<p>So next challenge is <a href="http://www.pythonchallenge.com/pc/def/equality.html">equality.html</a></p>
 ]]></content>
   </entry>
   
@@ -83,7 +111,7 @@ Inside this comment mess up with a bunch of puctuation
     <link href="http://blog.bujiang.info/blog/2014/08/15/python-challenge-0-1/"/>
     <updated>2014-08-15T18:40:45+08:00</updated>
     <id>http://blog.bujiang.info/blog/2014/08/15/python-challenge-0-1</id>
-    <content type="html"><![CDATA[<p>Stage 0. Warming up</p>
+    <content type="html"><![CDATA[<p>Challenge 0. Warming up</p>
 
 <p><a href="http://www.pythonchallenge.com/pc/def/0.html">http://www.pythonchallenge.com/pc/def/0.html</a></p>
 
@@ -99,7 +127,7 @@ the answer.
 
 <p>replace the 0 to result then get the next stage URL is <a href="http://www.pythonchallenge.com/pc/def/274877906944.html">http://www.pythonchallenge.com/pc/def/274877906944.html</a></p>
 
-<p>Stage 1. What about making trans?</p>
+<p>Challenge 1. What about making trans?</p>
 
 <p>In webpage there have one picture and one paragraph. The picture show K->M O->Q E->G, and
 the paragraph looks like have some meaning but for now I do not know it.
@@ -241,27 +269,6 @@ Another loophole for this registration API is password in plaintext.</p>
 
 <p>```
 <iframe width="" height="" src="http://www.youtube.com/embed/q_XmtWG1E7c " frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Python UTF-8]]></title>
-    <link href="http://blog.bujiang.info/blog/2013/11/21/python-utf-8/"/>
-    <updated>2013-11-21T12:09:00+08:00</updated>
-    <id>http://blog.bujiang.info/blog/2013/11/21/python-utf-8</id>
-    <content type="html"><![CDATA[<p>最近因为project的原因很频繁的需要处理本地数据和数据库及网页之间的转换
-就碰到了挺多关于encoding和decoding的问题</p>
-
-<p>涉及的操作系统平台包含Mac，Linux和Windows。软件是Python2.7（Django，pyserial）
-为了保持字符编码的统一性，使用了UTF－8</p>
-
-<p>但在转换成UTF－8的时候经常会有不符合UTF－8定义特殊的字符导致错误出现</p>
-
-<p>其实可以这样方便的解决问题</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">encodeString</span> <span class="o">=</span> <span class="n">originString</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">latin</span><span class="o">-</span><span class="mi">1</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">utf</span><span class="o">-</span><span class="mi">8</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;)</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   

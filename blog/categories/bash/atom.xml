@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Bash | Bujiang's Blog]]></title>
   <link href="http://blog.bujiang.info/blog/categories/bash/atom.xml" rel="self"/>
   <link href="http://blog.bujiang.info/"/>
-  <updated>2014-08-17T15:48:03+08:00</updated>
+  <updated>2014-08-22T12:59:13+08:00</updated>
   <id>http://blog.bujiang.info/</id>
   <author>
     <name><![CDATA[Yan Bujiang]]></name>
@@ -18,7 +18,7 @@
     <link href="http://blog.bujiang.info/blog/2014/08/15/python-challenge-0-1/"/>
     <updated>2014-08-15T18:40:45+08:00</updated>
     <id>http://blog.bujiang.info/blog/2014/08/15/python-challenge-0-1</id>
-    <content type="html"><![CDATA[<p>Stage 0. Warming up</p>
+    <content type="html"><![CDATA[<p>Challenge 0. Warming up</p>
 
 <p><a href="http://www.pythonchallenge.com/pc/def/0.html">http://www.pythonchallenge.com/pc/def/0.html</a></p>
 
@@ -34,7 +34,7 @@ the answer.
 
 <p>replace the 0 to result then get the next stage URL is <a href="http://www.pythonchallenge.com/pc/def/274877906944.html">http://www.pythonchallenge.com/pc/def/274877906944.html</a></p>
 
-<p>Stage 1. What about making trans?</p>
+<p>Challenge 1. What about making trans?</p>
 
 <p>In webpage there have one picture and one paragraph. The picture show K->M O->Q E->G, and
 the paragraph looks like have some meaning but for now I do not know it.
