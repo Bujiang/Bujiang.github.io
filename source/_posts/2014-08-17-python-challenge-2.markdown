@@ -58,4 +58,4 @@ Inside this comment mess up with a bunch of puctuation
 
 Combine with "findrarecharactersinthemessbelowequality", I got the answer "equality"
 
-So next state is [equality.html](http://www.pythonchallenge.com/pc/def/equality.html)
+So next challenge is [equality.html](http://www.pythonchallenge.com/pc/def/equality.html)
