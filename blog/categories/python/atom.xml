@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Bujiang's Blog]]></title>
   <link href="http://blog.bujiang.info/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://blog.bujiang.info/"/>
-  <updated>2014-08-22T12:59:13+08:00</updated>
+  <updated>2014-08-23T15:33:47+08:00</updated>
   <id>http://blog.bujiang.info/</id>
   <author>
     <name><![CDATA[Yan Bujiang]]></name>
@@ -12,6 +12,96 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Python Challenge 4]]></title>
+    <link href="http://blog.bujiang.info/blog/2014/08/23/python-challenge-4/"/>
+    <updated>2014-08-23T12:58:39+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2014/08/23/python-challenge-4</id>
+    <content type="html"><![CDATA[<p>Challenge 4. linkedlist
+After resolve the previous challenge and open <a href="http://www.pythonchallenge.com/pc/def/linkedlist.html">http://www.pythonchallenge.com/pc/def/linkedlist.html</a> in browser, it shows linkedlist.php.
+Finish loading <a href="http://www.pythonchallenge.com/pc/def/linkedlist.php">http://www.pythonchallenge.com/pc/def/linkedlist.php</a> there only lefe one picture.
+As before check the page source code and find a new link <a href="http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=12345">http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=12345</a>. I just try open the new url, and the page dispaly &ldquo;and the next nothing is 44827&rdquo;.
+It needs me to automate recursive open url by using python.</p>
+
+<p>``` python
+import urllib2, re</p>
+
+<p>url = &ldquo;<a href="http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=">http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=</a>&rdquo;
+nothingValue = &ldquo;12345&rdquo;
+digis = &ldquo;\d+&rdquo;</p>
+
+<p>data = urllib2.urlopen(url + nothingValue).read()
+print data
+finding = re.search(digis, data)</p>
+
+<p>while finding.group(0):</p>
+
+<pre><code>nothingValue = finding.group(0)
+data = urllib2.urlopen(url + nothingValue).read()
+print data
+finding = re.search(digis, data)
+</code></pre>
+
+<p>print data
+```</p>
+
+<p>Above code will find the digitals in webpage and use the finding digitals to do a new request.</p>
+
+<p>``` bash
+&hellip;&hellip;&hellip;&hellip;.
+and the next nothing is 29247
+and the next nothing is 13115
+and the next nothing is 23053
+and the next nothing is 3875
+and the next nothing is 16044
+Yes. Divide by two and keep going.
+Traceback (most recent call last):
+  File &ldquo;bu.py&rdquo;, line 11, in <module></p>
+
+<pre><code>while finding.group(0):
+</code></pre>
+
+<p>AttributeError: &lsquo;NoneType&rsquo; object has no attribute &lsquo;group&rsquo;
+<code>
+After run a while, the last printed line shows none digitals "Divide by two and keep going" By divide 16044 with 2 get 8022, then modify nothingValue in script then continue run.
+</code> bash
+&hellip;&hellip;&hellip;&hellip;..
+and the next nothing is 49574
+and the next nothing is 82682
+There maybe misleading numbers in the
+text. One example is 82683. Look only for the next nothing and the next nothing is 63579
+You&rsquo;ve been misleaded to here. Go to previous
+one and check.
+Traceback (most recent call last):
+  File &ldquo;bu.py&rdquo;, line 11, in <module></p>
+
+<pre><code>while finding.group(0):
+</code></pre>
+
+<p>AttributeError: &lsquo;NoneType&rsquo; object has no attribute &lsquo;group&rsquo;
+<code>
+But still got some problem here, it tells "One example is 82683...." I've search print statement history but can't find it.
+I continue modify the nothingValue to 63579 and re-run again.
+</code> bash
+and the next nothing is 27709
+and the next nothing is 96791
+and the next nothing is 75635
+and the next nothing is 52899
+and the next nothing is 66831
+peak.html
+Traceback (most recent call last):
+  File &ldquo;bu.py&rdquo;, line 11, in <module></p>
+
+<pre><code>while finding.group(0):
+</code></pre>
+
+<p>AttributeError: &lsquo;NoneType&rsquo; object has no attribute &lsquo;group&rsquo;
+```
+It seems OK here. I get peak.html  :)
+So next challenge is <a href="http://www.pythonchallenge.com/pc/def/peak.html">http://www.pythonchallenge.com/pc/def/peak.html</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Python Challenge 3]]></title>
@@ -37,7 +127,7 @@ linkedlist
 
 <p>[A-Z]{3} matches three UPPERCASE characters</p>
 
-<p>Next challenge is <a href="http://www.pythonchallenge.com/pc/def/equality.html">linkedlist</a></p>
+<p>Next challenge is <a href="http://www.pythonchallenge.com/pc/def/linkedlist.html">linkedlist</a></p>
 ]]></content>
   </entry>
   
@@ -251,24 +341,6 @@ COMMAND = &ldquo;curl -s -X POST -H &rdquo;</p>
 Another loophole for this registration API is password in plaintext.</p>
 
 <p>*: All test actions are under my friend authorization</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Ptyhon Printing]]></title>
-    <link href="http://blog.bujiang.info/blog/2014/07/23/ptyhon-printing/"/>
-    <updated>2014-07-23T00:02:09+08:00</updated>
-    <id>http://blog.bujiang.info/blog/2014/07/23/ptyhon-printing</id>
-    <content type="html"><![CDATA[<p>``` python Fun printing</p>
-
-<p>while True:</p>
-
-<pre><code>for i in ["/", "-", "|", "\\", "|", "-"]:
-    print "Loading [%s]\r\b" % i,
-</code></pre>
-
-<p>```
-<iframe width="" height="" src="http://www.youtube.com/embed/q_XmtWG1E7c " frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></p>
 ]]></content>
   </entry>
   

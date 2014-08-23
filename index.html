@@ -115,6 +115,168 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-23T12:58:39+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 23<sup>rd</sup>, 2014</time>
+        
+      </p>
+    
+    
+      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2014/08/23/python-challenge-4/" itemprop="url">Python Challenge 4</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>Challenge 4. linkedlist
+After resolve the previous challenge and open <a href="http://www.pythonchallenge.com/pc/def/linkedlist.html">http://www.pythonchallenge.com/pc/def/linkedlist.html</a> in browser, it shows linkedlist.php.
+Finish loading <a href="http://www.pythonchallenge.com/pc/def/linkedlist.php">http://www.pythonchallenge.com/pc/def/linkedlist.php</a> there only lefe one picture.
+As before check the page source code and find a new link <a href="http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=12345">http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=12345</a>. I just try open the new url, and the page dispaly &ldquo;and the next nothing is 44827&rdquo;.
+It needs me to automate recursive open url by using python.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">urllib2</span><span class="o">,</span> <span class="nn">re</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">url</span> <span class="o">=</span> <span class="s">&quot;http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=&quot;</span>
+</span><span class='line'><span class="n">nothingValue</span> <span class="o">=</span> <span class="s">&quot;12345&quot;</span>
+</span><span class='line'><span class="n">digis</span> <span class="o">=</span> <span class="s">&quot;\d+&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">data</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span> <span class="o">+</span> <span class="n">nothingValue</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span class='line'><span class="k">print</span> <span class="n">data</span>
+</span><span class='line'><span class="n">finding</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">digis</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">while</span> <span class="n">finding</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span>
+</span><span class='line'>    <span class="n">nothingValue</span> <span class="o">=</span> <span class="n">finding</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">data</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span> <span class="o">+</span> <span class="n">nothingValue</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span class='line'>    <span class="k">print</span> <span class="n">data</span>
+</span><span class='line'>    <span class="n">finding</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">digis</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">print</span> <span class="n">data</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Above code will find the digitals in webpage and use the finding digitals to do a new request.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>.............
+</span><span class='line'>and the next nothing is 29247
+</span><span class='line'>and the next nothing is 13115
+</span><span class='line'>and the next nothing is 23053
+</span><span class='line'>and the next nothing is 3875
+</span><span class='line'>and the next nothing is 16044
+</span><span class='line'>Yes. Divide by two and keep going.
+</span><span class='line'>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+</span><span class='line'>  File <span class="s2">&quot;bu.py&quot;</span>, line 11, in &lt;module&gt;
+</span><span class='line'>    <span class="k">while </span>finding.group<span class="o">(</span>0<span class="o">)</span>:
+</span><span class='line'>AttributeError: <span class="s1">&#39;NoneType&#39;</span> object has no attribute <span class="s1">&#39;group&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After run a while, the last printed line shows none digitals &ldquo;Divide by two and keep going&rdquo; By divide 16044 with 2 get 8022, then modify nothingValue in script then continue run.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>..............
+</span><span class='line'>and the next nothing is 49574
+</span><span class='line'>and the next nothing is 82682
+</span><span class='line'>There maybe misleading numbers in the
+</span><span class='line'>text. One example is 82683. Look only <span class="k">for </span>the next nothing and the next nothing is 63579
+</span><span class='line'>You<span class="s1">&#39;ve been misleaded to here. Go to previous </span>
+</span><span class='line'><span class="s1">one and check.</span>
+</span><span class='line'><span class="s1">Traceback (most recent call last):</span>
+</span><span class='line'><span class="s1">  File &quot;bu.py&quot;, line 11, in &lt;module&gt;</span>
+</span><span class='line'><span class="s1">    while finding.group(0):</span>
+</span><span class='line'><span class="s1">AttributeError: &#39;</span>NoneType<span class="s1">&#39; object has no attribute &#39;</span>group<span class="err">&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>But still got some problem here, it tells &ldquo;One example is 82683&hellip;.&rdquo; I&rsquo;ve search print statement history but can&rsquo;t find it.
+I continue modify the nothingValue to 63579 and re-run again.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>and the next nothing is 27709
+</span><span class='line'>and the next nothing is 96791
+</span><span class='line'>and the next nothing is 75635
+</span><span class='line'>and the next nothing is 52899
+</span><span class='line'>and the next nothing is 66831
+</span><span class='line'>peak.html
+</span><span class='line'>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+</span><span class='line'>  File <span class="s2">&quot;bu.py&quot;</span>, line 11, in &lt;module&gt;
+</span><span class='line'>    <span class="k">while </span>finding.group<span class="o">(</span>0<span class="o">)</span>:
+</span><span class='line'>AttributeError: <span class="s1">&#39;NoneType&#39;</span> object has no attribute <span class="s1">&#39;group&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+It seems OK here. I get peak.html  :)
+So next challenge is <a href="http://www.pythonchallenge.com/pc/def/peak.html">http://www.pythonchallenge.com/pc/def/peak.html</a></p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-20T00:10:44+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 20<sup>th</sup>, 2014</time>
         
       </p>
@@ -151,7 +313,7 @@
 
 <p>[A-Z]{3} matches three UPPERCASE characters</p>
 
-<p>Next challenge is <a href="http://www.pythonchallenge.com/pc/def/equality.html">linkedlist</a></p>
+<p>Next challenge is <a href="http://www.pythonchallenge.com/pc/def/linkedlist.html">linkedlist</a></p>
 </div>
   
   
@@ -624,105 +786,6 @@ Another loophole for this registration API is password in plaintext.</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-11T15:31:00+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 11<sup>th</sup>, 2014</time>
-        
-      </p>
-    
-    
-      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2014/08/11/mount-disk-from-shell-terminal-in-mac/" itemprop="url">Mount Disk From Shell(Terminal) in Mac</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>Before we mount disk or drive, we need to know all the connected first. There is a program called diskutil that can manipulate the structure of local disks.</p>
-
-<p>Type diskutil list in shell, the program will list all the
-connected disks.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>diskutil list
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The output will look like</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>/dev/disk0
-</span><span class='line'>   <span class="c">#:                       TYPE NAME                    SIZE       IDENTIFIER</span>
-</span><span class='line'>   0:      GUID_partition_scheme                        *250.1 GB   disk0
-</span><span class='line'>   1:                        EFI EFI                     209.7 MB   disk0s1
-</span><span class='line'>   2:                  Apple_HFS Mac OS                  249.2 GB   disk0s2
-</span><span class='line'>   3:                 Apple_Boot Recovery HD             650.0 MB   disk0s3
-</span><span class='line'>/dev/disk2
-</span><span class='line'>   <span class="c">#:                       TYPE NAME                    SIZE       IDENTIFIER</span>
-</span><span class='line'>   0:        CD_partition_scheme                        *124.0 MB   disk2
-</span><span class='line'>   1:       CD_ROM_Mode_2_Form_1 A20110738               108.0 MB   disk2s0
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Suppose will need mount the CD inside optical drive, we can type diskutil mountDisk /dev/disk2</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>diskutil mountDisk /dev/disk2
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>After successful mount the disk, the output will look something like</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>Volume<span class="o">(</span>s<span class="o">)</span> mounted successfully
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>For mounting disk the argument use in diskutil is mountDisk but normal extenal hard drive just use mount.</p>
-
-<p>Unmounting disk or drive use unmountDisk or unmount for argument</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>diskutil mount /dev/disk3
-</span><span class='line'>diskutil unmount /dev/disk3
-</span><span class='line'>disktuil mountDisk /dev/disk2
-</span><span class='line'>disktuil unmountDisk /dev/disk2
-</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -746,6 +809,8 @@ connected disks.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/2014/08/23/python-challenge-4/">Python Challenge 4</a>
+    
     <a class="list-group-item " href="/blog/2014/08/20/python-challenge-3/">Python Challenge 3</a>
     
     <a class="list-group-item " href="/blog/2014/08/17/python-challenge-2/">Python Challenge 2</a>
@@ -753,8 +818,6 @@ connected disks.</p>
     <a class="list-group-item " href="/blog/2014/08/15/perl-day-1/">Perl Day 1</a>
     
     <a class="list-group-item " href="/blog/2014/08/15/python-challenge-0-1/">Python Challenge 0 - 1</a>
-    
-    <a class="list-group-item " href="/blog/2014/08/12/generatre-alphabet-permutation-in-python/">Generate Alphabet Permutation in Python</a>
     
   </div>
 </section>
@@ -784,7 +847,7 @@ connected disks.</p>
     
     
     <a class="list-group-item " href="/blog/categories/python/index.html">
-        <span class="badge">7</span>
+        <span class="badge">8</span>
         python
       </a>
     

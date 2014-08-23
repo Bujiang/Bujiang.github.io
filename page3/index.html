@@ -115,6 +115,97 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-15T08:47:00+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Dec 15<sup>th</sup>, 2013</time>
+        
+      </p>
+    
+    
+      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2013/12/15/node-dot-js-shi-wan/" itemprop="url">Node.js 试玩</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>一般提到JavaScript都会想到网页前端， 通常JavaScript都是在浏览器中执行的</p>
+
+<p>而Node.js不同与一般JavaScript它是在服务器端执行（在V8引擎的虚拟机上）</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Node.js/%E8%AF%95%E7%8E%A9/Screen%20Shot%202013-12-15%20at%208.56.25%20AM.jpg"></p>
+
+<p>如上图 如果不带任何参数的执行node 就像Python一样会出现一个互动的界面 在这里可以执行JavaScript</p>
+
+<p>介绍完了 开始coding第一个小程序 hello.js</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>setTimeout(function() {
+</span><span class='line'>    console.log("world");
+</span><span class='line'>}, 2000)
+</span><span class='line'>    console.log("hello");</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Node.js/%E8%AF%95%E7%8E%A9/Screen%20Shot%202013-12-15%20at%209.11.24%20AM.jpg"></p>
+
+<p>执行hello.js  会先出现hello 在等待了2秒钟后会出现world</p>
+
+<p>＊： 把上面code中setTimeout 改成 setInterval  再执行hello.js 就会每间隔2秒显示一次world</p>
+
+<p>hello world 完了 现在来个简易的web server</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>web-server.js
+</span><span class='line'>var http = require('http');
+</span><span class='line'>
+</span><span class='line'>var s = http.createServer(function(req, res) {
+</span><span class='line'>    res.writeHead(200, { 'content-type': 'text/plain' });
+</span><span class='line'>    res.end("hello world\n");
+</span><span class='line'>}); 
+</span><span class='line'>s.listen(8000);</span></code></pre></td></tr></table></div></figure>
+
+
+<p>上面的code 先让http载入http模块  然后创建server变量s  让s返回200 ok 以及 hello world给浏览器 在浏览器端输入ip地址加上8000端口就可以看到hello world了</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Node.js/%E8%AF%95%E7%8E%A9/Screen%20Shot%202013-12-15%20at%209.31.15%20AM.jpg"></p>
+
+<p>当然也可以通过curl来看header</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Node.js/%E8%AF%95%E7%8E%A9/Screen%20Shot%202013-12-15%20at%209.36.23%20AM.jpg"></p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-12-10T16:26:00+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Dec 10<sup>th</sup>, 2013</time>
         
       </p>
@@ -599,71 +690,6 @@
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-11-28T02:14:00+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Nov 28<sup>th</sup>, 2013</time>
-        
-      </p>
-    
-    
-      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2013/11/28/git-day-1/" itemprop="url">Git Day 1</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>一直都没有系统的学习Git，这段时间决心从头来好好的学习下</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>mkdir store
-</span><span class='line'>cd store
-</span><span class='line'>git init</span></code></pre></td></tr></table></div></figure>
-
-
-<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/git_day_1_1.jpg"></p>
-
-<p>git status 如上图所示，用来检查repo的状态</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/git_day_1_2.jpg"></p>
-
-<p>添加了一个readme 文件后再用 git status 就有提示有添加新的文件</p>
-
-<p>添加文件可以有多种方式</p>
-
-<p>如 git add readme.txt bujiang.txt  一一列举需要添加的文件</p>
-
-<p>git add &mdash;all  添加所有</p>
-
-<p>git add *.txt  添加所有txt文件</p>
-
-<p>git add css/  添加整个css文件夹</p>
-
-<p>想知道添加了什么  可以使用 git log来查询历史记录</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -687,6 +713,8 @@
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/2014/08/23/python-challenge-4/">Python Challenge 4</a>
+    
     <a class="list-group-item " href="/blog/2014/08/20/python-challenge-3/">Python Challenge 3</a>
     
     <a class="list-group-item " href="/blog/2014/08/17/python-challenge-2/">Python Challenge 2</a>
@@ -694,8 +722,6 @@
     <a class="list-group-item " href="/blog/2014/08/15/perl-day-1/">Perl Day 1</a>
     
     <a class="list-group-item " href="/blog/2014/08/15/python-challenge-0-1/">Python Challenge 0 - 1</a>
-    
-    <a class="list-group-item " href="/blog/2014/08/12/generatre-alphabet-permutation-in-python/">Generate Alphabet Permutation in Python</a>
     
   </div>
 </section>
@@ -725,7 +751,7 @@
     
     
     <a class="list-group-item " href="/blog/categories/python/index.html">
-        <span class="badge">7</span>
+        <span class="badge">8</span>
         python
       </a>
     

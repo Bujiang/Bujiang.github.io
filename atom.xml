@@ -4,7 +4,7 @@
   <title><![CDATA[Bujiang's Blog]]></title>
   <link href="http://blog.bujiang.info/atom.xml" rel="self"/>
   <link href="http://blog.bujiang.info/"/>
-  <updated>2014-08-22T12:59:13+08:00</updated>
+  <updated>2014-08-23T15:33:47+08:00</updated>
   <id>http://blog.bujiang.info/</id>
   <author>
     <name><![CDATA[Yan Bujiang]]></name>
@@ -12,6 +12,140 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Python Challenge 4]]></title>
+    <link href="http://blog.bujiang.info/blog/2014/08/23/python-challenge-4/"/>
+    <updated>2014-08-23T12:58:39+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2014/08/23/python-challenge-4</id>
+    <content type="html"><![CDATA[<p>Challenge 4. linkedlist
+After resolve the previous challenge and open <a href="http://www.pythonchallenge.com/pc/def/linkedlist.html">http://www.pythonchallenge.com/pc/def/linkedlist.html</a> in browser, it shows linkedlist.php.
+Finish loading <a href="http://www.pythonchallenge.com/pc/def/linkedlist.php">http://www.pythonchallenge.com/pc/def/linkedlist.php</a> there only lefe one picture.
+As before check the page source code and find a new link <a href="http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=12345">http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=12345</a>. I just try open the new url, and the page dispaly &ldquo;and the next nothing is 44827&rdquo;.
+It needs me to automate recursive open url by using python.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">urllib2</span><span class="o">,</span> <span class="nn">re</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">url</span> <span class="o">=</span> <span class="s">&quot;http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=&quot;</span>
+</span><span class='line'><span class="n">nothingValue</span> <span class="o">=</span> <span class="s">&quot;12345&quot;</span>
+</span><span class='line'><span class="n">digis</span> <span class="o">=</span> <span class="s">&quot;\d+&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">data</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span> <span class="o">+</span> <span class="n">nothingValue</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span class='line'><span class="k">print</span> <span class="n">data</span>
+</span><span class='line'><span class="n">finding</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">digis</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">while</span> <span class="n">finding</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span>
+</span><span class='line'>    <span class="n">nothingValue</span> <span class="o">=</span> <span class="n">finding</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">data</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span> <span class="o">+</span> <span class="n">nothingValue</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span class='line'>    <span class="k">print</span> <span class="n">data</span>
+</span><span class='line'>    <span class="n">finding</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">digis</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">print</span> <span class="n">data</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Above code will find the digitals in webpage and use the finding digitals to do a new request.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>.............
+</span><span class='line'>and the next nothing is 29247
+</span><span class='line'>and the next nothing is 13115
+</span><span class='line'>and the next nothing is 23053
+</span><span class='line'>and the next nothing is 3875
+</span><span class='line'>and the next nothing is 16044
+</span><span class='line'>Yes. Divide by two and keep going.
+</span><span class='line'>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+</span><span class='line'>  File <span class="s2">&quot;bu.py&quot;</span>, line 11, in &lt;module&gt;
+</span><span class='line'>    <span class="k">while </span>finding.group<span class="o">(</span>0<span class="o">)</span>:
+</span><span class='line'>AttributeError: <span class="s1">&#39;NoneType&#39;</span> object has no attribute <span class="s1">&#39;group&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After run a while, the last printed line shows none digitals &ldquo;Divide by two and keep going&rdquo; By divide 16044 with 2 get 8022, then modify nothingValue in script then continue run.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>..............
+</span><span class='line'>and the next nothing is 49574
+</span><span class='line'>and the next nothing is 82682
+</span><span class='line'>There maybe misleading numbers in the
+</span><span class='line'>text. One example is 82683. Look only <span class="k">for </span>the next nothing and the next nothing is 63579
+</span><span class='line'>You<span class="s1">&#39;ve been misleaded to here. Go to previous </span>
+</span><span class='line'><span class="s1">one and check.</span>
+</span><span class='line'><span class="s1">Traceback (most recent call last):</span>
+</span><span class='line'><span class="s1">  File &quot;bu.py&quot;, line 11, in &lt;module&gt;</span>
+</span><span class='line'><span class="s1">    while finding.group(0):</span>
+</span><span class='line'><span class="s1">AttributeError: &#39;</span>NoneType<span class="s1">&#39; object has no attribute &#39;</span>group<span class="err">&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>But still got some problem here, it tells &ldquo;One example is 82683&hellip;.&rdquo; I&rsquo;ve search print statement history but can&rsquo;t find it.
+I continue modify the nothingValue to 63579 and re-run again.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>and the next nothing is 27709
+</span><span class='line'>and the next nothing is 96791
+</span><span class='line'>and the next nothing is 75635
+</span><span class='line'>and the next nothing is 52899
+</span><span class='line'>and the next nothing is 66831
+</span><span class='line'>peak.html
+</span><span class='line'>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+</span><span class='line'>  File <span class="s2">&quot;bu.py&quot;</span>, line 11, in &lt;module&gt;
+</span><span class='line'>    <span class="k">while </span>finding.group<span class="o">(</span>0<span class="o">)</span>:
+</span><span class='line'>AttributeError: <span class="s1">&#39;NoneType&#39;</span> object has no attribute <span class="s1">&#39;group&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+It seems OK here. I get peak.html  :)
+So next challenge is <a href="http://www.pythonchallenge.com/pc/def/peak.html">http://www.pythonchallenge.com/pc/def/peak.html</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Python Challenge 3]]></title>
@@ -44,7 +178,7 @@
 
 <p>[A-Z]{3} matches three UPPERCASE characters</p>
 
-<p>Next challenge is <a href="http://www.pythonchallenge.com/pc/def/equality.html">linkedlist</a></p>
+<p>Next challenge is <a href="http://www.pythonchallenge.com/pc/def/linkedlist.html">linkedlist</a></p>
 ]]></content>
   </entry>
   
@@ -1102,37 +1236,6 @@ connected disks.</p>
 </pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">encodeString</span> <span class="o">=</span> <span class="n">originString</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">&quot;latin-1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&quot;utf-8&quot;</span><span class="p">)</span>
 </span></code></pre></td></tr></table></div></figure>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Python的类型判别]]></title>
-    <link href="http://blog.bujiang.info/blog/2013/11/08/pythonde-lei-xing-pan-bie/"/>
-    <updated>2013-11-08T10:42:00+08:00</updated>
-    <id>http://blog.bujiang.info/blog/2013/11/08/pythonde-lei-xing-pan-bie</id>
-    <content type="html"><![CDATA[<p>以前在Python里面判别类型会使用type()</p>
-
-<figure class='code'><figcaption><span>Check type by using type() </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='pycon'><span class='line'><span class="go">num = 6</span>
-</span><span class='line'><span class="go">type(num)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>其实还有isinstance()</p>
-
-<figure class='code'><figcaption><span>Check type by using isinstance() </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='pycon'><span class='line'><span class="go">line = u&#39;你好&#39;</span>
-</span><span class='line'><span class="go">isinstance(line, unicode)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>甚至还能这样使用 isinstance(line, (unicode, str))</p>
-
-<p>因为最近在开发网站所以会经常碰到unicode的问题所以还蛮频繁的需要检查类型</p>
 ]]></content>
   </entry>
   
