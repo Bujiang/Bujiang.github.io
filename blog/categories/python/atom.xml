@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Bujiang's Blog]]></title>
   <link href="http://blog.bujiang.info/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://blog.bujiang.info/"/>
-  <updated>2014-08-23T15:33:47+08:00</updated>
+  <updated>2014-08-23T15:36:34+08:00</updated>
   <id>http://blog.bujiang.info/</id>
   <author>
     <name><![CDATA[Yan Bujiang]]></name>
@@ -19,10 +19,11 @@
     <updated>2014-08-23T12:58:39+08:00</updated>
     <id>http://blog.bujiang.info/blog/2014/08/23/python-challenge-4</id>
     <content type="html"><![CDATA[<p>Challenge 4. linkedlist
-After resolve the previous challenge and open <a href="http://www.pythonchallenge.com/pc/def/linkedlist.html">http://www.pythonchallenge.com/pc/def/linkedlist.html</a> in browser, it shows linkedlist.php.
-Finish loading <a href="http://www.pythonchallenge.com/pc/def/linkedlist.php">http://www.pythonchallenge.com/pc/def/linkedlist.php</a> there only lefe one picture.
-As before check the page source code and find a new link <a href="http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=12345">http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=12345</a>. I just try open the new url, and the page dispaly &ldquo;and the next nothing is 44827&rdquo;.
-It needs me to automate recursive open url by using python.</p>
+After resolve the previous challenge and open <a href="http://www.pythonchallenge.com/pc/def/linkedlist.html">http://www.pythonchallenge.com/pc/def/linkedlist.html</a> in browser, it shows linkedlist.php.</p>
+
+<p>Finish loading <a href="http://www.pythonchallenge.com/pc/def/linkedlist.php">http://www.pythonchallenge.com/pc/def/linkedlist.php</a> there only lefe one picture.
+As before, I check the page source code and find a new link <a href="http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=12345">http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=12345</a>. I just try open the new url, and the page dispaly &ldquo;and the next nothing is 44827&rdquo;.
+It seems need me to automate recursive open url by using python.</p>
 
 <p>``` python
 import urllib2, re</p>
