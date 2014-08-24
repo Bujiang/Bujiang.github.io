@@ -115,6 +115,140 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-24T15:42:39+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 24<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+    
+      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2014/08/24/python-challenge-5/" itemprop="url">Python Challenge 5</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>Challenge 5. <a href="http://www.pythonchallenge.com/pc/def/peak.html">peak hell</a></p>
+
+<p>By fininsh loading challenge 5 webpage, it contains one picture and one phrase &ldquo;pronounce it&rdquo;.</p>
+
+<p>As usual check the source code</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;html&gt;</span>
+</span><span class='line'><span class="nt">&lt;head&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;title&gt;</span>peak hell<span class="nt">&lt;/title&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;../style.css&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'><span class="nt">&lt;/head&gt;</span>
+</span><span class='line'><span class="nt">&lt;body&gt;</span>
+</span><span class='line'><span class="nt">&lt;center&gt;</span>
+</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;peakhell.jpg&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'><span class="nt">&lt;br&gt;&lt;font</span> <span class="na">color=</span><span class="s">&quot;#c0c0ff&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>pronounce it
+</span><span class='line'><span class="nt">&lt;br&gt;</span>
+</span><span class='line'><span class="nt">&lt;peakhell</span> <span class="na">src=</span><span class="s">&quot;banner.p&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'><span class="nt">&lt;/body&gt;</span>
+</span><span class='line'><span class="nt">&lt;/html&gt;</span>
+</span><span class='line'><span class="c">&lt;!-- peak hell sounds familiar ? --&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Besides the banner.p file founded, the comment &ldquo;peak hell sounds familiar&rdquo; bothers me. Just cannot figure out what it means.
+Forget about the comment in html, I just load the file in python to see what inside.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">urllib2</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&quot;http://www.pythonchallenge.com/pc/def/banner.p&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">data</span>
+</span><span class='line'><span class="s">&quot;(lp0</span><span class="se">\n</span><span class="s">(lp1</span><span class="se">\n</span><span class="s">(S&#39; &#39;</span><span class="se">\n</span><span class="s">p2</span><span class="se">\n</span><span class="s">I95</span><span class="se">\n</span><span class="s">tp3</span><span class="se">\n</span><span class="s">aa(lp4</span><span class="se">\n</span><span class="s">(g2</span><span class="se">\n</span><span class="s">I14</span><span class="se">\n</span><span class="s">tp5</span><span class="se">\n</span><span class="s">a(S&#39;#&#39;</span><span class="se">\n</span><span class="s">p6</span><span class="se">\n</span><span class="s">I5</span><span class="se">\n</span><span class="s">tp7</span><span class="se">\n</span><span class="s">a(g2</span><span class="se">\n</span><span class="s">I70</span><span class="se">\n</span><span class="s">tp8</span><span class="se">\n</span><span class="s">a(g6</span><span class="se">\n</span><span class="s">I5</span><span class="se">\n</span><span class="s">tp9</span><span class="se">\n</span><span class="s">a(g2</span><span class="se">\n</span><span class="s">I1</span><span class="se">\n</span><span class="s">tp10</span><span class="se">\n</span><span class="s">aa(lp11</span><span class="se">\n</span><span class="s">(g2</span><span class="se">\n</span><span class="s">I15</span><span class="se">\n</span><span class="s">tp12</span><span class="se">\n</span><span class="s">a(g6</span><span class="se">\n</span><span class="s">I4</span><span class="se">\n</span><span class="s">tp13</span><span class="se">\n</span><span class="s">a(g2</span><span class="se">\n</span><span class="s">I7</span>
+</span><span class='line'><span class="o">.................</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It seems like seriers of data, then I try to import pickle package and have a look.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">pickle</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">data</span>
+</span><span class='line'><span class="p">[[(</span><span class="s">&#39; &#39;</span><span class="p">,</span> <span class="mi">95</span><span class="p">)],</span> <span class="p">[(</span><span class="s">&#39; &#39;</span><span class="p">,</span> <span class="mi">14</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;#&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">,</span> <span class="mi">70</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;#&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)],</span> <span class="p">[(</span><span class="s">&#39; &#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;#&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">,</span> <span class="mi">71</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;#&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+</span><span class='line'><span class="o">.................</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>But it still like a mystery for me.</p>
+
+<p>Beginning of data is (&lsquo;&rsquo;,95), last is (&lsquo;&rsquo;,95), second is (&lsquo;&rsquo;,14) but second last not same, not symmetric. Waite a minute, I find something interesting, inside the dictionary, there are sub dictionaries and inside the sub dict there are tuple(s). The numbers in each sub dictionaries sum together are equal to 95. e.g. the first tuple(&lsquo;&rsquo;,95) obvious is 95. the seconde dictonary contains five tuples (&lsquo;&rsquo;,14),(&lsquo;#&rsquo;, 5), (&lsquo; &rsquo;, 70), (&lsquo;#&rsquo;, 5), (&lsquo; &rsquo;, 1). 14+5+70+5+1=95
+Perhaps the 95 is line width, if I printed out maybe will find something.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="nb">dict</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+</span><span class='line'><span class="o">...</span>     <span class="k">for</span> <span class="nb">tuple</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">:</span>
+</span><span class='line'><span class="o">...</span>             <span class="k">print</span> <span class="nb">tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="nb">tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The output remains unknow. Oh, I figure out the problem above code has, I don&rsquo;t have a complete second line.</p>
+
+<p>asdf</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="nb">dict</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+</span><span class='line'><span class="o">...</span>     <span class="k">print</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="nb">tuple</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Python/Python%20challenge%205/1.jpg"></p>
+
+<p>: ) Next challenge is <a href="http://www.pythonchallenge.com/pc/def/channel.html">channel</a></p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-23T12:58:39+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 23<sup>rd</sup>, 2014</time>
         
       </p>
@@ -521,7 +655,9 @@ I open the source code of webpage in browser</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>&lt;= is less or equal; >= is grater or equal</p>
+<p>&lt;= is less or equal;</p>
+
+<blockquote><p>= is grater or equal</p></blockquote>
 </div>
   
   
@@ -688,106 +824,6 @@ map need to change to ocr, so get next stage URL
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-12T22:38:04+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 12<sup>th</sup>, 2014</time>
-        
-      </p>
-    
-    
-      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2014/08/12/generatre-alphabet-permutation-in-python/" itemprop="url">Generate Alphabet Permutation in Python</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>Yesterday I&rsquo;ve find a loophole in my friends website, the API for mobile side registration does not have any human verification functions.
-I decide to generate alphabet permutation list for user name and register fake users.</p>
-
-<p>In python standard library have functions for iterators for efficient looping which name is itertools. The itertools have permutation generators.</p>
-
-<p>The permutation function needs two arguments, one is iterable, another one is length like if the iterable is &ldquo;ABC&rdquo; and length is 2 then (A,B) (A,C) (B,A) (B,C) (C,A) (C,B) are results for this functions.</p>
-
-<figure class='code'><figcaption><span>Generate permutation</span><a href='https://docs.python.org/2/library/itertools.html#itertools.permutations'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">itertools</span>
-</span><span class='line'><span class="n">iterable</span> <span class="o">=</span> <span class="s">&#39;ABC&#39;</span>
-</span><span class='line'><span class="n">length</span> <span class="o">=</span> <span class="mi">2</span>
-</span><span class='line'><span class="n">permutation</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">permutations</span><span class="p">(</span><span class="n">iterable</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
-</span><span class='line'><span class="n">permutation</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">permuation</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>After generate, inside the python list are tuples not string for user name. We need join alphabet within tuple together. Like (A,B) become &lsquo;AB&rsquo;</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">nameList</span> <span class="o">=</span> <span class="p">[]</span>                        <span class="c">#Create a empty list</span>
-</span><span class='line'><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">permutation</span><span class="p">:</span>
-</span><span class='line'>    <span class="n">nameList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>      <span class="c">#Join alphabet together and append in namList</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The user name list are done, next is register user by use API. That API for registration use form-urlencoded. For simplicity, I decide just use curl construct special POST request.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">TYPE</span> <span class="o">=</span> <span class="s">&quot;&#39;Content-Type:application/x-www-form-urlencoded&#39;&quot;</span>
-</span><span class='line'><span class="n">DEVICE</span> <span class="o">=</span> <span class="s">&quot; -d &#39;device_type=2&amp;user_name=&quot;</span>
-</span><span class='line'><span class="n">EMAIL</span> <span class="o">=</span> <span class="s">&quot;&amp;email=&quot;</span>
-</span><span class='line'><span class="n">EMAILTAIL</span> <span class="o">=</span> <span class="s">&quot;%40bujiang.info&amp;password=12345&amp;device_token=&#39;&quot;</span>
-</span><span class='line'><span class="n">URL</span> <span class="o">=</span> <span class="s">&quot; http://***********.com/*******api/index.php/v1/dp_auth/signup&quot;</span>
-</span><span class='line'><span class="n">COMMAND</span> <span class="o">=</span> <span class="s">&quot;curl -s -X POST -H &quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">execmd</span><span class="p">():</span>
-</span><span class='line'>    <span class="k">if</span> <span class="n">nameList</span><span class="p">:</span>
-</span><span class='line'>        <span class="n">name</span> <span class="o">=</span> <span class="n">nameList</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>    <span class="c">#Poped name use for username</span>
-</span><span class='line'>        <span class="n">cmd</span> <span class="o">=</span> <span class="n">COMMAND</span> <span class="o">+</span> <span class="n">TYPE</span> <span class="o">+</span> <span class="n">DEVICE</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="n">EMAIL</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="n">EMAILTAIL</span> <span class="o">+</span> <span class="n">URL</span>    <span class="c">#Construct command for different username registration</span>
-</span><span class='line'>        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>    <span class="c">#Execute command in shell </span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The code is modified from original code, original code use multithread for concurrent post request. Those asterisk in code URL for privacy reason.
-Another loophole for this registration API is password in plaintext.</p>
-
-<p>*: All test actions are under my friend authorization</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -811,6 +847,8 @@ Another loophole for this registration API is password in plaintext.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/2014/08/24/python-challenge-5/">Python Challenge 5</a>
+    
     <a class="list-group-item " href="/blog/2014/08/23/python-challenge-4/">Python Challenge 4</a>
     
     <a class="list-group-item " href="/blog/2014/08/20/python-challenge-3/">Python Challenge 3</a>
@@ -818,8 +856,6 @@ Another loophole for this registration API is password in plaintext.</p>
     <a class="list-group-item " href="/blog/2014/08/17/python-challenge-2/">Python Challenge 2</a>
     
     <a class="list-group-item " href="/blog/2014/08/15/perl-day-1/">Perl Day 1</a>
-    
-    <a class="list-group-item " href="/blog/2014/08/15/python-challenge-0-1/">Python Challenge 0 - 1</a>
     
   </div>
 </section>
@@ -849,7 +885,7 @@ Another loophole for this registration API is password in plaintext.</p>
     
     
     <a class="list-group-item " href="/blog/categories/python/index.html">
-        <span class="badge">8</span>
+        <span class="badge">9</span>
         python
       </a>
     

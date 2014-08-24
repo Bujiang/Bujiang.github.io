@@ -4,7 +4,7 @@
   <title><![CDATA[Bujiang's Blog]]></title>
   <link href="http://blog.bujiang.info/atom.xml" rel="self"/>
   <link href="http://blog.bujiang.info/"/>
-  <updated>2014-08-23T15:39:39+08:00</updated>
+  <updated>2014-08-24T20:01:11+08:00</updated>
   <id>http://blog.bujiang.info/</id>
   <author>
     <name><![CDATA[Yan Bujiang]]></name>
@@ -12,6 +12,112 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Python Challenge 5]]></title>
+    <link href="http://blog.bujiang.info/blog/2014/08/24/python-challenge-5/"/>
+    <updated>2014-08-24T15:42:39+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2014/08/24/python-challenge-5</id>
+    <content type="html"><![CDATA[<p>Challenge 5. <a href="http://www.pythonchallenge.com/pc/def/peak.html">peak hell</a></p>
+
+<p>By fininsh loading challenge 5 webpage, it contains one picture and one phrase &ldquo;pronounce it&rdquo;.</p>
+
+<p>As usual check the source code</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;html&gt;</span>
+</span><span class='line'><span class="nt">&lt;head&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;title&gt;</span>peak hell<span class="nt">&lt;/title&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;../style.css&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'><span class="nt">&lt;/head&gt;</span>
+</span><span class='line'><span class="nt">&lt;body&gt;</span>
+</span><span class='line'><span class="nt">&lt;center&gt;</span>
+</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;peakhell.jpg&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'><span class="nt">&lt;br&gt;&lt;font</span> <span class="na">color=</span><span class="s">&quot;#c0c0ff&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>pronounce it
+</span><span class='line'><span class="nt">&lt;br&gt;</span>
+</span><span class='line'><span class="nt">&lt;peakhell</span> <span class="na">src=</span><span class="s">&quot;banner.p&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'><span class="nt">&lt;/body&gt;</span>
+</span><span class='line'><span class="nt">&lt;/html&gt;</span>
+</span><span class='line'><span class="c">&lt;!-- peak hell sounds familiar ? --&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Besides the banner.p file founded, the comment &ldquo;peak hell sounds familiar&rdquo; bothers me. Just cannot figure out what it means.
+Forget about the comment in html, I just load the file in python to see what inside.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">urllib2</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&quot;http://www.pythonchallenge.com/pc/def/banner.p&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">data</span>
+</span><span class='line'><span class="s">&quot;(lp0</span><span class="se">\n</span><span class="s">(lp1</span><span class="se">\n</span><span class="s">(S&#39; &#39;</span><span class="se">\n</span><span class="s">p2</span><span class="se">\n</span><span class="s">I95</span><span class="se">\n</span><span class="s">tp3</span><span class="se">\n</span><span class="s">aa(lp4</span><span class="se">\n</span><span class="s">(g2</span><span class="se">\n</span><span class="s">I14</span><span class="se">\n</span><span class="s">tp5</span><span class="se">\n</span><span class="s">a(S&#39;#&#39;</span><span class="se">\n</span><span class="s">p6</span><span class="se">\n</span><span class="s">I5</span><span class="se">\n</span><span class="s">tp7</span><span class="se">\n</span><span class="s">a(g2</span><span class="se">\n</span><span class="s">I70</span><span class="se">\n</span><span class="s">tp8</span><span class="se">\n</span><span class="s">a(g6</span><span class="se">\n</span><span class="s">I5</span><span class="se">\n</span><span class="s">tp9</span><span class="se">\n</span><span class="s">a(g2</span><span class="se">\n</span><span class="s">I1</span><span class="se">\n</span><span class="s">tp10</span><span class="se">\n</span><span class="s">aa(lp11</span><span class="se">\n</span><span class="s">(g2</span><span class="se">\n</span><span class="s">I15</span><span class="se">\n</span><span class="s">tp12</span><span class="se">\n</span><span class="s">a(g6</span><span class="se">\n</span><span class="s">I4</span><span class="se">\n</span><span class="s">tp13</span><span class="se">\n</span><span class="s">a(g2</span><span class="se">\n</span><span class="s">I7</span>
+</span><span class='line'><span class="o">.................</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It seems like seriers of data, then I try to import pickle package and have a look.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">pickle</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">data</span>
+</span><span class='line'><span class="p">[[(</span><span class="s">&#39; &#39;</span><span class="p">,</span> <span class="mi">95</span><span class="p">)],</span> <span class="p">[(</span><span class="s">&#39; &#39;</span><span class="p">,</span> <span class="mi">14</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;#&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">,</span> <span class="mi">70</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;#&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)],</span> <span class="p">[(</span><span class="s">&#39; &#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;#&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">,</span> <span class="mi">71</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;#&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+</span><span class='line'><span class="o">.................</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>But it still like a mystery for me.</p>
+
+<p>Beginning of data is (&lsquo;&rsquo;,95), last is (&lsquo;&rsquo;,95), second is (&lsquo;&rsquo;,14) but second last not same, not symmetric. Waite a minute, I find something interesting, inside the dictionary, there are sub dictionaries and inside the sub dict there are tuple(s). The numbers in each sub dictionaries sum together are equal to 95. e.g. the first tuple(&lsquo;&rsquo;,95) obvious is 95. the seconde dictonary contains five tuples (&lsquo;&rsquo;,14),(&lsquo;#&rsquo;, 5), (&lsquo; &rsquo;, 70), (&lsquo;#&rsquo;, 5), (&lsquo; &rsquo;, 1). 14+5+70+5+1=95
+Perhaps the 95 is line width, if I printed out maybe will find something.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="nb">dict</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+</span><span class='line'><span class="o">...</span>     <span class="k">for</span> <span class="nb">tuple</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">:</span>
+</span><span class='line'><span class="o">...</span>             <span class="k">print</span> <span class="nb">tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="nb">tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The output remains unknow. Oh, I figure out the problem above code has, I don&rsquo;t have a complete second line.</p>
+
+<p>asdf</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="nb">dict</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+</span><span class='line'><span class="o">...</span>     <span class="k">print</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="nb">tuple</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Python/Python%20challenge%205/1.jpg"></p>
+
+<p>: ) Next challenge is <a href="http://www.pythonchallenge.com/pc/def/channel.html">channel</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Python Challenge 4]]></title>
@@ -330,7 +436,9 @@ I open the source code of webpage in browser</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>&lt;= is less or equal; >= is grater or equal</p>
+<p>&lt;= is less or equal;</p>
+
+<blockquote><p>= is grater or equal</p></blockquote>
 ]]></content>
   </entry>
   
@@ -1216,28 +1324,6 @@ connected disks.</p>
 <p>git add css/  添加整个css文件夹</p>
 
 <p>想知道添加了什么  可以使用 git log来查询历史记录</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Python UTF-8]]></title>
-    <link href="http://blog.bujiang.info/blog/2013/11/21/python-utf-8/"/>
-    <updated>2013-11-21T12:09:00+08:00</updated>
-    <id>http://blog.bujiang.info/blog/2013/11/21/python-utf-8</id>
-    <content type="html"><![CDATA[<p>最近因为project的原因很频繁的需要处理本地数据和数据库及网页之间的转换
-就碰到了挺多关于encoding和decoding的问题</p>
-
-<p>涉及的操作系统平台包含Mac，Linux和Windows。软件是Python2.7（Django，pyserial）
-为了保持字符编码的统一性，使用了UTF－8</p>
-
-<p>但在转换成UTF－8的时候经常会有不符合UTF－8定义特殊的字符导致错误出现</p>
-
-<p>其实可以这样方便的解决问题</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">encodeString</span> <span class="o">=</span> <span class="n">originString</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">&quot;latin-1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&quot;utf-8&quot;</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
 ]]></content>
   </entry>
   

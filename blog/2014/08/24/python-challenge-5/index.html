@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Python Challenge 4 - Bujiang's Blog</title>
+  <title>Python Challenge 5 - Bujiang's Blog</title>
   <meta name="author" content="Yan Bujiang">
 
   
@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.bujiang.info/blog/2014/08/23/python-challenge-4">
+  <link rel="canonical" href="http://blog.bujiang.info/blog/2014/08/24/python-challenge-5">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="Bujiang's Blog" type="application/atom+xml">
 
@@ -111,26 +111,24 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-23T12:58:39+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 23<sup>rd</sup>, 2014</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-24T15:42:39+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 24<sup>th</sup>, 2014</time>
         
       </p>
     
     
     <h1 class="entry-title" itemprop="name headline">
-        Python Challenge 4
+        Python Challenge 5
         
     </h1>
     
   </header>
 
 
-<div class="entry-content clearfix" itemprop="articleBody"><p>Challenge 4. <a href="http://www.pythonchallenge.com/pc/def/linkedlist.html">linkedlist</a></p>
+<div class="entry-content clearfix" itemprop="articleBody"><p>Challenge 5. <a href="http://www.pythonchallenge.com/pc/def/peak.html">peak hell</a></p>
 
-<p>Open the resolved url in browser, it shows linkedlist.php.</p>
+<p>By fininsh loading challenge 5 webpage, it contains one picture and one phrase &ldquo;pronounce it&rdquo;.</p>
 
-<p>Finish loading <a href="http://www.pythonchallenge.com/pc/def/linkedlist.php">http://www.pythonchallenge.com/pc/def/linkedlist.php</a> there only lefe one picture.
-As before, I check the page source code and find a new link <a href="http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=12345">http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=12345</a>. I just try open the new url, and the page dispaly &ldquo;and the next nothing is 44827&rdquo;.
-It seems need me to automate recursive open url by using python.</p>
+<p>As usual check the source code</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -147,111 +145,83 @@ It seems need me to automate recursive open url by using python.</p>
 <span class='line-number'>13</span>
 <span class='line-number'>14</span>
 <span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">urllib2</span><span class="o">,</span> <span class="nn">re</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">url</span> <span class="o">=</span> <span class="s">&quot;http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=&quot;</span>
-</span><span class='line'><span class="n">nothingValue</span> <span class="o">=</span> <span class="s">&quot;12345&quot;</span>
-</span><span class='line'><span class="n">digis</span> <span class="o">=</span> <span class="s">&quot;\d+&quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">data</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span> <span class="o">+</span> <span class="n">nothingValue</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-</span><span class='line'><span class="k">print</span> <span class="n">data</span>
-</span><span class='line'><span class="n">finding</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">digis</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">while</span> <span class="n">finding</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span>
-</span><span class='line'>    <span class="n">nothingValue</span> <span class="o">=</span> <span class="n">finding</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">data</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span> <span class="o">+</span> <span class="n">nothingValue</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-</span><span class='line'>    <span class="k">print</span> <span class="n">data</span>
-</span><span class='line'>    <span class="n">finding</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">digis</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">print</span> <span class="n">data</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;html&gt;</span>
+</span><span class='line'><span class="nt">&lt;head&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;title&gt;</span>peak hell<span class="nt">&lt;/title&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;../style.css&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'><span class="nt">&lt;/head&gt;</span>
+</span><span class='line'><span class="nt">&lt;body&gt;</span>
+</span><span class='line'><span class="nt">&lt;center&gt;</span>
+</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;peakhell.jpg&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'><span class="nt">&lt;br&gt;&lt;font</span> <span class="na">color=</span><span class="s">&quot;#c0c0ff&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>pronounce it
+</span><span class='line'><span class="nt">&lt;br&gt;</span>
+</span><span class='line'><span class="nt">&lt;peakhell</span> <span class="na">src=</span><span class="s">&quot;banner.p&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'><span class="nt">&lt;/body&gt;</span>
+</span><span class='line'><span class="nt">&lt;/html&gt;</span>
+</span><span class='line'><span class="c">&lt;!-- peak hell sounds familiar ? --&gt;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Above code will find the digitals in webpage and use the finding digitals to do a new request.</p>
+<p>Besides the banner.p file founded, the comment &ldquo;peak hell sounds familiar&rdquo; bothers me. Just cannot figure out what it means.
+Forget about the comment in html, I just load the file in python to see what inside.</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>.............
-</span><span class='line'>and the next nothing is 29247
-</span><span class='line'>and the next nothing is 13115
-</span><span class='line'>and the next nothing is 23053
-</span><span class='line'>and the next nothing is 3875
-</span><span class='line'>and the next nothing is 16044
-</span><span class='line'>Yes. Divide by two and keep going.
-</span><span class='line'>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
-</span><span class='line'>  File <span class="s2">&quot;bu.py&quot;</span>, line 11, in &lt;module&gt;
-</span><span class='line'>    <span class="k">while </span>finding.group<span class="o">(</span>0<span class="o">)</span>:
-</span><span class='line'>AttributeError: <span class="s1">&#39;NoneType&#39;</span> object has no attribute <span class="s1">&#39;group&#39;</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">urllib2</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&quot;http://www.pythonchallenge.com/pc/def/banner.p&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">data</span>
+</span><span class='line'><span class="s">&quot;(lp0</span><span class="se">\n</span><span class="s">(lp1</span><span class="se">\n</span><span class="s">(S&#39; &#39;</span><span class="se">\n</span><span class="s">p2</span><span class="se">\n</span><span class="s">I95</span><span class="se">\n</span><span class="s">tp3</span><span class="se">\n</span><span class="s">aa(lp4</span><span class="se">\n</span><span class="s">(g2</span><span class="se">\n</span><span class="s">I14</span><span class="se">\n</span><span class="s">tp5</span><span class="se">\n</span><span class="s">a(S&#39;#&#39;</span><span class="se">\n</span><span class="s">p6</span><span class="se">\n</span><span class="s">I5</span><span class="se">\n</span><span class="s">tp7</span><span class="se">\n</span><span class="s">a(g2</span><span class="se">\n</span><span class="s">I70</span><span class="se">\n</span><span class="s">tp8</span><span class="se">\n</span><span class="s">a(g6</span><span class="se">\n</span><span class="s">I5</span><span class="se">\n</span><span class="s">tp9</span><span class="se">\n</span><span class="s">a(g2</span><span class="se">\n</span><span class="s">I1</span><span class="se">\n</span><span class="s">tp10</span><span class="se">\n</span><span class="s">aa(lp11</span><span class="se">\n</span><span class="s">(g2</span><span class="se">\n</span><span class="s">I15</span><span class="se">\n</span><span class="s">tp12</span><span class="se">\n</span><span class="s">a(g6</span><span class="se">\n</span><span class="s">I4</span><span class="se">\n</span><span class="s">tp13</span><span class="se">\n</span><span class="s">a(g2</span><span class="se">\n</span><span class="s">I7</span>
+</span><span class='line'><span class="o">.................</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>After run a while, the last printed line shows none digitals &ldquo;Divide by two and keep going&rdquo; By divide 16044 with 2 get 8022, then modify nothingValue in script then continue run.</p>
+<p>It seems like seriers of data, then I try to import pickle package and have a look.</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>..............
-</span><span class='line'>and the next nothing is 49574
-</span><span class='line'>and the next nothing is 82682
-</span><span class='line'>There maybe misleading numbers in the
-</span><span class='line'>text. One example is 82683. Look only <span class="k">for </span>the next nothing and the next nothing is 63579
-</span><span class='line'>You<span class="s1">&#39;ve been misleaded to here. Go to previous </span>
-</span><span class='line'><span class="s1">one and check.</span>
-</span><span class='line'><span class="s1">Traceback (most recent call last):</span>
-</span><span class='line'><span class="s1">  File &quot;bu.py&quot;, line 11, in &lt;module&gt;</span>
-</span><span class='line'><span class="s1">    while finding.group(0):</span>
-</span><span class='line'><span class="s1">AttributeError: &#39;</span>NoneType<span class="s1">&#39; object has no attribute &#39;</span>group<span class="err">&#39;</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">pickle</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">data</span>
+</span><span class='line'><span class="p">[[(</span><span class="s">&#39; &#39;</span><span class="p">,</span> <span class="mi">95</span><span class="p">)],</span> <span class="p">[(</span><span class="s">&#39; &#39;</span><span class="p">,</span> <span class="mi">14</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;#&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">,</span> <span class="mi">70</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;#&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)],</span> <span class="p">[(</span><span class="s">&#39; &#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;#&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">,</span> <span class="mi">71</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;#&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+</span><span class='line'><span class="o">.................</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>But still got some problem here, it tells &ldquo;One example is 82683&hellip;.&rdquo; I&rsquo;ve search print statement history but can&rsquo;t find it.
-I continue modify the nothingValue to 63579 and re-run again.</p>
+<p>But it still like a mystery for me.</p>
+
+<p>Beginning of data is (&lsquo;&rsquo;,95), last is (&lsquo;&rsquo;,95), second is (&lsquo;&rsquo;,14) but second last not same, not symmetric. Waite a minute, I find something interesting, inside the dictionary, there are sub dictionaries and inside the sub dict there are tuple(s). The numbers in each sub dictionaries sum together are equal to 95. e.g. the first tuple(&lsquo;&rsquo;,95) obvious is 95. the seconde dictonary contains five tuples (&lsquo;&rsquo;,14),(&lsquo;#&rsquo;, 5), (&lsquo; &rsquo;, 70), (&lsquo;#&rsquo;, 5), (&lsquo; &rsquo;, 1). 14+5+70+5+1=95
+Perhaps the 95 is line width, if I printed out maybe will find something.</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>and the next nothing is 27709
-</span><span class='line'>and the next nothing is 96791
-</span><span class='line'>and the next nothing is 75635
-</span><span class='line'>and the next nothing is 52899
-</span><span class='line'>and the next nothing is 66831
-</span><span class='line'>peak.html
-</span><span class='line'>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
-</span><span class='line'>  File <span class="s2">&quot;bu.py&quot;</span>, line 11, in &lt;module&gt;
-</span><span class='line'>    <span class="k">while </span>finding.group<span class="o">(</span>0<span class="o">)</span>:
-</span><span class='line'>AttributeError: <span class="s1">&#39;NoneType&#39;</span> object has no attribute <span class="s1">&#39;group&#39;</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="nb">dict</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+</span><span class='line'><span class="o">...</span>     <span class="k">for</span> <span class="nb">tuple</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">:</span>
+</span><span class='line'><span class="o">...</span>             <span class="k">print</span> <span class="nb">tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="nb">tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>
-It seems OK here. I get peak.html  :)
-So next challenge is <a href="http://www.pythonchallenge.com/pc/def/peak.html">http://www.pythonchallenge.com/pc/def/peak.html</a></p>
+<p>The output remains unknow. Oh, I figure out the problem above code has, I don&rsquo;t have a complete second line.</p>
+
+<p>asdf</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="nb">dict</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+</span><span class='line'><span class="o">...</span>     <span class="k">print</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="nb">tuple</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Python/Python%20challenge%205/1.jpg"></p>
+
+<p>: ) Next challenge is <a href="http://www.pythonchallenge.com/pc/def/channel.html">channel</a></p>
 </div>
 
 
@@ -275,7 +245,7 @@ So next challenge is <a href="http://www.pythonchallenge.com/pc/def/peak.html">h
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-23T12:58:39+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 23<sup>rd</sup>, 2014</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-24T15:42:39+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 24<sup>th</sup>, 2014</time>
           
 
 <span class="glyphicon glyphicon-tags"></span>&nbsp;
@@ -290,7 +260,7 @@ So next challenge is <a href="http://www.pythonchallenge.com/pc/def/peak.html">h
         
           <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.bujiang.info/blog/2014/08/23/python-challenge-4/" data-via="DiangDiang" data-counturl="http://blog.bujiang.info/blog/2014/08/23/python-challenge-4/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.bujiang.info/blog/2014/08/24/python-challenge-5/" data-via="DiangDiang" data-counturl="http://blog.bujiang.info/blog/2014/08/24/python-challenge-5/" >Tweet</a>
   
   
   
@@ -302,10 +272,8 @@ So next challenge is <a href="http://www.pythonchallenge.com/pc/def/peak.html">h
         
           <ul class="meta text-muted pager">
             
-            <li class="previous"><a href="/blog/2014/08/20/python-challenge-3/" title="Previous Post: Python challenge 3">&laquo; Python challenge 3</a></li>
+            <li class="previous"><a href="/blog/2014/08/23/python-challenge-4/" title="Previous Post: Python challenge 4">&laquo; Python challenge 4</a></li>
             
-            
-            <li class="next"><a href="/blog/2014/08/24/python-challenge-5/" title="Next Post: Python Challenge 5">Python Challenge 5 &raquo;</a></li>
             
           </ul>
         
@@ -330,9 +298,9 @@ So next challenge is <a href="http://www.pythonchallenge.com/pc/def/peak.html">h
   
   <div id="recent_posts" class="list-group">
     
-    <a class="list-group-item " href="/blog/2014/08/24/python-challenge-5/">Python Challenge 5</a>
+    <a class="list-group-item active" href="/blog/2014/08/24/python-challenge-5/">Python Challenge 5</a>
     
-    <a class="list-group-item active" href="/blog/2014/08/23/python-challenge-4/">Python Challenge 4</a>
+    <a class="list-group-item " href="/blog/2014/08/23/python-challenge-4/">Python Challenge 4</a>
     
     <a class="list-group-item " href="/blog/2014/08/20/python-challenge-3/">Python Challenge 3</a>
     
@@ -466,8 +434,8 @@ So next challenge is <a href="http://www.pythonchallenge.com/pc/def/peak.html">h
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://blog.bujiang.info/blog/2014/08/23/python-challenge-4/';
-        var disqus_url = 'http://blog.bujiang.info/blog/2014/08/23/python-challenge-4/';
+        var disqus_identifier = 'http://blog.bujiang.info/blog/2014/08/24/python-challenge-5/';
+        var disqus_url = 'http://blog.bujiang.info/blog/2014/08/24/python-challenge-5/';
         var disqus_script = 'embed.js';
       
     (function () {

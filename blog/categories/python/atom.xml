@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Bujiang's Blog]]></title>
   <link href="http://blog.bujiang.info/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://blog.bujiang.info/"/>
-  <updated>2014-08-23T15:39:39+08:00</updated>
+  <updated>2014-08-24T20:01:11+08:00</updated>
   <id>http://blog.bujiang.info/</id>
   <author>
     <name><![CDATA[Yan Bujiang]]></name>
@@ -12,6 +12,77 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Python Challenge 5]]></title>
+    <link href="http://blog.bujiang.info/blog/2014/08/24/python-challenge-5/"/>
+    <updated>2014-08-24T15:42:39+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2014/08/24/python-challenge-5</id>
+    <content type="html"><![CDATA[<p>Challenge 5. <a href="http://www.pythonchallenge.com/pc/def/peak.html">peak hell</a></p>
+
+<p>By fininsh loading challenge 5 webpage, it contains one picture and one phrase &ldquo;pronounce it&rdquo;.</p>
+
+<p>As usual check the source code
+``` html
+<html>
+<head>
+  <title>peak hell</title>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body></p>
+
+<p><center>
+<img src="peakhell.jpg"/>
+<br><font color="#c0c0ff">
+pronounce it
+<br>
+<peakhell src="banner.p"/>
+</body>
+</html>
+<!-- peak hell sounds familiar ? -->
+<code>
+Besides the banner.p file founded, the comment "peak hell sounds familiar" bothers me. Just cannot figure out what it means.
+Forget about the comment in html, I just load the file in python to see what inside.
+</code> python</p>
+
+<blockquote><blockquote><blockquote><p>import urllib2
+data = urllib2.urlopen(&ldquo;<a href="http://www.pythonchallenge.com/pc/def/banner.p">http://www.pythonchallenge.com/pc/def/banner.p</a>&rdquo;).read()
+data
+&ldquo;(lp0\n(lp1\n(S' &lsquo;\np2\nI95\ntp3\naa(lp4\n(g2\nI14\ntp5\na(S&rsquo;#&lsquo;\np6\nI5\ntp7\na(g2\nI70\ntp8\na(g6\nI5\ntp9\na(g2\nI1\ntp10\naa(lp11\n(g2\nI15\ntp12\na(g6\nI4\ntp13\na(g2\nI7
+&hellip;&hellip;&hellip;&hellip;&hellip;..
+<code>
+It seems like seriers of data, then I try to import pickle package and have a look.
+</code> python
+import pickle
+data = pickle.loads(data)
+data
+[[(&rsquo; &lsquo;, 95)], [(&rsquo; &lsquo;, 14), (&rsquo;#&lsquo;, 5), (&rsquo; &lsquo;, 70), (&rsquo;#&lsquo;, 5), (&rsquo; &lsquo;, 1)], [(&rsquo; &lsquo;, 15), (&rsquo;#&lsquo;, 4), (&rsquo; &lsquo;, 71), (&rsquo;#&lsquo;, 4),
+&hellip;&hellip;&hellip;&hellip;&hellip;..
+```
+But it still like a mystery for me.</p></blockquote></blockquote></blockquote>
+
+<p>Beginning of data is (&lsquo;&rsquo;,95), last is (&lsquo;&rsquo;,95), second is (&lsquo;&rsquo;,14) but second last not same, not symmetric. Waite a minute, I find something interesting, inside the dictionary, there are sub dictionaries and inside the sub dict there are tuple(s). The numbers in each sub dictionaries sum together are equal to 95. e.g. the first tuple(&lsquo;&rsquo;,95) obvious is 95. the seconde dictonary contains five tuples (&lsquo;&rsquo;,14),(&lsquo;#&rsquo;, 5), (&lsquo; &rsquo;, 70), (&lsquo;#&rsquo;, 5), (&lsquo; &rsquo;, 1). 14+5+70+5+1=95
+Perhaps the 95 is line width, if I printed out maybe will find something.
+``` python</p>
+
+<blockquote><blockquote><blockquote><p>for dict in data:
+&hellip;     for tuple in dict:
+&hellip;             print tuple[0]*tuple[1]
+```
+The output remains unknow. Oh, I figure out the problem above code has, I don&rsquo;t have a complete second line.</p></blockquote></blockquote></blockquote>
+
+<p>asdf</p>
+
+<p>``` python</p>
+
+<blockquote><blockquote><blockquote><p>for dict in data:
+&hellip;     print &lsquo;&rsquo;.join(tuple[0] * tuple[1] for tuple in dict)
+```
+<img class="<a" src="href="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Python/Python%20challenge%205/1.jpg">https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Python/Python%20challenge%205/1.jpg</a>"></p></blockquote></blockquote></blockquote>
+
+<p>: ) Next challenge is <a href="http://www.pythonchallenge.com/pc/def/channel.html">channel</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Python Challenge 4]]></title>
@@ -287,62 +358,6 @@ ciphertext = &ldquo;map&rdquo;</p>
 
 <p>print ciphertext.translate(plaintext)
 ```</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Generate Alphabet Permutation in Python]]></title>
-    <link href="http://blog.bujiang.info/blog/2014/08/12/generatre-alphabet-permutation-in-python/"/>
-    <updated>2014-08-12T22:38:04+08:00</updated>
-    <id>http://blog.bujiang.info/blog/2014/08/12/generatre-alphabet-permutation-in-python</id>
-    <content type="html"><![CDATA[<p>Yesterday I&rsquo;ve find a loophole in my friends website, the API for mobile side registration does not have any human verification functions.
-I decide to generate alphabet permutation list for user name and register fake users.</p>
-
-<p>In python standard library have functions for iterators for efficient looping which name is itertools. The itertools have permutation generators.</p>
-
-<p>The permutation function needs two arguments, one is iterable, another one is length like if the iterable is &ldquo;ABC&rdquo; and length is 2 then (A,B) (A,C) (B,A) (B,C) (C,A) (C,B) are results for this functions.
-<code>python Generate permutation https://docs.python.org/2/library/itertools.html#itertools.permutations
-import itertools
-iterable = 'ABC'
-length = 2
-permutation = itertools.permutations(iterable, length)
-permutation = list(permuation)
-</code></p>
-
-<p>After generate, inside the python list are tuples not string for user name. We need join alphabet within tuple together. Like (A,B) become &lsquo;AB&rsquo;</p>
-
-<p>``` python
-nameList = []                        #Create a empty list
-for i in permutation:</p>
-
-<pre><code>nameList.append(''.join(i))      #Join alphabet together and append in namList
-</code></pre>
-
-<p>```
-The user name list are done, next is register user by use API. That API for registration use form-urlencoded. For simplicity, I decide just use curl construct special POST request.</p>
-
-<p>``` python
-TYPE = &ldquo;&lsquo;Content-Type:application/x-www-form-urlencoded&rsquo;&rdquo;
-DEVICE = &ldquo; -d &lsquo;device_type=2&amp;user_name=&rdquo;
-EMAIL = &ldquo;&amp;email=&rdquo;
-EMAILTAIL = &ldquo;%40bujiang.info&amp;password=12345&amp;device_token=&rsquo;&rdquo;
-URL = &ldquo; <a href="http://***********.com/*******api/index.php/v1/dp_auth/signup">http://***********.com/*******api/index.php/v1/dp_auth/signup</a>&rdquo;
-COMMAND = &ldquo;curl -s -X POST -H &rdquo;</p>
-
-<p>def execmd():</p>
-
-<pre><code>if nameList:
-    name = nameList.pop()    #Poped name use for username
-    cmd = COMMAND + TYPE + DEVICE + name + EMAIL + name + EMAILTAIL + URL    #Construct command for different username registration
-    os.system(cmd)    #Execute command in shell 
-</code></pre>
-
-<p>```</p>
-
-<p>The code is modified from original code, original code use multithread for concurrent post request. Those asterisk in code URL for privacy reason.
-Another loophole for this registration API is password in plaintext.</p>
-
-<p>*: All test actions are under my friend authorization</p>
 ]]></content>
   </entry>
   

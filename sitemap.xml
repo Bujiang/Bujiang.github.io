@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://blog.bujiang.info/blog/2014/08/24/python-challenge-5/</loc>
+    <lastmod>2014-08-24T15:42:39+08:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.bujiang.info/blog/2014/08/23/python-challenge-4/</loc>
     <lastmod>2014-08-23T12:58:39+08:00</lastmod>
     <priority>0.8</priority>
@@ -155,14 +161,14 @@
   
   <url>
     <loc>http://blog.bujiang.info/blog/archives/</loc>
-    <lastmod>2014-08-23T15:39:39+08:00</lastmod>
+    <lastmod>2014-08-24T20:01:11+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://blog.bujiang.info/</loc>
-    <lastmod>2014-08-23T15:39:39+08:00</lastmod>
+    <lastmod>2014-08-24T20:01:11+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
