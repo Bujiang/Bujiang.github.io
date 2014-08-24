@@ -25,4 +25,4 @@ linkedlist
 
 [A-Z]{3} matches three UPPERCASE characters
 
-Next challenge is [linkedlist](http://www.pythonchallenge.com/pc/def/equality.html)
+Next challenge is [linkedlist](http://www.pythonchallenge.com/pc/def/linkedlist.html)
