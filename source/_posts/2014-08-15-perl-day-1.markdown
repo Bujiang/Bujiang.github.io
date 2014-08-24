@@ -41,4 +41,6 @@ scalar variable begin with $ sign
 $Bujiang = "Bujiang";
 $Bujiang .= $Bujiang;  # "BujiangBujiang"
 ```
-<= is less or equal; >= is grater or equal
+<= is less or equal;
+>= is grater or equal
+
