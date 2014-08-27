@@ -4,7 +4,7 @@
   <title><![CDATA[Bujiang's Blog]]></title>
   <link href="http://blog.bujiang.info/atom.xml" rel="self"/>
   <link href="http://blog.bujiang.info/"/>
-  <updated>2014-08-24T20:01:11+08:00</updated>
+  <updated>2014-08-27T23:46:12+08:00</updated>
   <id>http://blog.bujiang.info/</id>
   <author>
     <name><![CDATA[Yan Bujiang]]></name>
@@ -12,6 +12,241 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Python Challenge 6]]></title>
+    <link href="http://blog.bujiang.info/blog/2014/08/25/python-challenge-6/"/>
+    <updated>2014-08-25T20:12:12+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2014/08/25/python-challenge-6</id>
+    <content type="html"><![CDATA[<p>Challenge 6. <a href="http://www.pythonchallenge.com/pc/def/channel.html">now there are pairs</a></p>
+
+<p>Only one image, a zipper opened jeans, file in web page. As usual to check the source code.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;html&gt;</span> <span class="c">&lt;!-- &lt;-- zip --&gt;</span>
+</span><span class='line'><span class="nt">&lt;head&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;title&gt;</span>now there are pairs<span class="nt">&lt;/title&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;../style.css&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'><span class="nt">&lt;/head&gt;</span>
+</span><span class='line'><span class="nt">&lt;body&gt;</span>
+</span><span class='line'><span class="nt">&lt;center&gt;</span>
+</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;channel.jpg&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'><span class="nt">&lt;br/&gt;</span>
+</span><span class='line'><span class="c">&lt;!-- The following has nothing to do with the riddle itself. I just</span>
+</span><span class='line'><span class="c">thought it would be the right point to offer you to donate to the</span>
+</span><span class='line'><span class="c">Python Challenge project. Any amount will be greatly appreciated.</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">-thesamet</span>
+</span><span class='line'><span class="c">--&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;https://www.paypal.com/cgi-bin/webscr&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;cmd&quot;</span> <span class="na">value=</span><span class="s">&quot;_xclick&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;business&quot;</span> <span class="na">value=</span><span class="s">&quot;thesamet@gmail.com&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;item_name&quot;</span> <span class="na">value=</span><span class="s">&quot;Python Challenge donations&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;no_note&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;currency_code&quot;</span> <span class="na">value=</span><span class="s">&quot;USD&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;tax&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;bn&quot;</span> <span class="na">value=</span><span class="s">&quot;PP-DonationsBF&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;image&quot;</span> <span class="na">src=</span><span class="s">&quot;https://www.paypal.com/en_US/i/btn/x-click-but04.gif&quot;</span> <span class="na">border=</span><span class="s">&quot;0&quot;</span> <span class="na">name=</span><span class="s">&quot;submit&quot;</span> <span class="na">alt=</span><span class="s">&quot;Make payments with PayPal - it&#39;s fast, free and secure!&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;img</span> <span class="na">alt=</span><span class="s">&quot;&quot;</span> <span class="na">border=</span><span class="s">&quot;0&quot;</span> <span class="na">src=</span><span class="s">&quot;https://www.paypal.com/en_US/i/scr/pixel.gif&quot;</span> <span class="na">width=</span><span class="s">&quot;1&quot;</span> <span class="na">height=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'><span class="nt">&lt;/form&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/body&gt;</span>
+</span><span class='line'><span class="nt">&lt;/html&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Nothing special, the head, title, body, except an donate form. But the comment in the middle of markup code indicate only above it belongs to challenge 6. So let&rsquo;s analyze line by line. First line is opening html tag, second line is head tag, third line is a title tag with &ldquo;now&rdquo; ther are pairs inside, next line is css link, next line is closing head tag, next is body tag, next is a center img.
+Now the only thing I have left is the comment after the html opening tag</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="c">&lt;!-- &lt;-- zip --&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Maybe this challenge is not channel.html, but channel.zip? After change html to zip in browser, surprisingly find there do exist the zip file.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>~/Desktop/channel ➤ cat readme.txt
+</span><span class='line'>welcome to my zipped list.
+</span><span class='line'>
+</span><span class='line'>hint1: start from 90052
+</span><span class='line'>hint2: answer is inside the zip
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Unzip the file and find it has a readme.txt inside channel folder.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>~/Desktop/channel ➤ cat 90052.txt
+</span><span class='line'>Next nothing is 94191~/Desktop/channel ➤ cat 94191.txt
+</span><span class='line'>Next nothing is 85503~/Desktop/channel ➤
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Like challeng 4 find the linked html, this time need to check the txt file.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">re</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">fileExtension</span> <span class="o">=</span> <span class="s">&#39;.txt&#39;</span>
+</span><span class='line'><span class="n">firstFileName</span> <span class="o">=</span> <span class="s">&#39;90052&#39;</span>
+</span><span class='line'><span class="n">digis</span> <span class="o">=</span> <span class="s">&quot;\d+&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">with</span> <span class="nb">open</span><span class="p">((</span><span class="n">firstFileName</span> <span class="o">+</span> <span class="n">fileExtension</span><span class="p">),</span> <span class="s">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span class='line'>    <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span class='line'>    <span class="k">print</span> <span class="n">data</span>
+</span><span class='line'><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span class='line'><span class="n">finding</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">digis</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">while</span> <span class="n">finding</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span>
+</span><span class='line'>    <span class="n">nothingValue</span> <span class="o">=</span> <span class="n">finding</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>    <span class="c">#In text file is like &quot;Next nothing is ***&quot;, name the variable nothingValue</span>
+</span><span class='line'>    <span class="k">with</span> <span class="nb">open</span><span class="p">((</span><span class="n">nothingValue</span> <span class="o">+</span> <span class="n">fileExtension</span><span class="p">),</span> <span class="s">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span class='line'>        <span class="k">print</span> <span class="n">data</span>
+</span><span class='line'>    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span class='line'>    <span class="n">finding</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">digis</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</span><span class='line'><span class="k">print</span> <span class="n">data</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>~/Desktop/channel ➤ python b.py
+</span><span class='line'>Next nothing is 94191
+</span><span class='line'>............
+</span><span class='line'>Next nothing is 67824
+</span><span class='line'>Next nothing is 46145
+</span><span class='line'>Collect the comments.
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I do a quick Google search for python file comment and find there is a zipfile module for python to work with archives. Use comment methond of ZipFile can get the comment.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">re</span><span class="o">,</span> <span class="nn">zipfile</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">fileExtension</span> <span class="o">=</span> <span class="s">&#39;.txt&#39;</span>
+</span><span class='line'><span class="n">firstFileName</span> <span class="o">=</span> <span class="s">&#39;90052&#39;</span>
+</span><span class='line'><span class="n">digis</span> <span class="o">=</span> <span class="s">&quot;\d+&quot;</span>
+</span><span class='line'><span class="n">commentList</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">channelZipfile</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="s">&quot;channel.zip&quot;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">with</span> <span class="nb">open</span><span class="p">((</span><span class="n">firstFileName</span> <span class="o">+</span> <span class="n">fileExtension</span><span class="p">),</span> <span class="s">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span class='line'>    <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span class='line'>    <span class="k">print</span> <span class="n">data</span>
+</span><span class='line'><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span class='line'><span class="n">finding</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">digis</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</span><span class='line'><span class="n">commentList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">channelZipfile</span><span class="o">.</span><span class="n">getinfo</span><span class="p">((</span><span class="n">firstFileName</span> <span class="o">+</span> <span class="n">fileExtension</span><span class="p">))</span><span class="o">.</span><span class="n">comment</span><span class="p">)</span>
+</span><span class='line'><span class="k">try</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">while</span> <span class="n">finding</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span>
+</span><span class='line'>        <span class="n">nothingValue</span> <span class="o">=</span> <span class="n">finding</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>        <span class="c">#In text file is like &quot;Next nothing is ***&quot;, name the variable nothingValue</span>
+</span><span class='line'>        <span class="n">commentList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">channelZipfile</span><span class="o">.</span><span class="n">getinfo</span><span class="p">((</span><span class="n">nothingValue</span> <span class="o">+</span> <span class="n">fileExtension</span><span class="p">))</span><span class="o">.</span><span class="n">comment</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">with</span> <span class="nb">open</span><span class="p">((</span><span class="n">nothingValue</span> <span class="o">+</span> <span class="n">fileExtension</span><span class="p">),</span> <span class="s">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span class='line'>            <span class="k">print</span> <span class="n">data</span>
+</span><span class='line'>        <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span class='line'>        <span class="n">finding</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">digis</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</span><span class='line'><span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">pass</span>
+</span><span class='line'><span class="k">print</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">commentList</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Python/Python%20challenge%206/1.jpg"></p>
+
+<p>Next challenge is <a href="http://www.pythonchallenge.com/pc/def/hockey.html">hockey</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Python Challenge 5]]></title>
@@ -1287,43 +1522,6 @@ connected disks.</p>
 </pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;file.css&quot;</span><span class="nt">&gt;</span>
 </span></code></pre></td></tr></table></div></figure>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Git Day 1]]></title>
-    <link href="http://blog.bujiang.info/blog/2013/11/28/git-day-1/"/>
-    <updated>2013-11-28T02:14:00+08:00</updated>
-    <id>http://blog.bujiang.info/blog/2013/11/28/git-day-1</id>
-    <content type="html"><![CDATA[<p>一直都没有系统的学习Git，这段时间决心从头来好好的学习下</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>mkdir store
-</span><span class='line'>cd store
-</span><span class='line'>git init</span></code></pre></td></tr></table></div></figure>
-
-
-<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/git_day_1_1.jpg"></p>
-
-<p>git status 如上图所示，用来检查repo的状态</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/git_day_1_2.jpg"></p>
-
-<p>添加了一个readme 文件后再用 git status 就有提示有添加新的文件</p>
-
-<p>添加文件可以有多种方式</p>
-
-<p>如 git add readme.txt bujiang.txt  一一列举需要添加的文件</p>
-
-<p>git add &mdash;all  添加所有</p>
-
-<p>git add *.txt  添加所有txt文件</p>
-
-<p>git add css/  添加整个css文件夹</p>
-
-<p>想知道添加了什么  可以使用 git log来查询历史记录</p>
 ]]></content>
   </entry>
   

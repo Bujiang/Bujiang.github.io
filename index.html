@@ -115,6 +115,269 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-25T20:12:12+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 25<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+    
+      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2014/08/25/python-challenge-6/" itemprop="url">Python Challenge 6</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>Challenge 6. <a href="http://www.pythonchallenge.com/pc/def/channel.html">now there are pairs</a></p>
+
+<p>Only one image, a zipper opened jeans, file in web page. As usual to check the source code.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;html&gt;</span> <span class="c">&lt;!-- &lt;-- zip --&gt;</span>
+</span><span class='line'><span class="nt">&lt;head&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;title&gt;</span>now there are pairs<span class="nt">&lt;/title&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;../style.css&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'><span class="nt">&lt;/head&gt;</span>
+</span><span class='line'><span class="nt">&lt;body&gt;</span>
+</span><span class='line'><span class="nt">&lt;center&gt;</span>
+</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;channel.jpg&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'><span class="nt">&lt;br/&gt;</span>
+</span><span class='line'><span class="c">&lt;!-- The following has nothing to do with the riddle itself. I just</span>
+</span><span class='line'><span class="c">thought it would be the right point to offer you to donate to the</span>
+</span><span class='line'><span class="c">Python Challenge project. Any amount will be greatly appreciated.</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">-thesamet</span>
+</span><span class='line'><span class="c">--&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;https://www.paypal.com/cgi-bin/webscr&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;cmd&quot;</span> <span class="na">value=</span><span class="s">&quot;_xclick&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;business&quot;</span> <span class="na">value=</span><span class="s">&quot;thesamet@gmail.com&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;item_name&quot;</span> <span class="na">value=</span><span class="s">&quot;Python Challenge donations&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;no_note&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;currency_code&quot;</span> <span class="na">value=</span><span class="s">&quot;USD&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;tax&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;bn&quot;</span> <span class="na">value=</span><span class="s">&quot;PP-DonationsBF&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;image&quot;</span> <span class="na">src=</span><span class="s">&quot;https://www.paypal.com/en_US/i/btn/x-click-but04.gif&quot;</span> <span class="na">border=</span><span class="s">&quot;0&quot;</span> <span class="na">name=</span><span class="s">&quot;submit&quot;</span> <span class="na">alt=</span><span class="s">&quot;Make payments with PayPal - it&#39;s fast, free and secure!&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;img</span> <span class="na">alt=</span><span class="s">&quot;&quot;</span> <span class="na">border=</span><span class="s">&quot;0&quot;</span> <span class="na">src=</span><span class="s">&quot;https://www.paypal.com/en_US/i/scr/pixel.gif&quot;</span> <span class="na">width=</span><span class="s">&quot;1&quot;</span> <span class="na">height=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'><span class="nt">&lt;/form&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/body&gt;</span>
+</span><span class='line'><span class="nt">&lt;/html&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Nothing special, the head, title, body, except an donate form. But the comment in the middle of markup code indicate only above it belongs to challenge 6. So let&rsquo;s analyze line by line. First line is opening html tag, second line is head tag, third line is a title tag with &ldquo;now&rdquo; ther are pairs inside, next line is css link, next line is closing head tag, next is body tag, next is a center img.
+Now the only thing I have left is the comment after the html opening tag</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="c">&lt;!-- &lt;-- zip --&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Maybe this challenge is not channel.html, but channel.zip? After change html to zip in browser, surprisingly find there do exist the zip file.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>~/Desktop/channel ➤ cat readme.txt
+</span><span class='line'>welcome to my zipped list.
+</span><span class='line'>
+</span><span class='line'>hint1: start from 90052
+</span><span class='line'>hint2: answer is inside the zip
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Unzip the file and find it has a readme.txt inside channel folder.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>~/Desktop/channel ➤ cat 90052.txt
+</span><span class='line'>Next nothing is 94191~/Desktop/channel ➤ cat 94191.txt
+</span><span class='line'>Next nothing is 85503~/Desktop/channel ➤
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Like challeng 4 find the linked html, this time need to check the txt file.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">re</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">fileExtension</span> <span class="o">=</span> <span class="s">&#39;.txt&#39;</span>
+</span><span class='line'><span class="n">firstFileName</span> <span class="o">=</span> <span class="s">&#39;90052&#39;</span>
+</span><span class='line'><span class="n">digis</span> <span class="o">=</span> <span class="s">&quot;\d+&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">with</span> <span class="nb">open</span><span class="p">((</span><span class="n">firstFileName</span> <span class="o">+</span> <span class="n">fileExtension</span><span class="p">),</span> <span class="s">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span class='line'>    <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span class='line'>    <span class="k">print</span> <span class="n">data</span>
+</span><span class='line'><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span class='line'><span class="n">finding</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">digis</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">while</span> <span class="n">finding</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span>
+</span><span class='line'>    <span class="n">nothingValue</span> <span class="o">=</span> <span class="n">finding</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>    <span class="c">#In text file is like &quot;Next nothing is ***&quot;, name the variable nothingValue</span>
+</span><span class='line'>    <span class="k">with</span> <span class="nb">open</span><span class="p">((</span><span class="n">nothingValue</span> <span class="o">+</span> <span class="n">fileExtension</span><span class="p">),</span> <span class="s">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span class='line'>        <span class="k">print</span> <span class="n">data</span>
+</span><span class='line'>    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span class='line'>    <span class="n">finding</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">digis</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</span><span class='line'><span class="k">print</span> <span class="n">data</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>~/Desktop/channel ➤ python b.py
+</span><span class='line'>Next nothing is 94191
+</span><span class='line'>............
+</span><span class='line'>Next nothing is 67824
+</span><span class='line'>Next nothing is 46145
+</span><span class='line'>Collect the comments.
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I do a quick Google search for python file comment and find there is a zipfile module for python to work with archives. Use comment methond of ZipFile can get the comment.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">re</span><span class="o">,</span> <span class="nn">zipfile</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">fileExtension</span> <span class="o">=</span> <span class="s">&#39;.txt&#39;</span>
+</span><span class='line'><span class="n">firstFileName</span> <span class="o">=</span> <span class="s">&#39;90052&#39;</span>
+</span><span class='line'><span class="n">digis</span> <span class="o">=</span> <span class="s">&quot;\d+&quot;</span>
+</span><span class='line'><span class="n">commentList</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">channelZipfile</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="s">&quot;channel.zip&quot;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">with</span> <span class="nb">open</span><span class="p">((</span><span class="n">firstFileName</span> <span class="o">+</span> <span class="n">fileExtension</span><span class="p">),</span> <span class="s">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span class='line'>    <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span class='line'>    <span class="k">print</span> <span class="n">data</span>
+</span><span class='line'><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span class='line'><span class="n">finding</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">digis</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</span><span class='line'><span class="n">commentList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">channelZipfile</span><span class="o">.</span><span class="n">getinfo</span><span class="p">((</span><span class="n">firstFileName</span> <span class="o">+</span> <span class="n">fileExtension</span><span class="p">))</span><span class="o">.</span><span class="n">comment</span><span class="p">)</span>
+</span><span class='line'><span class="k">try</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">while</span> <span class="n">finding</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span>
+</span><span class='line'>        <span class="n">nothingValue</span> <span class="o">=</span> <span class="n">finding</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>        <span class="c">#In text file is like &quot;Next nothing is ***&quot;, name the variable nothingValue</span>
+</span><span class='line'>        <span class="n">commentList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">channelZipfile</span><span class="o">.</span><span class="n">getinfo</span><span class="p">((</span><span class="n">nothingValue</span> <span class="o">+</span> <span class="n">fileExtension</span><span class="p">))</span><span class="o">.</span><span class="n">comment</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">with</span> <span class="nb">open</span><span class="p">((</span><span class="n">nothingValue</span> <span class="o">+</span> <span class="n">fileExtension</span><span class="p">),</span> <span class="s">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span class='line'>            <span class="k">print</span> <span class="n">data</span>
+</span><span class='line'>        <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span class='line'>        <span class="n">finding</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">digis</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</span><span class='line'><span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">pass</span>
+</span><span class='line'><span class="k">print</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">commentList</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Python/Python%20challenge%206/1.jpg"></p>
+
+<p>Next challenge is <a href="http://www.pythonchallenge.com/pc/def/hockey.html">hockey</a></p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-24T15:42:39+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 24<sup>th</sup>, 2014</time>
         
       </p>
@@ -665,165 +928,6 @@ I open the source code of webpage in browser</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-15T18:40:45+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 15<sup>th</sup>, 2014</time>
-        
-      </p>
-    
-    
-      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2014/08/15/python-challenge-0-1/" itemprop="url">Python Challenge 0 - 1</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>Challenge 0. Warming up</p>
-
-<p><a href="http://www.pythonchallenge.com/pc/def/0.html">http://www.pythonchallenge.com/pc/def/0.html</a></p>
-
-<p>The webpage contain a picture and show 2 to the power of 38, beneath the picture has a
-hint &ldquo;try to change the URL address.&rdquo;
-This is a python challenge, so I open python in interactive mode, then calculate
-the answer.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>&gt;&gt;&gt; 2**38
-</span><span class='line'>274877906944
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>replace the 0 to result then get the next stage URL is <a href="http://www.pythonchallenge.com/pc/def/274877906944.html">http://www.pythonchallenge.com/pc/def/274877906944.html</a></p>
-
-<p>Challenge 1. What about making trans?</p>
-
-<p>In webpage there have one picture and one paragraph. The picture show K->M O->Q E->G, and
-the paragraph looks like have some meaning but for now I do not know it.
-I guess it probably is a caesar cipher. So in terminal(shell) I type man ascii to do
-a quick check to confirm my guess. &lsquo;K&rsquo;, &lsquo;O&rsquo;, &lsquo;E&rsquo; are all shift by two positions.
-Then I write a shift function to decrypt it.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c">#!/usr/bin/env python</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">change</span><span class="p">(</span><span class="n">ciphertext</span><span class="p">):</span>
-</span><span class='line'>    <span class="n">plaintext</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span class='line'>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ciphertext</span><span class="p">:</span>
-</span><span class='line'>        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s">&#39; &#39;</span><span class="p">:</span>
-</span><span class='line'>            <span class="n">plaintext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">)</span>
-</span><span class='line'>        <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="s">&#39;.&#39;</span><span class="p">:</span>
-</span><span class='line'>            <span class="n">plaintext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">)</span>
-</span><span class='line'>        <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="s">&#39;(&#39;</span><span class="p">:</span>
-</span><span class='line'>            <span class="n">plaintext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;(&#39;</span><span class="p">)</span>
-</span><span class='line'>        <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="s">&#39;)&#39;</span><span class="p">:</span>
-</span><span class='line'>            <span class="n">plaintext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;)&#39;</span><span class="p">)</span>
-</span><span class='line'>        <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="s">&#39;</span><span class="se">\&#39;</span><span class="s">&#39;</span><span class="p">:</span>
-</span><span class='line'>            <span class="n">plaintext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\&#39;</span><span class="s">&#39;</span><span class="p">)</span>
-</span><span class='line'>        <span class="k">else</span><span class="p">:</span>
-</span><span class='line'>            <span class="c"># ASCII lower letter decimal value for a to z is 97 to 122</span>
-</span><span class='line'>            <span class="n">value</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span>
-</span><span class='line'>
-</span><span class='line'>            <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="mi">122</span><span class="p">:</span>
-</span><span class='line'>                <span class="n">value</span> <span class="o">=</span> <span class="n">value</span> <span class="o">-</span> <span class="mi">122</span> <span class="o">+</span> <span class="mi">96</span>
-</span><span class='line'>                <span class="n">plaintext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
-</span><span class='line'>            <span class="k">else</span><span class="p">:</span>
-</span><span class='line'>                <span class="n">plaintext</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span><span class="p">))</span>
-</span><span class='line'>    <span class="k">return</span> <span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">plaintext</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">paragraph</span> <span class="o">=</span> <span class="s">&quot;g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcpq ypc dmp. bmgle gr gl zw fylb gq glcddgagclr ylb rfyr&#39;q ufw rfgq rcvr gq qm jmle. sqgle qrpgle.kyicrpylq() gq pcamkkclbcb. lmu ynnjw ml rfc spj.&quot;</span>
-</span><span class='line'><span class="n">decodedParagraph</span> <span class="o">=</span> <span class="n">change</span><span class="p">(</span><span class="n">paragraph</span><span class="p">)</span>
-</span><span class='line'><span class="k">print</span> <span class="n">decodedParagraph</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The result is below</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>i hope you didnt translate it by hand.
-</span><span class='line'>thats what computers are <span class="k">for</span>.
-</span><span class='line'>doing it in by hand is inefficient and that<span class="err">&#39;</span>s why this text is so long.
-</span><span class='line'>using string.maketrans<span class="o">()</span> is recommended.
-</span><span class='line'>now apply on the url.
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>oops, it seems instead of doing lines of coding, it just need a string function.
-This stage URL is <a href="http://www.pythonchallenge.com/pc/def/map.html">http://www.pythonchallenge.com/pc/def/map.html</a>
-map need to change to ocr, so get next stage URL
-<a href="http://www.pythonchallenge.com/pc/def/ocr.html">http://www.pythonchallenge.com/pc/def/ocr.html</a></p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">ciphertext</span> <span class="o">=</span> <span class="s">&quot;map&quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">plaintext</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span>
-</span><span class='line'>    <span class="s">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span><span class="p">,</span> <span class="s">&quot;cdefghijklmnopqrstuvwxyzab&quot;</span>
-</span><span class='line'><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">print</span> <span class="n">ciphertext</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">plaintext</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -847,6 +951,8 @@ map need to change to ocr, so get next stage URL
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/2014/08/25/python-challenge-6/">Python Challenge 6</a>
+    
     <a class="list-group-item " href="/blog/2014/08/24/python-challenge-5/">Python Challenge 5</a>
     
     <a class="list-group-item " href="/blog/2014/08/23/python-challenge-4/">Python Challenge 4</a>
@@ -854,8 +960,6 @@ map need to change to ocr, so get next stage URL
     <a class="list-group-item " href="/blog/2014/08/20/python-challenge-3/">Python Challenge 3</a>
     
     <a class="list-group-item " href="/blog/2014/08/17/python-challenge-2/">Python Challenge 2</a>
-    
-    <a class="list-group-item " href="/blog/2014/08/15/perl-day-1/">Perl Day 1</a>
     
   </div>
 </section>
@@ -885,7 +989,7 @@ map need to change to ocr, so get next stage URL
     
     
     <a class="list-group-item " href="/blog/categories/python/index.html">
-        <span class="badge">9</span>
+        <span class="badge">10</span>
         python
       </a>
     
