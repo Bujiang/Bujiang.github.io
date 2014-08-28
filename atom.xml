@@ -4,7 +4,7 @@
   <title><![CDATA[Bujiang's Blog]]></title>
   <link href="http://blog.bujiang.info/atom.xml" rel="self"/>
   <link href="http://blog.bujiang.info/"/>
-  <updated>2014-08-27T23:46:12+08:00</updated>
+  <updated>2014-08-28T22:31:37+08:00</updated>
   <id>http://blog.bujiang.info/</id>
   <author>
     <name><![CDATA[Yan Bujiang]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Use SSHFS to Mount Remote File System]]></title>
+    <link href="http://blog.bujiang.info/blog/2014/08/28/use-sshfs-to-mount-remote-file-system/"/>
+    <updated>2014-08-28T22:19:11+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2014/08/28/use-sshfs-to-mount-remote-file-system</id>
+    <content type="html"><![CDATA[<p>Be a lazy man sometimes may increase productivity a bit :)
+Everytime update my server I need to scp or use FileZilla to upload my updated files or new files. But I want a method that upload files to server just like copy to another directory. After I do some search, I find a tool named SSHFS(SSH Filesystem) can do the job.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo sshfs *****@xxx.xxx.xxx.xxx:/usr/share/nginx/html ~/ServerHTML
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Python Challenge 6]]></title>
@@ -1420,108 +1435,6 @@ connected disks.</p>
 <p>第三 丢掉最新的HEAD commit， soft还保留stage， hard就都丢了</p>
 
 <p>第四 撤销到第三新的  例如 1，2，3 代表时间顺序 1最新是HEAD  2是HEAD^ 3是HEAD^^</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[HTML5]]></title>
-    <link href="http://blog.bujiang.info/blog/2013/11/29/html5/"/>
-    <updated>2013-11-29T07:00:00+08:00</updated>
-    <id>http://blog.bujiang.info/blog/2013/11/29/html5</id>
-    <content type="html"><![CDATA[<p>HTML5相较于HTML 4.01还是挺多相当省事的变化</p>
-
-<p>DOCTYPE在HTML 4.01里</p>
-
-<figure class='code'><figcaption><span>HTML 4.01 Strict </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="cp">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/</span>
-</span><span class='line'><span class="cp">strict.dtd&quot;&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<figure class='code'><figcaption><span>HTML 4.01 Transitional </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="cp">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://</span>
-</span><span class='line'><span class="cp">www.w3.org/TR/html4/loose.dtd&quot;&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<figure class='code'><figcaption><span>HTML 4.01 Frameset </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="cp">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Frameset//EN&quot; &quot;http://www.w3.org/</span>
-</span><span class='line'><span class="cp">TR/html4/frameset.dtd&quot;&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>在HTML 5中就相当简单了</p>
-
-<figure class='code'><figcaption><span>HTML 5 </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="cp">&lt;!DOCTYPE html&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>META</p>
-
-<figure class='code'><figcaption><span>HTML 4 </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">&quot;Content-Type&quot;</span> <span class="na">content=</span><span class="s">&quot;text/html; charset=UTF-8&quot;</span><span class="nt">&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<figure class='code'><figcaption><span>HTML 5 </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;UTF-8&quot;</span><span class="nt">&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>Script Tag</p>
-
-<figure class='code'><figcaption><span>HTML 4.01 </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;file.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>
-在HTML 5中省去了type 浏览器会推测使用的是javascript</p>
-
-<figure class='code'><figcaption><span>HTML 5 </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;file.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>Link Tag</p>
-
-<figure class='code'><figcaption><span>HTML 4.01 </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;file.css&quot;</span><span class="nt">&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>对于Link Tag同样也可以省去type</p>
-
-<figure class='code'><figcaption><span>HTML 5 </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;file.css&quot;</span><span class="nt">&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
 ]]></content>
   </entry>
   

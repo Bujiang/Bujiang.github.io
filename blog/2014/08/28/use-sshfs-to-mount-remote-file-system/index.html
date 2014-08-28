@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Git Day 2 - Bujiang's Blog</title>
+  <title>Use SSHFS to Mount Remote File System - Bujiang's Blog</title>
   <meta name="author" content="Yan Bujiang">
 
   
@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.bujiang.info/blog/2013/11/29/git-day-2">
+  <link rel="canonical" href="http://blog.bujiang.info/blog/2014/08/28/use-sshfs-to-mount-remote-file-system">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="Bujiang's Blog" type="application/atom+xml">
 
@@ -111,92 +111,26 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-11-29T23:44:00+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Nov 29<sup>th</sup>, 2013</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-28T22:19:11+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 28<sup>th</sup>, 2014</time>
         
       </p>
     
     
     <h1 class="entry-title" itemprop="name headline">
-        Git Day 2
+        Use SSHFS to Mount Remote File System
         
     </h1>
     
   </header>
 
 
-<div class="entry-content clearfix" itemprop="articleBody"><p>在搜索引擎这么发达的情况下有问题Google下，立马就有答案了</p>
+<div class="entry-content clearfix" itemprop="articleBody"><p>Be a lazy man sometimes may increase productivity a bit :)
+Everytime update my server I need to scp or use FileZilla to upload my updated files or new files. But I want a method that upload files to server just like copy to another directory. After I do some search, I find a tool named SSHFS(SSH Filesystem) can do the job.</p>
 
-<p>但其实Git有提供挺不错的帮助信息可供查询</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo sshfs *****@xxx.xxx.xxx.xxx:/usr/share/nginx/html ~/ServerHTML
+</span></code></pre></td></tr></table></div></figure>
 
-<p>只要使用git help 和 git help add （在help后面加想要查询的git command)</p>
-
-<p>不记得从上次commit到现在对文件有做过什么改动了，想要查看怎么办呢git log?</p>
-
-<p>git log只能查询添加了哪些文件不能查询改动 这次得用git diff</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%202/git-day-2-1.jpg"></p>
-
-<p>如图 在用diff 可以看到 在License后面添加了copyright info</p>
-
-<p>diff就像Terminal中的diff类似 告诉你有哪些改动</p>
-
-<p>但是当把License文件添加到stage后 再使用git diff将不会显示改动了</p>
-
-<p>如果要显示改动需要添加参数 git diff &mdash;staged</p>
-
-<p>后悔了 不想把License添加到stage</p>
-
-<p>可以用reset来取消stage</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git reset HEAD License</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>其中的HEAD是指最近的commit 可以想像一条从上至下的时间线 最顶上最近的是HEAD</p>
-
-<p>reset可以把staged的给unstage 但是要怎么还原成以前的没有copyright info的那个</p>
-
-<p>License文件呢</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git checkout -- License</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>当修改过不止一个文件时 又要commit 需要一个一个文件commit吗</p>
-
-<p>给commit加上一个小参数就能搞定</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git commit -a -m "All files"</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>-a 所有staged的文件</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git reset --soft HEAD^
-</span><span class='line'>git commit --amend -m "Changed"
-</span><span class='line'>git reset --hard HEAD
-</span><span class='line'>git reset --soft HEAD^^</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>第一条是 撤销最新的HEAD commit 转到第二新的</p>
-
-<p>第二 做了新的改变但是不想要新的commit 而是在HEAD commit中修改</p>
-
-<p>第三 丢掉最新的HEAD commit， soft还保留stage， hard就都丢了</p>
-
-<p>第四 撤销到第三新的  例如 1，2，3 代表时间顺序 1最新是HEAD  2是HEAD^ 3是HEAD^^</p>
 </div>
 
 
@@ -220,13 +154,13 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-11-29T23:44:00+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Nov 29<sup>th</sup>, 2013</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-28T22:19:11+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 28<sup>th</sup>, 2014</time>
           
 
 <span class="glyphicon glyphicon-tags"></span>&nbsp;
 <span class="categories">
   
-    <a class='category' href='/blog/categories/git/'>git</a>
+    <a class='category' href='/blog/categories/bash/'>bash</a>
   
 </span>
 
@@ -235,7 +169,7 @@
         
           <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.bujiang.info/blog/2013/11/29/git-day-2/" data-via="DiangDiang" data-counturl="http://blog.bujiang.info/blog/2013/11/29/git-day-2/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.bujiang.info/blog/2014/08/28/use-sshfs-to-mount-remote-file-system/" data-via="DiangDiang" data-counturl="http://blog.bujiang.info/blog/2014/08/28/use-sshfs-to-mount-remote-file-system/" >Tweet</a>
   
   
   
@@ -247,10 +181,8 @@
         
           <ul class="meta text-muted pager">
             
-            <li class="previous"><a href="/blog/2013/11/29/html5/" title="Previous Post: HTML5">&laquo; HTML5</a></li>
+            <li class="previous"><a href="/blog/2014/08/25/python-challenge-6/" title="Previous Post: Python challenge 6">&laquo; Python challenge 6</a></li>
             
-            
-            <li class="next"><a href="/blog/2013/11/30/git-day-3/" title="Next Post: Git Day 3">Git Day 3 &raquo;</a></li>
             
           </ul>
         
@@ -275,7 +207,7 @@
   
   <div id="recent_posts" class="list-group">
     
-    <a class="list-group-item " href="/blog/2014/08/28/use-sshfs-to-mount-remote-file-system/">Use SSHFS to Mount Remote File System</a>
+    <a class="list-group-item active" href="/blog/2014/08/28/use-sshfs-to-mount-remote-file-system/">Use SSHFS to Mount Remote File System</a>
     
     <a class="list-group-item " href="/blog/2014/08/25/python-challenge-6/">Python Challenge 6</a>
     
@@ -411,8 +343,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://blog.bujiang.info/blog/2013/11/29/git-day-2/';
-        var disqus_url = 'http://blog.bujiang.info/blog/2013/11/29/git-day-2/';
+        var disqus_identifier = 'http://blog.bujiang.info/blog/2014/08/28/use-sshfs-to-mount-remote-file-system/';
+        var disqus_url = 'http://blog.bujiang.info/blog/2014/08/28/use-sshfs-to-mount-remote-file-system/';
         var disqus_script = 'embed.js';
       
     (function () {

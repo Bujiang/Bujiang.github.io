@@ -115,6 +115,99 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-15T23:42:23+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 15<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+    
+      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2014/08/15/perl-day-1/" itemprop="url">Perl Day 1</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>I really like to use ack(pure Perl implemented)  which is a tool like grep but it optimized for search source code and filter by easy filter by file type, it cause me became interested in Perl.</p>
+
+<p>For blog about Perl, I just want to record fragments of my learning process, it may not be suitable for others to read. Sorry for that :)</p>
+
+<p>Perl, Practical Extraction and Report Language or Pathologically Eclectic Rubbish Lister.</p>
+
+<p>For the tradition, first is &ldquo;Hello World!&rdquo;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="c1">#!/usr/bin/env perl</span>
+</span><span class='line'><span class="k">print</span> <span class="s">&quot;Hello Worlds!&quot;</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Perl need &ldquo;;&rdquo;.</p>
+
+<p>61298040 and 61_298_040 are same</p>
+
+<p>Octal: 0377</p>
+
+<p>Hexadecimal: 0xff</p>
+
+<p>Binary: 0b11111111</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="k">print</span> <span class="s">&quot;\lL&quot;</span> <span class="c1">#outputs small l</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">print</span> <span class="s">&quot;\LAPPLE&quot;</span> <span class="c1">#outputs apple    *: For capital use \u or \U</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Use . to connotate two strings like &ldquo;Hello&rdquo;.&ldquo; World!&rdquo;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="s">&quot;fred&quot;</span> <span class="n">x</span> <span class="mi">3</span> <span class="c1"># will outputs &quot;fredfredfred&quot;; </span>
+</span><span class='line'><span class="s">&quot;fred&quot;</span> <span class="n">x</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># outputs same</span>
+</span><span class='line'><span class="mi">5</span> <span class="n">x</span> <span class="mi">4</span> <span class="c1"># outputs &quot;5555&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>scalar variable begin with $ sign</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="nv">$Bujiang</span> <span class="o">=</span> <span class="s">&quot;Bujiang&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="nv">$Bujiang</span> <span class="o">.=</span> <span class="nv">$Bujiang</span><span class="p">;</span>  <span class="c1"># &quot;BujiangBujiang&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>&lt;= is less or equal;</p>
+
+<blockquote><p>= is grater or equal</p></blockquote>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-15T18:40:45+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 15<sup>th</sup>, 2014</time>
         
       </p>
@@ -566,53 +659,6 @@ connected disks.</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-01-09T21:07:09+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Jan 9<sup>th</sup>, 2014</time>
-        
-      </p>
-    
-    
-      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2014/01/09/vim-tips-2/" itemprop="url">VIM Tips 2</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>VIM除了可以使用Ctrl和a或者x键来进行数字的加减 在Insert Mode的时候其实还能很方便的进行四则运</p>
-
-<p>例如在Insert Mode下 已经输入了</p>
-
-<p>买了5个苹果 每个苹果是1.34元 总共是：</p>
-
-<p>在一般的文本编辑器中只有两种选择 1.心算 2.计算器</p>
-
-<p>但是在VIM中可以按Ctrl和r 然后按＝ 然后输入5 * 1.34 在按enter(return)键就可以得到结果了</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Vim/Tips/2/Screen%20Shot%202014-01-09%20at%209.16.51%20PM.jpg"> 6.7</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -636,6 +682,8 @@ connected disks.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/2014/08/28/use-sshfs-to-mount-remote-file-system/">Use SSHFS to Mount Remote File System</a>
+    
     <a class="list-group-item " href="/blog/2014/08/25/python-challenge-6/">Python Challenge 6</a>
     
     <a class="list-group-item " href="/blog/2014/08/24/python-challenge-5/">Python Challenge 5</a>
@@ -643,8 +691,6 @@ connected disks.</p>
     <a class="list-group-item " href="/blog/2014/08/23/python-challenge-4/">Python Challenge 4</a>
     
     <a class="list-group-item " href="/blog/2014/08/20/python-challenge-3/">Python Challenge 3</a>
-    
-    <a class="list-group-item " href="/blog/2014/08/17/python-challenge-2/">Python Challenge 2</a>
     
   </div>
 </section>
@@ -716,7 +762,7 @@ connected disks.</p>
     
     
     <a class="list-group-item " href="/blog/categories/bash/index.html">
-        <span class="badge">3</span>
+        <span class="badge">4</span>
         bash
       </a>
     

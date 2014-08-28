@@ -115,6 +115,53 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-01-09T21:07:09+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Jan 9<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+    
+      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2014/01/09/vim-tips-2/" itemprop="url">VIM Tips 2</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>VIM除了可以使用Ctrl和a或者x键来进行数字的加减 在Insert Mode的时候其实还能很方便的进行四则运</p>
+
+<p>例如在Insert Mode下 已经输入了</p>
+
+<p>买了5个苹果 每个苹果是1.34元 总共是：</p>
+
+<p>在一般的文本编辑器中只有两种选择 1.心算 2.计算器</p>
+
+<p>但是在VIM中可以按Ctrl和r 然后按＝ 然后输入5 * 1.34 在按enter(return)键就可以得到结果了</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Vim/Tips/2/Screen%20Shot%202014-01-09%20at%209.16.51%20PM.jpg"> 6.7</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-01-09T00:50:24+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Jan 9<sup>th</sup>, 2014</time>
         
       </p>
@@ -503,83 +550,6 @@
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-11-30T21:24:00+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Nov 30<sup>th</sup>, 2013</time>
-        
-      </p>
-    
-    
-      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2013/11/30/git-day-3/" itemprop="url">Git Day 3</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>Git是一个分布式版本控制（distributed revision control）系统，除了在本地保留commit和repo</p>
-
-<p>当然也可以储存在不同的地方 例如最常用的GitHub和Bitbucket了</p>
-
-<p>虽然Git是分布式版本控制但是在Git中并没有访问控制（access control)</p>
-
-<p>如果需要访问控制需要借由第三方来实现 如网站（在Github或Bitbucket上可以设置不同帐户的访问权限）或者软件</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git remote add origin https://ddiang@bitbucket.org/ddiang/multi-drop-use-rs232-asm-cg3002-project.git</span></code></pre></td></tr></table></div></figure>
-
-
-<p>上面的code 就添加了一个新的remote repo， add是添加新的 origin是remote端的名字 后面的https是地址</p>
-
-<p>想要查询有添加过哪些remote可以通过git remote -v</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%203/Git-Day-3-1.jpg"></p>
-
-<p>本地的文件修改好了也commit了</p>
-
-<p>现在需要把本地的push到remote repo上</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git push -u origin master</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>-u 参数是用来记住 remote的origin</p>
-
-<p>下次push的时候就直接push到origin上</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git remote rm origin
-</span><span class='line'>git pull</span></code></pre></td></tr></table></div></figure>
-
-
-<p>remote rm 用来移除</p>
-
-<p>pull 把remote repo上做的更改给拿到本地来</p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -603,6 +573,8 @@
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/2014/08/28/use-sshfs-to-mount-remote-file-system/">Use SSHFS to Mount Remote File System</a>
+    
     <a class="list-group-item " href="/blog/2014/08/25/python-challenge-6/">Python Challenge 6</a>
     
     <a class="list-group-item " href="/blog/2014/08/24/python-challenge-5/">Python Challenge 5</a>
@@ -610,8 +582,6 @@
     <a class="list-group-item " href="/blog/2014/08/23/python-challenge-4/">Python Challenge 4</a>
     
     <a class="list-group-item " href="/blog/2014/08/20/python-challenge-3/">Python Challenge 3</a>
-    
-    <a class="list-group-item " href="/blog/2014/08/17/python-challenge-2/">Python Challenge 2</a>
     
   </div>
 </section>
@@ -683,7 +653,7 @@
     
     
     <a class="list-group-item " href="/blog/categories/bash/index.html">
-        <span class="badge">3</span>
+        <span class="badge">4</span>
         bash
       </a>
     

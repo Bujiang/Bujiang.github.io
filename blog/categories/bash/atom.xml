@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Bash | Bujiang's Blog]]></title>
   <link href="http://blog.bujiang.info/blog/categories/bash/atom.xml" rel="self"/>
   <link href="http://blog.bujiang.info/"/>
-  <updated>2014-08-27T23:46:12+08:00</updated>
+  <updated>2014-08-28T22:31:37+08:00</updated>
   <id>http://blog.bujiang.info/</id>
   <author>
     <name><![CDATA[Yan Bujiang]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Use SSHFS to Mount Remote File System]]></title>
+    <link href="http://blog.bujiang.info/blog/2014/08/28/use-sshfs-to-mount-remote-file-system/"/>
+    <updated>2014-08-28T22:19:11+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2014/08/28/use-sshfs-to-mount-remote-file-system</id>
+    <content type="html"><![CDATA[<p>Be a lazy man sometimes may increase productivity a bit :)
+Everytime update my server I need to scp or use FileZilla to upload my updated files or new files. But I want a method that upload files to server just like copy to another directory. After I do some search, I find a tool named SSHFS(SSH Filesystem) can do the job.
+<code>bash
+sudo sshfs *****@xxx.xxx.xxx.xxx:/usr/share/nginx/html ~/ServerHTML
+</code></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Python Challenge 0 - 1]]></title>
