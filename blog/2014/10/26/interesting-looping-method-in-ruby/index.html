@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Quote - Bujiang's Blog</title>
+  <title>Interesting Looping Methods in Ruby - Bujiang's Blog</title>
   <meta name="author" content="Yan Bujiang">
 
   
@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.bujiang.info/blog/2013/11/03/quote">
+  <link rel="canonical" href="http://blog.bujiang.info/blog/2014/10/26/interesting-looping-method-in-ruby">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="Bujiang's Blog" type="application/atom+xml">
 
@@ -111,22 +111,61 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-11-03T09:46:00+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Nov 3<sup>rd</sup>, 2013</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-10-26T14:40:51+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Oct 26<sup>th</sup>, 2014</time>
         
       </p>
     
     
     <h1 class="entry-title" itemprop="name headline">
-        Quote
+        Interesting Looping Methods in Ruby
         
     </h1>
     
   </header>
 
 
-<div class="entry-content clearfix" itemprop="articleBody"><blockquote><p>If you want a happy ending, that depends, of course, on where you stop your story.<br/>如果你想有一个美好的结局，这取决于你在哪里停止这个故事</p><footer><strong>Orson Welles</strong></footer></blockquote>
+<div class="entry-content clearfix" itemprop="articleBody"><p>In Python most the time I use for loop method to iterating list, like the code below</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">print</span> <span class="n">num</span><span class="p">,</span>
+</span><span class='line'>
+</span><span class='line'><span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
+<p>But in Ruby there are more ways to play with</p>
+
+<p>like Ptyhon one for loop</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">for</span> <span class="n">num</span> <span class="k">in</span> <span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">9</span><span class="p">)</span>
+</span><span class='line'>    <span class="nb">print</span> <span class="n">num</span><span class="p">,</span> <span class="s1">&#39; &#39;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Ruby way</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">num</span><span class="o">|</span>
+</span><span class='line'>    <span class="nb">print</span> <span class="n">num</span><span class="p">,</span> <span class="s1">&#39; &#39;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>one line</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">num</span><span class="o">|</span> <span class="nb">print</span> <span class="n">num</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
 </div>
 
@@ -151,13 +190,13 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-11-03T09:46:00+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Nov 3<sup>rd</sup>, 2013</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-10-26T14:40:51+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Oct 26<sup>th</sup>, 2014</time>
           
 
 <span class="glyphicon glyphicon-tags"></span>&nbsp;
 <span class="categories">
   
-    <a class='category' href='/blog/categories/quote/'>quote</a>
+    <a class='category' href='/blog/categories/ruby/'>ruby</a>
   
 </span>
 
@@ -166,7 +205,7 @@
         
           <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.bujiang.info/blog/2013/11/03/quote/" data-via="DiangDiang" data-counturl="http://blog.bujiang.info/blog/2013/11/03/quote/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.bujiang.info/blog/2014/10/26/interesting-looping-method-in-ruby/" data-via="DiangDiang" data-counturl="http://blog.bujiang.info/blog/2014/10/26/interesting-looping-method-in-ruby/" >Tweet</a>
   
   
   
@@ -178,10 +217,8 @@
         
           <ul class="meta text-muted pager">
             
-            <li class="previous"><a href="/blog/2013/11/02/markdown/" title="Previous Post: Markdown">&laquo; Markdown</a></li>
+            <li class="previous"><a href="/blog/2014/08/28/use-sshfs-to-mount-remote-file-system/" title="Previous Post: Use SSHFS to mount remote file system">&laquo; Use SSHFS to mount remote file system</a></li>
             
-            
-            <li class="next"><a href="/blog/2013/11/04/os-x-mavericksxiao-ji-qiao/" title="Next Post: OS X Mavericks小技巧">OS X Mavericks小技巧 &raquo;</a></li>
             
           </ul>
         
@@ -206,7 +243,7 @@
   
   <div id="recent_posts" class="list-group">
     
-    <a class="list-group-item " href="/blog/2014/10/26/interesting-looping-method-in-ruby/">Interesting Looping Methods in Ruby</a>
+    <a class="list-group-item active" href="/blog/2014/10/26/interesting-looping-method-in-ruby/">Interesting Looping Methods in Ruby</a>
     
     <a class="list-group-item " href="/blog/2014/08/28/use-sshfs-to-mount-remote-file-system/">Use SSHFS to Mount Remote File System</a>
     
@@ -348,8 +385,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://blog.bujiang.info/blog/2013/11/03/quote/';
-        var disqus_url = 'http://blog.bujiang.info/blog/2013/11/03/quote/';
+        var disqus_identifier = 'http://blog.bujiang.info/blog/2014/10/26/interesting-looping-method-in-ruby/';
+        var disqus_url = 'http://blog.bujiang.info/blog/2014/10/26/interesting-looping-method-in-ruby/';
         var disqus_script = 'embed.js';
       
     (function () {

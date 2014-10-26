@@ -4,7 +4,7 @@
   <title><![CDATA[Bujiang's Blog]]></title>
   <link href="http://blog.bujiang.info/atom.xml" rel="self"/>
   <link href="http://blog.bujiang.info/"/>
-  <updated>2014-08-28T22:31:37+08:00</updated>
+  <updated>2014-10-26T15:24:34+08:00</updated>
   <id>http://blog.bujiang.info/</id>
   <author>
     <name><![CDATA[Yan Bujiang]]></name>
@@ -12,6 +12,57 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Interesting Looping Methods in Ruby]]></title>
+    <link href="http://blog.bujiang.info/blog/2014/10/26/interesting-looping-method-in-ruby/"/>
+    <updated>2014-10-26T14:40:51+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2014/10/26/interesting-looping-method-in-ruby</id>
+    <content type="html"><![CDATA[<p>In Python most the time I use for loop method to iterating list, like the code below</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">print</span> <span class="n">num</span><span class="p">,</span>
+</span><span class='line'>
+</span><span class='line'><span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>But in Ruby there are more ways to play with</p>
+
+<p>like Ptyhon one for loop</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">for</span> <span class="n">num</span> <span class="k">in</span> <span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">9</span><span class="p">)</span>
+</span><span class='line'>    <span class="nb">print</span> <span class="n">num</span><span class="p">,</span> <span class="s1">&#39; &#39;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Ruby way</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">num</span><span class="o">|</span>
+</span><span class='line'>    <span class="nb">print</span> <span class="n">num</span><span class="p">,</span> <span class="s1">&#39; &#39;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>one line</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">num</span><span class="o">|</span> <span class="nb">print</span> <span class="n">num</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Use SSHFS to Mount Remote File System]]></title>
@@ -1354,87 +1405,6 @@ connected disks.</p>
 <p>remote rm 用来移除</p>
 
 <p>pull 把remote repo上做的更改给拿到本地来</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Git Day 2]]></title>
-    <link href="http://blog.bujiang.info/blog/2013/11/29/git-day-2/"/>
-    <updated>2013-11-29T23:44:00+08:00</updated>
-    <id>http://blog.bujiang.info/blog/2013/11/29/git-day-2</id>
-    <content type="html"><![CDATA[<p>在搜索引擎这么发达的情况下有问题Google下，立马就有答案了</p>
-
-<p>但其实Git有提供挺不错的帮助信息可供查询</p>
-
-<p>只要使用git help 和 git help add （在help后面加想要查询的git command)</p>
-
-<p>不记得从上次commit到现在对文件有做过什么改动了，想要查看怎么办呢git log?</p>
-
-<p>git log只能查询添加了哪些文件不能查询改动 这次得用git diff</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/Git/Day%202/git-day-2-1.jpg"></p>
-
-<p>如图 在用diff 可以看到 在License后面添加了copyright info</p>
-
-<p>diff就像Terminal中的diff类似 告诉你有哪些改动</p>
-
-<p>但是当把License文件添加到stage后 再使用git diff将不会显示改动了</p>
-
-<p>如果要显示改动需要添加参数 git diff &mdash;staged</p>
-
-<p>后悔了 不想把License添加到stage</p>
-
-<p>可以用reset来取消stage</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git reset HEAD License</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>其中的HEAD是指最近的commit 可以想像一条从上至下的时间线 最顶上最近的是HEAD</p>
-
-<p>reset可以把staged的给unstage 但是要怎么还原成以前的没有copyright info的那个</p>
-
-<p>License文件呢</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git checkout -- License</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>当修改过不止一个文件时 又要commit 需要一个一个文件commit吗</p>
-
-<p>给commit加上一个小参数就能搞定</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git commit -a -m "All files"</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>-a 所有staged的文件</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git reset --soft HEAD^
-</span><span class='line'>git commit --amend -m "Changed"
-</span><span class='line'>git reset --hard HEAD
-</span><span class='line'>git reset --soft HEAD^^</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>第一条是 撤销最新的HEAD commit 转到第二新的</p>
-
-<p>第二 做了新的改变但是不想要新的commit 而是在HEAD commit中修改</p>
-
-<p>第三 丢掉最新的HEAD commit， soft还保留stage， hard就都丢了</p>
-
-<p>第四 撤销到第三新的  例如 1，2，3 代表时间顺序 1最新是HEAD  2是HEAD^ 3是HEAD^^</p>
 ]]></content>
   </entry>
   

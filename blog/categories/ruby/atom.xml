@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ruby | Bujiang's Blog]]></title>
+  <link href="http://blog.bujiang.info/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://blog.bujiang.info/"/>
+  <updated>2014-10-26T15:24:34+08:00</updated>
+  <id>http://blog.bujiang.info/</id>
+  <author>
+    <name><![CDATA[Yan Bujiang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Interesting Looping Methods in Ruby]]></title>
+    <link href="http://blog.bujiang.info/blog/2014/10/26/interesting-looping-method-in-ruby/"/>
+    <updated>2014-10-26T14:40:51+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2014/10/26/interesting-looping-method-in-ruby</id>
+    <content type="html"><![CDATA[<p>In Python most the time I use for loop method to iterating list, like the code below
+``` python
+for num in xrange(10):</p>
+
+<pre><code>print num,
+</code></pre>
+
+<p>0 1 2 3 4 5 6 7 8 9
+```
+But in Ruby there are more ways to play with</p>
+
+<p>like Ptyhon one for loop
+``` ruby
+for num in (0..9)</p>
+
+<pre><code>print num, ' '
+</code></pre>
+
+<p>end
+```</p>
+
+<p>Ruby way
+``` ruby
+(0..9).each do |num|</p>
+
+<pre><code>print num, ' '
+</code></pre>
+
+<p>end
+```</p>
+
+<p>one line
+<code>ruby
+(0..9).each { |num| print num, ' '}
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>
