@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Git Day 1 - Bujiang's Blog</title>
+  <title>通过Wget和Xargs并行下载 - Bujiang's Blog</title>
   <meta name="author" content="Yan Bujiang">
 
   
@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.bujiang.info/blog/2013/11/28/git-day-1">
+  <link rel="canonical" href="http://blog.bujiang.info/blog/2014/11/01/parallel-download-by-using-wget-and-xargs">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="Bujiang's Blog" type="application/atom+xml">
 
@@ -111,48 +111,35 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-11-28T02:14:00+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Nov 28<sup>th</sup>, 2013</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-11-01T21:53:24+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Nov 1<sup>st</sup>, 2014</time>
         
       </p>
     
     
     <h1 class="entry-title" itemprop="name headline">
-        Git Day 1
+        通过Wget和Xargs并行下载
         
     </h1>
     
   </header>
 
 
-<div class="entry-content clearfix" itemprop="articleBody"><p>一直都没有系统的学习Git，这段时间决心从头来好好的学习下</p>
+<div class="entry-content clearfix" itemprop="articleBody"><p>前几天的36氪的WISE 1.0 互联网创业者大会 觉得还有点意思 准备把直播视频保存下来
+通过分析网页 发现视频是m3u8(m3u的Unicode版本 类似于文本文件里面纪录了视频文件名）
+里面包含了1500多个小视频 这要一个一个手动下载还不累死了</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>mkdir store
-</span><span class='line'>cd store
-</span><span class='line'>git init</span></code></pre></td></tr></table></div></figure>
+<p>因为文件中只有视频文件名 没有完整的地址 我通过VIM的visual block在所有文件名前添加了地址</p>
+
+<p>一切准备就绪后 就通过Wget和Xargs两个工具加上pipe进行下载了</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>cat file.m3u8 <span class="p">|</span> xargs -n 1 -P 20 wget
+</span></code></pre></td></tr></table></div></figure>
 
 
-<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/git_day_1_1.jpg"></p>
+<p>-n 1 即每次把一行（一个文件地址） 给wget下载</p>
 
-<p>git status 如上图所示，用来检查repo的状态</p>
-
-<p><img src="https://dl.dropboxusercontent.com/u/23849021/Blog/Picture/git_day_1_2.jpg"></p>
-
-<p>添加了一个readme 文件后再用 git status 就有提示有添加新的文件</p>
-
-<p>添加文件可以有多种方式</p>
-
-<p>如 git add readme.txt bujiang.txt  一一列举需要添加的文件</p>
-
-<p>git add &mdash;all  添加所有</p>
-
-<p>git add *.txt  添加所有txt文件</p>
-
-<p>git add css/  添加整个css文件夹</p>
-
-<p>想知道添加了什么  可以使用 git log来查询历史记录</p>
+<p>-P 20 表示最多同时运行20个wget （20个并行下载）</p>
 </div>
 
 
@@ -176,13 +163,13 @@
 
 
 
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-11-28T02:14:00+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Nov 28<sup>th</sup>, 2013</time>
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-11-01T21:53:24+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Nov 1<sup>st</sup>, 2014</time>
           
 
 <span class="glyphicon glyphicon-tags"></span>&nbsp;
 <span class="categories">
   
-    <a class='category' href='/blog/categories/git/'>git</a>
+    <a class='category' href='/blog/categories/bash/'>bash</a>
   
 </span>
 
@@ -191,7 +178,7 @@
         
           <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.bujiang.info/blog/2013/11/28/git-day-1/" data-via="DiangDiang" data-counturl="http://blog.bujiang.info/blog/2013/11/28/git-day-1/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.bujiang.info/blog/2014/11/01/parallel-download-by-using-wget-and-xargs/" data-via="DiangDiang" data-counturl="http://blog.bujiang.info/blog/2014/11/01/parallel-download-by-using-wget-and-xargs/" >Tweet</a>
   
   
   
@@ -203,10 +190,8 @@
         
           <ul class="meta text-muted pager">
             
-            <li class="previous"><a href="/blog/2013/11/21/python-utf-8/" title="Previous Post: Python UTF-8">&laquo; Python UTF-8</a></li>
+            <li class="previous"><a href="/blog/2014/10/26/interesting-looping-method-in-ruby/" title="Previous Post: Interesting looping methods in Ruby">&laquo; Interesting looping methods in Ruby</a></li>
             
-            
-            <li class="next"><a href="/blog/2013/11/29/html5/" title="Next Post: HTML5">HTML5 &raquo;</a></li>
             
           </ul>
         
@@ -231,7 +216,7 @@
   
   <div id="recent_posts" class="list-group">
     
-    <a class="list-group-item " href="/blog/2014/11/01/parallel-download-by-using-wget-and-xargs/">通过Wget和Xargs并行下载</a>
+    <a class="list-group-item active" href="/blog/2014/11/01/parallel-download-by-using-wget-and-xargs/">通过Wget和Xargs并行下载</a>
     
     <a class="list-group-item " href="/blog/2014/10/26/interesting-looping-method-in-ruby/">Interesting Looping Methods in Ruby</a>
     
@@ -373,8 +358,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://blog.bujiang.info/blog/2013/11/28/git-day-1/';
-        var disqus_url = 'http://blog.bujiang.info/blog/2013/11/28/git-day-1/';
+        var disqus_identifier = 'http://blog.bujiang.info/blog/2014/11/01/parallel-download-by-using-wget-and-xargs/';
+        var disqus_url = 'http://blog.bujiang.info/blog/2014/11/01/parallel-download-by-using-wget-and-xargs/';
         var disqus_script = 'embed.js';
       
     (function () {

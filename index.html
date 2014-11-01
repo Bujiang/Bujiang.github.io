@@ -115,6 +115,58 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-11-01T21:53:24+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Nov 1<sup>st</sup>, 2014</time>
+        
+      </p>
+    
+    
+      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2014/11/01/parallel-download-by-using-wget-and-xargs/" itemprop="url">通过Wget和Xargs并行下载</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>前几天的36氪的WISE 1.0 互联网创业者大会 觉得还有点意思 准备把直播视频保存下来
+通过分析网页 发现视频是m3u8(m3u的Unicode版本 类似于文本文件里面纪录了视频文件名）
+里面包含了1500多个小视频 这要一个一个手动下载还不累死了</p>
+
+<p>因为文件中只有视频文件名 没有完整的地址 我通过VIM的visual block在所有文件名前添加了地址</p>
+
+<p>一切准备就绪后 就通过Wget和Xargs两个工具加上pipe进行下载了</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>cat file.m3u8 <span class="p">|</span> xargs -n 1 -P 20 wget
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>-n 1 即每次把一行（一个文件地址） 给wget下载</p>
+
+<p>-P 20 表示最多同时运行20个wget （20个并行下载）</p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-10-26T14:40:51+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Oct 26<sup>th</sup>, 2014</time>
         
       </p>
@@ -779,69 +831,6 @@ So next challenge is <a href="http://www.pythonchallenge.com/pc/def/peak.html">h
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-20T00:10:44+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 20<sup>th</sup>, 2014</time>
-        
-      </p>
-    
-    
-      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2014/08/20/python-challenge-3/" itemprop="url">Python Challenge 3</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>Challenge 3. <a href="http://www.pythonchallenge.com/pc/def/equality.html">re</a></p>
-
-<p>Like previous challenge, this challenge contains one picture and one pargraph.</p>
-
-<blockquote><p>One small letter, surrounded by EXACTLY three big bodyguards on each of its sides.</p></blockquote>
-
-
-<p>The title of challenge 3 page is re, maybe this is another hint telling me to use re package?</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">urllib2</span>
-</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&quot;http://www.pythonchallenge.com/pc/def/equality.html&quot;</span><span class="p">)</span>
-</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="s">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">&quot;[^A-Z][A-Z]{3}([a-z])[A-Z]{3}[^A-Z]&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">))</span>
-</span><span class='line'><span class="n">linkedlist</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>[^A-Z] matches any single character not in it</p>
-
-<p>[A-Z]{3} matches three UPPERCASE characters</p>
-
-<p>Next challenge is <a href="http://www.pythonchallenge.com/pc/def/linkedlist.html">linkedlist</a></p>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -865,6 +854,8 @@ So next challenge is <a href="http://www.pythonchallenge.com/pc/def/peak.html">h
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/2014/11/01/parallel-download-by-using-wget-and-xargs/">通过Wget和Xargs并行下载</a>
+    
     <a class="list-group-item " href="/blog/2014/10/26/interesting-looping-method-in-ruby/">Interesting Looping Methods in Ruby</a>
     
     <a class="list-group-item " href="/blog/2014/08/28/use-sshfs-to-mount-remote-file-system/">Use SSHFS to Mount Remote File System</a>
@@ -872,8 +863,6 @@ So next challenge is <a href="http://www.pythonchallenge.com/pc/def/peak.html">h
     <a class="list-group-item " href="/blog/2014/08/25/python-challenge-6/">Python Challenge 6</a>
     
     <a class="list-group-item " href="/blog/2014/08/24/python-challenge-5/">Python Challenge 5</a>
-    
-    <a class="list-group-item " href="/blog/2014/08/23/python-challenge-4/">Python Challenge 4</a>
     
   </div>
 </section>
@@ -945,7 +934,7 @@ So next challenge is <a href="http://www.pythonchallenge.com/pc/def/peak.html">h
     
     
     <a class="list-group-item " href="/blog/categories/bash/index.html">
-        <span class="badge">4</span>
+        <span class="badge">5</span>
         bash
       </a>
     

@@ -115,6 +115,69 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-20T00:10:44+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 20<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+    
+      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2014/08/20/python-challenge-3/" itemprop="url">Python Challenge 3</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>Challenge 3. <a href="http://www.pythonchallenge.com/pc/def/equality.html">re</a></p>
+
+<p>Like previous challenge, this challenge contains one picture and one pargraph.</p>
+
+<blockquote><p>One small letter, surrounded by EXACTLY three big bodyguards on each of its sides.</p></blockquote>
+
+
+<p>The title of challenge 3 page is re, maybe this is another hint telling me to use re package?</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">urllib2</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&quot;http://www.pythonchallenge.com/pc/def/equality.html&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="s">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">&quot;[^A-Z][A-Z]{3}([a-z])[A-Z]{3}[^A-Z]&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">))</span>
+</span><span class='line'><span class="n">linkedlist</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>[^A-Z] matches any single character not in it</p>
+
+<p>[A-Z]{3} matches three UPPERCASE characters</p>
+
+<p>Next challenge is <a href="http://www.pythonchallenge.com/pc/def/linkedlist.html">linkedlist</a></p>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-08-17T14:47:57+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Aug 17<sup>th</sup>, 2014</time>
         
       </p>
@@ -662,53 +725,6 @@ connected disks.</p>
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-07-23T00:02:09+08:00" pubdate data-updated="true" itemprop="datePublished dateCreated">Jul 23<sup>rd</sup>, 2014</time>
-        
-      </p>
-    
-    
-      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2014/07/23/ptyhon-printing/" itemprop="url">Ptyhon Printing</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><figure class='code'><figcaption><span>Fun printing</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-</span><span class='line'>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&quot;/&quot;</span><span class="p">,</span> <span class="s">&quot;-&quot;</span><span class="p">,</span> <span class="s">&quot;|&quot;</span><span class="p">,</span> <span class="s">&quot;</span><span class="se">\\</span><span class="s">&quot;</span><span class="p">,</span> <span class="s">&quot;|&quot;</span><span class="p">,</span> <span class="s">&quot;-&quot;</span><span class="p">]:</span>
-</span><span class='line'>        <span class="k">print</span> <span class="s">&quot;Loading [</span><span class="si">%s</span><span class="s">]</span><span class="se">\r\b</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">i</span><span class="p">,</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<iframe width="" height="" src="http://www.youtube.com/embed/q_XmtWG1E7c " frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -732,6 +748,8 @@ connected disks.</p>
   
   <div id="recent_posts" class="list-group">
     
+    <a class="list-group-item " href="/blog/2014/11/01/parallel-download-by-using-wget-and-xargs/">通过Wget和Xargs并行下载</a>
+    
     <a class="list-group-item " href="/blog/2014/10/26/interesting-looping-method-in-ruby/">Interesting Looping Methods in Ruby</a>
     
     <a class="list-group-item " href="/blog/2014/08/28/use-sshfs-to-mount-remote-file-system/">Use SSHFS to Mount Remote File System</a>
@@ -739,8 +757,6 @@ connected disks.</p>
     <a class="list-group-item " href="/blog/2014/08/25/python-challenge-6/">Python Challenge 6</a>
     
     <a class="list-group-item " href="/blog/2014/08/24/python-challenge-5/">Python Challenge 5</a>
-    
-    <a class="list-group-item " href="/blog/2014/08/23/python-challenge-4/">Python Challenge 4</a>
     
   </div>
 </section>
@@ -812,7 +828,7 @@ connected disks.</p>
     
     
     <a class="list-group-item " href="/blog/categories/bash/index.html">
-        <span class="badge">4</span>
+        <span class="badge">5</span>
         bash
       </a>
     

@@ -119,12 +119,18 @@
         <lastmod>2014-10-26T15:24:25+08:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://blog.bujiang.info/blog/2014/11/01/parallel-download-by-using-wget-and-xargs/
+        </loc>
+        <lastmod>2014-11-01T22:19:05+08:00</lastmod>
+    </url>
+    <url>
         <loc>http://blog.bujiang.info/blog/archives/blog/archives/</loc>
-        <lastmod>2014-10-26T15:24:25+08:00</lastmod>
+        <lastmod>2014-11-01T22:19:05+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.bujiang.info/</loc>
-        <lastmod>2014-10-26T15:24:25+08:00</lastmod>
+        <lastmod>2014-11-01T22:19:05+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.bujiang.info/robots.txt</loc>

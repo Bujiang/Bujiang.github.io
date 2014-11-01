@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Bash | Bujiang's Blog]]></title>
   <link href="http://blog.bujiang.info/blog/categories/bash/atom.xml" rel="self"/>
   <link href="http://blog.bujiang.info/"/>
-  <updated>2014-10-26T15:24:34+08:00</updated>
+  <updated>2014-11-01T22:18:46+08:00</updated>
   <id>http://blog.bujiang.info/</id>
   <author>
     <name><![CDATA[Yan Bujiang]]></name>
@@ -12,6 +12,28 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[通过Wget和Xargs并行下载]]></title>
+    <link href="http://blog.bujiang.info/blog/2014/11/01/parallel-download-by-using-wget-and-xargs/"/>
+    <updated>2014-11-01T21:53:24+08:00</updated>
+    <id>http://blog.bujiang.info/blog/2014/11/01/parallel-download-by-using-wget-and-xargs</id>
+    <content type="html"><![CDATA[<p>前几天的36氪的WISE 1.0 互联网创业者大会 觉得还有点意思 准备把直播视频保存下来
+通过分析网页 发现视频是m3u8(m3u的Unicode版本 类似于文本文件里面纪录了视频文件名）
+里面包含了1500多个小视频 这要一个一个手动下载还不累死了</p>
+
+<p>因为文件中只有视频文件名 没有完整的地址 我通过VIM的visual block在所有文件名前添加了地址</p>
+
+<p>一切准备就绪后 就通过Wget和Xargs两个工具加上pipe进行下载了
+<code>bash
+cat file.m3u8 | xargs -n 1 -P 20 wget
+</code></p>
+
+<p>-n 1 即每次把一行（一个文件地址） 给wget下载</p>
+
+<p>-P 20 表示最多同时运行20个wget （20个并行下载）</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Use SSHFS to Mount Remote File System]]></title>
